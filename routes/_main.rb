@@ -1,5 +1,5 @@
 class Sinforum < Sinatra::Base
   get "/" do
-    haml :index
+    haml :forums
   end
 end

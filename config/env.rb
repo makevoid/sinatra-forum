@@ -1,4 +1,4 @@
-path = File.expand_path '../', __FILE__
+path = File.expand_path '../../', __FILE__
 APP = "sinforum"
 
 require "bundler/setup"
@@ -12,6 +12,7 @@ module Utils
 end
 include Utils
 
-# DataMapper.setup :default, "mysql://root@localhost:sinforum_development"
+env = "development" || ENV["RACK_ENV"]
+DataMapper.setup :default, "mysql://localhost/sinforum_#{env}"
 require_all "#{path}/models"
-# DataMapper.finalize
+DataMapper.finalize

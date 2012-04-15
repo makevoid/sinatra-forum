@@ -1,0 +1,6 @@
+%h1
+  = @forum.name
+
+.posts
+  - @forum.posts.each do |post|
+    = partial :post, post
