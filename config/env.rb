@@ -12,10 +12,10 @@ module Utils
 end
 include Utils
 
-env = "development" || ENV["RACK_ENV"]
+env = ENV["RACK_ENV"] || "development"
 DataMapper.setup :default, "mysql://localhost/sinforum_#{env}"
 require_all "#{path}/models"
 
-require "#{path}/config/sinatra_modules.rb"
+require "#{path}/config/sinatra_exts.rb"
 
 DataMapper.finalize

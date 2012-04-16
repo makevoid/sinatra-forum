@@ -3,7 +3,7 @@ path = File.expand_path "../../", __FILE__
 mod = "auth"
 
 if defined?(DataMapper)
-  require_all "#{path}/modules/#{mod}/models"
+  require_all "#{path}/exts/#{mod}/models"
 end
 
 LOAD_MODULES_ROUTES = lambda do
@@ -11,10 +11,10 @@ LOAD_MODULES_ROUTES = lambda do
     @@mod = "auth"
 
     def haml_mod(view, options={})
-      haml "../modules/#{@@mod}/views/#{view}".to_sym, options
+      haml "../exts/#{@@mod}/views/#{view}".to_sym, options
     end
   end
 
-  require_all "#{path}/modules/#{mod}/routes"
+  require_all "#{path}/exts/#{mod}/routes"
 end
 

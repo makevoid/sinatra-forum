@@ -2,12 +2,13 @@ class Post
   include DataMapper::Resource
 
   property :id,       Serial
-  property :name,     String,   length: 100
-  property :text,     Text
+  property :title,    String,   length: 100, required: true
+  property :text,     Text, required: true
   property :created_at, DateTime
   property :updated_at, DateTime
 
   belongs_to :forum
+  belongs_to :user
 
   # parent
 
@@ -27,6 +28,5 @@ class Post
   after :save do
     forum.update updated_at: Time.now
   end
-
 
 end

@@ -2,7 +2,7 @@
   .forum_name
     - link_to "back to #{@forum.name}", "/forums/#{@forum.id}"
 
-  %h1= @post.name
+  %h1= @post.title
 
   .text
     = @post.text

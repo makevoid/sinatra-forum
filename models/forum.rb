@@ -8,4 +8,8 @@ class Forum
 
   has n, :posts
 
+  before :create do
+    self.updated_at = Time.now
+  end
+
 end
