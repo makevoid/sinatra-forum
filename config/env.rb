@@ -15,4 +15,7 @@ include Utils
 env = "development" || ENV["RACK_ENV"]
 DataMapper.setup :default, "mysql://localhost/sinforum_#{env}"
 require_all "#{path}/models"
+
+require "#{path}/config/sinatra_modules.rb"
+
 DataMapper.finalize

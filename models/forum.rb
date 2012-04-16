@@ -4,6 +4,7 @@ class Forum
   property :id,       Serial
   property :name,     String
   property :private,  Integer, default: 0
+  property :updated_at, DateTime
 
   has n, :posts
 

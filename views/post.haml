@@ -1,5 +1,8 @@
 .post
-  %h1= post.name
+  .forum_name
+    - link_to "back to #{@forum.name}", "/forums/#{@forum.id}"
+
+  %h1= @post.name
 
   .text
-    = post.text
+    = @post.text

@@ -3,7 +3,15 @@ path = File.expand_path '../', __FILE__
 require "#{path}/config/env.rb"
 
 class Sinforum < Sinatra::Base
-  # sinatra configurations
+  @@path = File.expand_path '../', __FILE__
+
+  set :root, @@path
+
+  configure :development do
+    use Rack::Reloader, 0
+    Sinatra::Application.reset!
+  end
+
   include Voidtools::Sinatra::ViewHelpers
 
   # partial :comment, { comment: "blah" }
@@ -21,3 +29,5 @@ class Sinforum < Sinatra::Base
 end
 
 require_all "#{path}/routes"
+
+LOAD_MODULES_ROUTES.call

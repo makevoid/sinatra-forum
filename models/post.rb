@@ -4,6 +4,12 @@ class Post
   property :id,       Serial
   property :name,     String,   length: 100
   property :text,     Text
+  property :created_at, DateTime
+  property :updated_at, DateTime
+
+  belongs_to :forum
+
+  # parent
 
   property :parent_id, Integer
 
@@ -15,4 +21,12 @@ class Post
   def children
     Post.all parent_id: self.id
   end
+
+  # updated at
+
+  after :save do
+    forum.update updated_at: Time.now
+  end
+
+
 end
