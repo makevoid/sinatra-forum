@@ -31,7 +31,7 @@ class User
   require 'digest/sha2'
 
   before :create do
-    raise ConfirmationError if self.password_confirmation != self.password
+    #raise ConfirmationError if self.password_confirmation != self.password
     generate_salt
     self.password = crypt_password self.password
   end

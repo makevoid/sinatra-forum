@@ -23,7 +23,15 @@ class Post
     Post.all parent_id: self.id
   end
 
-  # updated at
+  # timestamps at
+
+  before :create do
+    self.created_at = Time.now
+  end
+
+  before :save do
+    self.updated_at = Time.now
+  end
 
   after :save do
     forum.update updated_at: Time.now

@@ -30,10 +30,6 @@ def referer
   location.gsub(/http:\/\/example\.org/, '') if location
 end
 
-def clear_db
-  DataMapper.auto_migrate!
-end
-
 def login(user)
   session[:user_id] = user.id
 end
@@ -43,9 +39,6 @@ def sinforum_login
   raise "implement me"
 end
 
-def user
-  @user ||= User.create username: "antani", password: "sblinda", password_confirmation: "sblinda"
-end
 
 def app.current_user
   $spec_current_user
