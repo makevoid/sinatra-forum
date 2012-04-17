@@ -25,8 +25,13 @@ def body
   last_response.body
 end
 
-def should_render
-  last_response.status_code.should eq(200)
+def referer
+  location = last_response.headers["Location"]
+  location.gsub(/http:\/\/example\.org/, '') if location
+end
+
+def clear_db
+  DataMapper.auto_migrate!
 end
 
 def login(user)
@@ -39,7 +44,7 @@ def sinforum_login
 end
 
 def user
-  @user ||= User.create username: "makevoid", password: "secret"
+  @user ||= User.create username: "antani", password: "sblinda", password_confirmation: "sblinda"
 end
 
 def app.current_user

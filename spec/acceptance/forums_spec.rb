@@ -1,7 +1,6 @@
 require_relative "spec_helper"
 
 describe "Forum" do
-  let(:user){ User.create user: "antani" }
   let(:forum){ Forum.create name: "foro"  }
   let(:post){ forum.posts.create title: "one", text: "one", user_id: user.id  }
 
@@ -18,4 +17,9 @@ describe "Forum" do
     get "/forums/#{forum.id}"
     body.should include(forum.name)
   end
+
+  after :all do
+    clear_db
+  end
+
 end

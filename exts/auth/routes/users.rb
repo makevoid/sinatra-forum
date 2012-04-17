@@ -8,4 +8,9 @@ class Sinforum < Sinatra::Base
      haml :register
   end
 
+  post "/users" do
+    User.create params[:user]
+    redirect "/"
+  end
+
 end

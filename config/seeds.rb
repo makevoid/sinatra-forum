@@ -4,7 +4,7 @@ require "#{path}/config/env"
 
 DataMapper.auto_migrate!
 
-user = User.create user: "antani"
+user = User.create username: "antani", password: "sblinda", password_confirmation: "sblinda"
 forum = Forum.create name: "foro"
 
 post1 = user.post forum, title: "one", text: "one"

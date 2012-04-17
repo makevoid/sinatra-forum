@@ -13,11 +13,11 @@ example:
 - install dependencies
 
     bundle
-    
+
 - automigrate and apply seeds
 
     ruby config/seeds.rb
-    
+
 - run rack server
 
 example:
@@ -25,7 +25,7 @@ example:
     rackup
 
 
-### testing
+### Testing
 
 create database
 

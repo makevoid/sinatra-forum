@@ -6,6 +6,7 @@ gem "json"
 gem "dm-core"
 gem "dm-mysql-adapter"
 gem "dm-migrations"
+gem "dm-validations"
 
 gem "haml"
 gem "sass"
