@@ -5,12 +5,18 @@ class Sinforum < Sinatra::Base
   end
 
   get "/register" do
-     haml :register
+    @user = User.new
+    haml :register
   end
 
   post "/users" do
-    User.create params[:user]
-    redirect "/"
+    @user = User.create params[:user]
+    p @user.errors
+    if @user.errors
+      redirect "/"
+    else
+      haml :register
+    end
   end
 
 end

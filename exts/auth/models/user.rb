@@ -1,9 +1,3 @@
-class ConfirmationError < ArgumentError
-  def message
-    "Password and Confirmed password have different values."
-  end
-end
-
 class User
   include DataMapper::Resource
 
@@ -30,13 +24,16 @@ class User
 
   require 'digest/sha2'
 
+  attr_accessor :password_confirmation
+
+  validates_with_block :password_confirmation do
+    self.password_confirmation == self.password ? [true] : [false,  "Password and Confirmed password have different values."]
+  end
+
   before :create do
-    #raise ConfirmationError if self.password_confirmation != self.password
     generate_salt
     self.password = crypt_password self.password
   end
-
-  attr_accessor :password_confirmation
 
   def password?(pass)
     self.password == crypt_password(pass)
@@ -53,4 +50,5 @@ class User
   def hexdigest(string)
     Digest::SHA2.hexdigest(string)[0..49]
   end
+
 end
