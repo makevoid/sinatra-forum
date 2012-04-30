@@ -19,7 +19,6 @@ require "#{path}/sinforum"
 # Capybara.app = app
 
 
-DataMapper.auto_migrate!
 
 def body
   last_response.body

@@ -8,6 +8,7 @@ describe "Sessions" do
 
   context "POST /sessions" do
     it "logs in" do
+      user = factory User
       post "/sessions", user: { username: user.username, password: "sblinda" }
       referer.should == "/"
     end
@@ -25,4 +26,5 @@ describe "Sessions" do
     pending "need session"
     #session[:user_id].should be_nil
   end
+
 end

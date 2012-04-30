@@ -6,6 +6,7 @@ class Sinforum < Sinatra::Base
   end
 
   get "/users/:id" do |id|
+    p id
     @user = User.get id
     haml_mod :user
   end

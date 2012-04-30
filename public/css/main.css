@@ -55,7 +55,7 @@ header h1 {
 h1 {
   margin: 0 0 10px 0; }
 
-.post, .forum {
+.post, .forum, .user {
   margin: 0 0 10px 0;
   background: white;
   background: linear-gradient(top, white, #dddddd);
@@ -71,7 +71,7 @@ h1 {
   border-top: 1px solid #cccccc;
   cursor: pointer;
   box-shadow: 1px 1px 3px #999999; }
-  .post:hover, .forum:hover {
+  .post:hover, .forum:hover, .user:hover {
     background: #bbbbbb;
     background: linear-gradient(top, #bbbbbb, #eeeeee);
     background: -o-linear-gradient(top, #bbbbbb, #eeeeee);

@@ -4,6 +4,8 @@
 %nav.inpage
   - if logged_in?
     %a{ href: "/posts/new" } New post
+  - else
+    %a{ href: "/login" } Log in to post
 
 .posts
   - @forum.posts.each do |post|
