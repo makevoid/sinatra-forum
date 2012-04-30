@@ -31,7 +31,7 @@ create database
 
     mysql -u root -e "CREATE DATABASE sinforum_test;"
 
-run migrations
+run auto migrate
 
     RACK_ENV=test ruby -e 'DataMapper.auto_migrate!' -r ./config/env
 

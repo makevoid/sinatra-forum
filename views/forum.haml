@@ -1,6 +1,10 @@
 %h1
   = @forum.name
 
+%nav.inpage
+  - if logged_in?
+    %a{ href: "/posts/new" } New post
+
 .posts
   - @forum.posts.each do |post|
     = partial :post, post

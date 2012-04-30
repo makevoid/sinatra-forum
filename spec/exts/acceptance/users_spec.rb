@@ -1,6 +1,16 @@
 require_relative "../../acceptance/spec_helper"
 
 describe "Users" do
+  it "GET /users" do
+    get "/users"
+    body.should include(user.username)
+  end
+
+  it "GET /users/:id" do
+    get "/users/#{user.id}"
+    body.should include(user.username)
+  end
+
   it "GET /register" do
     get "/register"
     body.should =~ /Register/
@@ -14,9 +24,9 @@ describe "Users" do
       User.all.count.should == users_count+1
     end
 
-    it "renders errors" do
+    it "displays validations" do
       post "/users", { user: { username: "antani2", password: "sblinda", password_confirmation: "sblinda2" } }
-      p body
+      body.should =~ /Password and Confirmed password have different values/
     end
   end
 

@@ -1,9 +1,9 @@
 class Post
   include DataMapper::Resource
 
-  property :id,       Serial
-  property :title,    String,   length: 100, required: true
-  property :text,     Text, required: true
+  property :id,         Serial
+  property :title,      String, length: 100, required: true
+  property :text,       Text, required: true
   property :created_at, DateTime
   property :updated_at, DateTime
 

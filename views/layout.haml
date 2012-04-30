@@ -5,7 +5,22 @@
   %body
     #container
       %header
+        %nav.right
+          - if logged_in?
+            %a{ href: "/users/#{current_user.id}" }= current_user.username
+            %form{ action: "/logout", method: "post" }
+              %input{ type: "submit", value: "Logout" }
+          - else
+            %a{ href: "/login" } Login
+            or
+            %a{ href: "/register" } Register
         %h1
           - link_to "Sinforum", "/"
-      %nav
+      %nav.main
+        %a{ href: "/forums" } Forums
+        %a{ href: "/users" } Users
+      .flashes
+        - flash.each do |type, message|
+          %div{ class: type }= message
+
       %section.content= yield

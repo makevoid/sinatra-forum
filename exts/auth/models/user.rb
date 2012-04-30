@@ -13,11 +13,11 @@ class User
   # actions
 
   def post(forum, attributes)
-    forum.posts.create attributes.merge(user: self)
+    forum.posts.new attributes.merge(user_id: self.id)
   end
 
   def reply(post, attributes)
-    Post.create attributes.merge(user: self, parent_id: post.id, forum: post.forum)
+    post.forum.posts.new attributes.merge(user_id: self.id, parent_id: post.id)
   end
 
   # authentication

@@ -6,6 +6,7 @@ describe User do
 
   it "replies to a post" do
     post2 = user.reply( post, { title: "two", text: "two" })
+    post2.save
     user.posts.should include(post2)
   end
 end

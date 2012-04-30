@@ -6,6 +6,7 @@ class Sinforum < Sinatra::Base
   @@path = File.expand_path '../', __FILE__
 
   set :root, @@path
+  enable :sessions
 
   configure :development do
     use Rack::Reloader, 0
@@ -14,17 +15,35 @@ class Sinforum < Sinatra::Base
 
   include Voidtools::Sinatra::ViewHelpers
 
+  require "#{@@path}/lib/form_helpers"
+  include FormHelpers
+
+  # partials
+
   # partial :comment, { comment: "blah" }
   # partial :comment, comment
 
-  def partial(name, value)
-    locals = if value.is_a? Hash
+  def extract_locals(name, value)
+    if value.is_a? Hash
       value
     else
       hash = {}; hash[name] = value
       hash
     end
-    haml "_#{name}".to_sym, locals: locals
+  end
+
+  def partial(name, value={})
+    haml "_#{name}".to_sym, locals: extract_locals(name, value)
+  end
+
+  # flash messages
+
+  def flash
+    @@flashes ||= {}
+  end
+
+  after do
+    @@flashes = {}
   end
 end
 

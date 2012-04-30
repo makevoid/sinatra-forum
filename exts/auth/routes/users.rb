@@ -1,21 +1,26 @@
 class Sinforum < Sinatra::Base
 
   get "/users" do
+    @users = User.all
     haml_mod :users
+  end
+
+  get "/users/:id" do |id|
+    @user = User.get id
+    haml_mod :user
   end
 
   get "/register" do
     @user = User.new
-    haml :register
+    haml_mod :register
   end
 
   post "/users" do
-    @user = User.create params[:user]
-    p @user.errors
-    if @user.errors
+    @user = User.new params[:user]
+    if @user.save
       redirect "/"
     else
-      haml :register
+      haml_mod :register
     end
   end
 

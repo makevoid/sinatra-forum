@@ -13,6 +13,10 @@ LOAD_MODULES_ROUTES = lambda do
     def haml_mod(view, options={})
       haml "../exts/#{@@mod}/views/#{view}".to_sym, options
     end
+
+    def partial_mod(name, value={})
+      haml_mod "_#{name}".to_sym, locals: extract_locals(name, value)
+    end
   end
 
   require_all "#{path}/exts/#{mod}/routes"
