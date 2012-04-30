@@ -18,6 +18,10 @@ describe "Forum" do
     body.should include(forum.name)
   end
 
+  it "GET /forum/new" do
+    get "/forums/new"
+  end
+
   after :all do
     clear_db
   end

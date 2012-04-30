@@ -21,6 +21,12 @@ group :test do
   gem "rack-test"
 end
 
+group :development do
+  gem "foreman"
+  gem "guard"
+  gem "guard-sass"
+  gem "guard-coffeescript"
+end
 # group :acceptance_test do
 #   gem "capybara"
 # end
