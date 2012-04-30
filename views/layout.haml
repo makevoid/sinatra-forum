@@ -11,14 +11,14 @@
             %form{ action: "/logout", method: "post" }
               %input{ type: "submit", value: "Logout" }
           - else
-            %a{ href: "/login" } Login
+            %a.btn{ href: "/login" } Login
             or
-            %a{ href: "/register" } Register
+            %a.btn{ href: "/register" } Register
         %h1
           - link_to "Sinforum", "/"
-      %nav.main
-        %a{ href: "/forums" } Forums
-        %a{ href: "/users" } Users
+        %nav.main
+          %a.btn{ href: "/forums" } Forums
+          %a.btn{ href: "/users" } Users
       .flashes
         - flash.each do |type, message|
           %div{ class: type }= message

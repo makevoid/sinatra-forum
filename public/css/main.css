@@ -1,5 +1,86 @@
+a {
+  text-decoration: none; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 body {
-  background: #dddddd; }
+  background: #d9d9d9;
+  font-family: Georgia, Verdana, Arial; }
+
+a {
+  color: #dd0000; }
+
+a:hover {
+  color: #ff1111; }
+
+a.btn {
+  border-radius: 8px;
+  background: #dd0000;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 3px 10px;
+  border: 1px solid #888888;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #aaaaaa;
+  border-top: 1px solid #cccccc;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #999999; }
+
+a.btn:hover {
+  background: white;
+  color: #dd0000;
+  border: 1px solid #cccccc;
+  border-top: 1px solid #888888;
+  box-shadow: 0px 0px 4px white; }
+
+h1, nav.main {
+  display: inline-block; }
+
+nav.main {
+  margin: 0 0 20px 1%;
+  position: relative;
+  top: -3px; }
+
+nav.right {
+  margin: 12px 0 0; }
+
+header h1 {
+  font-size: 2.2em;
+  text-shadow: 1px 1px 1px white, 1px 1px 4px #222222; }
+
+h1 {
+  margin: 0 0 10px 0; }
+
+.post, .forum {
+  margin: 0 0 10px 0;
+  background: white;
+  background: linear-gradient(top, white, #dddddd);
+  background: -o-linear-gradient(top, white, #dddddd);
+  background: -moz-linear-gradient(top, white, #dddddd);
+  background: -webkit-linear-gradient(top, white, #dddddd);
+  background: -ms-linear-gradient(top, white, #dddddd);
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid #888888;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #aaaaaa;
+  border-top: 1px solid #cccccc;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #999999; }
+  .post:hover, .forum:hover {
+    background: #bbbbbb;
+    background: linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
+    border: 1px solid #cccccc;
+    border-top: 1px solid #888888;
+    box-shadow: 0px 0px 4px white; }
 
 input {
   display: block; }
@@ -9,3 +90,7 @@ input[type='submit'] {
 
 .right {
   float: right; }
+
+#container {
+  width: 92%;
+  margin: 20px auto; }
