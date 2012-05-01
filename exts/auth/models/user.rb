@@ -5,6 +5,7 @@ class User
   property :username,   String, length: 100, required: true, unique: true
   property :password,   String, required: true, length: 5..50
   property :salt,       String
+  property :diablo_id,  String
   property :avatar,     String, length: 255
   property :signature,  Text
 

@@ -29,8 +29,10 @@ describe "Users" do
       User.all.count.should == users_count+1
     end
 
-    pending "logins user" do
+    it "logins user" do
       process!
+      # p session[:user_id]
+      # TODO: pending
     end
 
     it "displays validations" do

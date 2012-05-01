@@ -6,7 +6,6 @@ class Sinforum < Sinatra::Base
   @@path = File.expand_path '../', __FILE__
 
   set :root, @@path
-  enable :sessions
 
   configure :development do
     use Rack::Reloader, 0
@@ -45,6 +44,13 @@ class Sinforum < Sinatra::Base
   after do
     @@flashes = {}
   end
+
+  # utils
+
+  def route_is_new?
+    request.path.split("/")[2] == "new" || @route == :new
+  end
+
 end
 
 require_all "#{path}/routes"

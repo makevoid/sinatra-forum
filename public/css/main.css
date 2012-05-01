@@ -8,7 +8,8 @@ a {
 
 body {
   background: #d9d9d9;
-  font-family: Georgia, Verdana, Arial; }
+  font-family: Georgia, Verdana, Arial;
+  color: #111111; }
 
 a {
   color: #dd0000; }
@@ -27,7 +28,6 @@ a.btn {
   border-left: 1px solid #999999;
   border-right: 1px solid #aaaaaa;
   border-top: 1px solid #cccccc;
-  cursor: pointer;
   box-shadow: 1px 1px 3px #999999; }
 
 a.btn:hover {
@@ -43,10 +43,20 @@ h1, nav.main {
 nav.main {
   margin: 0 0 20px 1%;
   position: relative;
-  top: -3px; }
+  top: -4px; }
 
 nav.right {
   margin: 12px 0 0; }
+
+nav.inpage {
+  margin: 0 0 15px;
+  display: inline-block;
+  margin: 0 0 0 10px;
+  position: relative;
+  top: -3px; }
+
+nav.alone {
+  margin: 0 0 15px; }
 
 header h1 {
   font-size: 2.2em;
@@ -62,35 +72,75 @@ h1 {
   background: -o-linear-gradient(top, white, #dddddd);
   background: -moz-linear-gradient(top, white, #dddddd);
   background: -webkit-linear-gradient(top, white, #dddddd);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, white), color-stop(0, #dddddd));
   background: -ms-linear-gradient(top, white, #dddddd);
-  padding: 3px 10px;
+  padding: 5px 1.5% 10px;
   border-radius: 12px;
   border: 1px solid #888888;
   border-left: 1px solid #999999;
   border-right: 1px solid #aaaaaa;
   border-top: 1px solid #cccccc;
-  cursor: pointer;
   box-shadow: 1px 1px 3px #999999; }
-  .post:hover, .forum:hover, .user:hover {
+
+.posts .post, .forums .forum, .users .user {
+  cursor: pointer; }
+  .posts .post:hover, .forums .forum:hover, .users .user:hover {
     background: #bbbbbb;
     background: linear-gradient(top, #bbbbbb, #eeeeee);
     background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
     background: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(1, #bbbbbb), color-stop(0, #eeeeee));
     background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
     border: 1px solid #cccccc;
     border-top: 1px solid #888888;
     box-shadow: 0px 0px 4px white; }
 
-input {
+.user a {
+  font-weight: bold; }
+
+label {
+  font-size: 0.85em;
+  font-weight: bold;
+  margin: 0 0 4px;
   display: block; }
 
+input {
+  font-size: 1.1em;
+  display: block;
+  margin: 0 0 15px;
+  padding: 2px 5px;
+  width: 30%; }
+
+.submit {
+  width: 30%;
+  clear: right; }
+
 input[type='submit'] {
-  margin: 20px 0 0 0; }
+  margin: 10px 0 0 0;
+  font-size: 1.2em;
+  width: auto;
+  float: right;
+  display: inline-block; }
 
 .right {
   float: right; }
+  .right .user_name {
+    margin: 0 10px 0 0;
+    position: relative;
+    top: -4px; }
+  .right form, .right .user_name {
+    display: inline-block; }
 
 #container {
   width: 92%;
   margin: 20px auto; }
+
+.forum .info {
+  font-size: 0.9em; }
+  .forum .info .updated_at {
+    font-weight: bold;
+    font-size: 0.9em; }
+
+.post .forum_name {
+  margin: 0 0 10px 0; }

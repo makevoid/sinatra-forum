@@ -1,8 +1,12 @@
-.post
-  .forum_name
-    - link_to "back to #{@forum.name}", "/forums/#{@forum.id}"
+%nav.alone
+  - link_to "< back to #{@forum.name}", "/forums/#{@forum.id}", class: "btn"
 
+.post
   %h1= @post.title
+  
+  .forum_name
+    in 
+    - link_to @forum.name, "/forums/#{@forum.id}"
 
   .text
     = @post.text

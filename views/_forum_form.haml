@@ -1,0 +1,14 @@
+%h1
+  - if route_is_new?
+    - action = "/forums"
+    New Forum
+  - else
+    Edit: #{@forum.name}
+    - action = "/forums/#{@forum.id}"
+
+%form{ action: action, method: "post" }
+  - unless route_is_new?
+    %input{ type: "hidden", name: "_method", value: "put" }
+  - input @forum, :name
+  - input @forum, :description
+  - submit "Save"

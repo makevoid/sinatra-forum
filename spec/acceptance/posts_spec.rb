@@ -9,6 +9,11 @@ describe "Posts" do
     body.should include(post.title)
   end
 
+  it "GET /forums/:forum_id/posts/new" do
+    get "/forums/#{forum.id}/posts/new"
+    body.should include("New post")
+  end
+
   after :all do
     clear_db
   end

@@ -3,9 +3,11 @@
 
 %nav.inpage
   - if logged_in?
-    %a{ href: "/posts/new" } New post
+    %a.btn{ href: "/forums/#{@forum.id}/posts/new" } New post
+    - if admin?
+      %a.btn{ href: "/forums/#{@forum.id}/edit" } Edit
   - else
-    %a{ href: "/login" } Log in to post
+    %a.btn{ href: "/login" } Log in to post
 
 .posts
   - @forum.posts.each do |post|

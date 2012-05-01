@@ -29,4 +29,10 @@ module FormHelpers
     end unless object.errors.empty?
   end
 
+  def submit(label)
+    haml_tag :div, class: "submit" do
+      haml_tag :input, type: "submit", value: label
+    end
+  end
+
 end

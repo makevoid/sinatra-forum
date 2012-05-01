@@ -1,3 +1,9 @@
 %h1= @user.username
 
+- if me?
+  %nav.inpage
+    - link_to "Edit profile", "/users/#{@user.id}/edit", class: "btn"
+
 = @user.avatar
+
+= @user.signature

@@ -3,7 +3,7 @@
 
 %nav.inpage
   - if admin?
-    %a{ href: "/forums/new" } Create forum
+    %a.btn{ href: "/forums/new" } Create forum
   
 .forums
   - Forum.all.each do |forum|

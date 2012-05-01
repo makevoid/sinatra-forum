@@ -4,4 +4,9 @@ class Sinforum < Sinatra::Base
     @forum = @post.forum
     haml :post
   end
+
+  get "/forums/:forum_id/posts/new" do |forum_id|
+    @forum = Forum.get forum_id
+    haml :_post_form
+  end
 end

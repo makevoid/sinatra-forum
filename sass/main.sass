@@ -1,6 +1,13 @@
 $main: #D00
 $bg: #D9D9D9
 $fg: #FFF
+$text: #111
+
+
+// $main: #D00
+// $bg: #333
+// $fg: #111
+// $text: #EEE
 
 =gradient($start, $end)
   background: $start
@@ -8,6 +15,7 @@ $fg: #FFF
   background: -o-linear-gradient(top, $start, $end)
   background: -moz-linear-gradient(top, $start, $end)
   background: -webkit-linear-gradient(top, $start, $end)
+  background: -webkit-gradient(linear, left bottom,	left top, color-stop(1, $start), color-stop(0, $end))
   background: -ms-linear-gradient(top, $start, $end)
 
 =emboss
@@ -15,7 +23,6 @@ $fg: #FFF
   border-left:  1px solid $fg - #666
   border-right: 1px solid $fg - #555
   border-top:   1px solid $fg - #333
-  cursor: pointer
   box-shadow: 1px 1px 3px #999
 
 =emboss_hover
@@ -25,7 +32,7 @@ $fg: #FFF
 
 =box
   +gradient($fg, $fg - #222)
-  padding: 3px 10px
+  padding: 5px 1.5% 10px
   border-radius: 12px
   +emboss
   
@@ -45,6 +52,7 @@ a
 body
   background: $bg
   font-family: Georgia, Verdana, Arial
+  color: $text
 
 a
   color: $main
@@ -70,10 +78,20 @@ h1, nav.main
 nav.main
   margin: 0 0 20px 1%
   position: relative
-  top: -3px
+  top: -4px
   
 nav.right
   margin: 12px 0 0
+
+nav.inpage
+  margin: 0 0 15px
+  display: inline-block
+  margin: 0 0 0 10px
+  position: relative
+  top: -3px
+  
+nav.alone
+  margin: 0 0 15px
 
 header h1
   font-size: 2.2em
@@ -85,19 +103,59 @@ h1
 .post, .forum, .user
   margin: 0 0 10px 0
   +box
+  
+.posts .post, .forums .forum, .users .user
+  cursor: pointer
   &:hover
     +box_hover
+    
+.user a
+  font-weight: bold
+
+label
+  font-size: 0.85em
+  font-weight: bold
+  margin: 0 0 4px 
+  display: block
 
 input
+  font-size: 1.1em
   display: block
+  margin: 0 0 15px
+  padding: 2px 5px
+  width: 30%
+  
+.submit
+  width: 30%
+  clear: right
   
 input[type='submit']
-  margin: 20px 0 0 0
+  margin: 10px 0 0 0
+  font-size: 1.2em
+  width: auto
+  float: right
+  display: inline-block
   
 .right
   float: right
+  .user_name
+    margin: 0 10px 0 0 
+    position: relative
+    top: -4px
+  form, .user_name
+    display: inline-block
   
 #container
   width: 92%
   margin: 20px auto
   
+.forum
+  .info
+    font-size: 0.9em
+    .updated_at
+      font-weight: bold
+      font-size: 0.9em
+  
+.post
+  .forum_name
+    margin: 0 0 10px 0

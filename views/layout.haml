@@ -2,12 +2,15 @@
   %head
     %title= Sinforum
     %link{ rel: "stylesheet", href: "/css/main.css" }
+    %script{ type: "text/javascript", src: "/js/vendor/zepto.js" }
+    %script{ type: "text/javascript", src: "/js/main.js" }
   %body
     #container
       %header
         %nav.right
           - if logged_in?
-            %a{ href: "/users/#{current_user.id}" }= current_user.username
+            .user_name
+              %a{ href: "/users/#{current_user.id}" }= current_user.username
             %form{ action: "/logout", method: "post" }
               %input{ type: "submit", value: "Logout" }
           - else

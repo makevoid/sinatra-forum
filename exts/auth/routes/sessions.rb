@@ -1,5 +1,8 @@
 class Sinforum < Sinatra::Base
 
+  enable :sessions
+  use Rack::Session::Cookie
+
   def current_user
     @current_user ||= User.get session[:user_id]
   end
@@ -10,6 +13,10 @@ class Sinforum < Sinatra::Base
 
   def admin?
     current_user && true # current_user.admin?
+  end
+
+  def me?
+    @user == current_user
   end
 
   get "/login" do

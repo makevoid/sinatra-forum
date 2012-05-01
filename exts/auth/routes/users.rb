@@ -6,7 +6,6 @@ class Sinforum < Sinatra::Base
   end
 
   get "/users/:id" do |id|
-    p id
     @user = User.get id
     haml_mod :user
   end
@@ -19,6 +18,7 @@ class Sinforum < Sinatra::Base
   post "/users" do
     @user = User.new params[:user]
     if @user.save
+      session[:user_id] = @user.id
       redirect "/"
     else
       haml_mod :register

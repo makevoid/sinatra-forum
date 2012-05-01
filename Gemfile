@@ -26,6 +26,7 @@ group :development do
   gem "guard"
   gem "guard-sass"
   gem "guard-coffeescript"
+  gem 'growl'
 end
 # group :acceptance_test do
 #   gem "capybara"
