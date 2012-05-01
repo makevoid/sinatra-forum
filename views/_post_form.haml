@@ -1,4 +1,16 @@
-%h1 New post
+.post_form
+  %h1
+    - if route_is_new?(nested: true)
+      - action = "/forums/#{@forum.id}/posts"
+      New post
+    - else
+      Edit: #{@post.title}
+      - action = "/posts/#{@post.id}"
 
-- input     @post, :title
-- textarea  @post, :text
+  %form{ action: action, method: "post" }
+    - unless route_is_new?(nested: true)
+      %input{ type: "hidden", name: "_method", value: "put" }
+    - input     @post, :title
+    - textarea  @post, :text
+
+    - submit "Save"

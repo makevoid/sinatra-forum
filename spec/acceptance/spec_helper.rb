@@ -29,6 +29,7 @@ def referer
   location.gsub(/http:\/\/example\.org/, '') if location
 end
 
+
 def login(user)
   session[:user_id] = user.id
 end
@@ -37,7 +38,6 @@ def sinforum_login
   visit "/"
   raise "implement me"
 end
-
 
 def app.current_user
   $spec_current_user

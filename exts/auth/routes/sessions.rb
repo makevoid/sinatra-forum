@@ -1,10 +1,19 @@
 class Sinforum < Sinatra::Base
 
   enable :sessions
-  use Rack::Session::Cookie
+  # use Rack::Session::Cookie
+  use Rack::Session::Pool
+
+
+  def login_required
+    redirect "/login" unless current_user
+  end
 
   def current_user
-    @current_user ||= User.get session[:user_id]
+    return self.class.current_user if defined?(self.class.current_user) # for test sake
+    if id = session[:user_id]
+      User.get id
+    end
   end
 
   def logged_in?

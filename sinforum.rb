@@ -47,8 +47,9 @@ class Sinforum < Sinatra::Base
 
   # utils
 
-  def route_is_new?
-    request.path.split("/")[2] == "new" || @route == :new
+  def route_is_new?(options={})
+    num_split = options[:nested] ? 4 : 2
+    request.path.split("/")[num_split] == "new" || @route == :new
   end
 
 end
