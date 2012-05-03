@@ -132,7 +132,7 @@ textarea
   width: 30%
   clear: right
   
-.post_form 
+.post_form, .reply
   input, textarea, .submit
     width: 70%
   
@@ -142,6 +142,9 @@ input[type='submit']
   width: auto
   float: right
   display: inline-block
+  
+.clear 
+  clear: both
   
 .right
   float: right
@@ -166,3 +169,6 @@ input[type='submit']
 .post
   .forum_name
     margin: 0 0 10px 0
+    
+.reply
+  +box

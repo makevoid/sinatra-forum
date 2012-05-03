@@ -17,9 +17,24 @@ describe "Posts" do
   it "POST /forums/:forum_id/posts" do
     login
     posts_count = Post.count
-    post "/forums/#{forum.id}/posts", post: { title: "Antani", text: "sblinda" }
+    post "/forums/#{forum.id}/posts", post: { title: "antani", text: "sblinda" }
     referer.should == "/forums/#{forum.id}"
     Post.count.should == posts_count+1
+  end
+
+  it "POST /posts/:post_id/reply" do
+    login
+    post_id = post1.id
+    posts_count = Post.count
+    post "/posts/#{post_id}/reply", post: { title: "antani too!", text: "sblinda" }
+    referer.should == "/posts/#{post_id}"
+    Post.count.should == posts_count+1
+  end
+
+  it "POST /posts/:post_id/reply invalid" do
+    login
+    post "/posts/#{post1.id}/reply", post: { title: "" }
+    body.should include("#{post1.title}")
   end
 
   after :all do

@@ -3,10 +3,20 @@
 
 .post
   %h1= @post.title
-  
+
   .forum_name
-    in 
+    in
     - link_to @forum.name, "/forums/#{@forum.id}"
 
   .text
     = @post.text
+
+.reply
+  - @reply = Post.new params[:post]
+  %form{ action: "/posts/#{@post.id}/reply", method: "post" }
+    - unless route_is_new?(nested: true)
+      %input{ type: "hidden", name: "_method", value: "put" }
+    - textarea  @reply, :text
+
+    - submit "Save"
+  .clear

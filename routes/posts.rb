@@ -14,13 +14,24 @@ class Sinforum < Sinatra::Base
   post "/forums/:forum_id/posts" do |forum_id|
     login_required
     @forum = Forum.get forum_id
-    @post = @forum.posts.new params[:post]
-    @post.user_id = current_user.id
+    @post = current_user.post @forum, params[:post]
     @route = :new
     if @post.save
       redirect "/forums/#{@forum.id}"
     else
       haml :_post_form
+    end
+  end
+
+  post "/posts/:post_id/reply" do |post_id|
+    login_required
+    post = Post.get post_id
+    @forum = post.forum
+    @post = current_user.reply post, params[:post]
+    if @post.save
+      redirect "/posts/#{post.id}"
+    else
+      haml :post
     end
   end
 end

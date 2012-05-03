@@ -119,7 +119,7 @@ textarea {
   width: 30%;
   clear: right; }
 
-.post_form input, .post_form textarea, .post_form .submit {
+.post_form input, .post_form textarea, .post_form .submit, .reply input, .reply textarea, .reply .submit {
   width: 70%; }
 
 input[type='submit'] {
@@ -128,6 +128,9 @@ input[type='submit'] {
   width: auto;
   float: right;
   display: inline-block; }
+
+.clear {
+  clear: both; }
 
 .right {
   float: right; }
@@ -150,3 +153,19 @@ input[type='submit'] {
 
 .post .forum_name {
   margin: 0 0 10px 0; }
+
+.reply {
+  background: white;
+  background: linear-gradient(top, white, #dddddd);
+  background: -o-linear-gradient(top, white, #dddddd);
+  background: -moz-linear-gradient(top, white, #dddddd);
+  background: -webkit-linear-gradient(top, white, #dddddd);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, white), color-stop(0, #dddddd));
+  background: -ms-linear-gradient(top, white, #dddddd);
+  padding: 5px 1.5% 10px;
+  border-radius: 12px;
+  border: 1px solid #888888;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #aaaaaa;
+  border-top: 1px solid #cccccc;
+  box-shadow: 1px 1px 3px #999999; }

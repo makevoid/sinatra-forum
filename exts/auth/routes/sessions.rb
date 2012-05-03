@@ -1,8 +1,7 @@
 class Sinforum < Sinatra::Base
 
   enable :sessions
-  # use Rack::Session::Cookie
-  use Rack::Session::Pool
+  use Rack::Session::Cookie
 
 
   def login_required
