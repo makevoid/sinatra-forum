@@ -1,5 +1,6 @@
 %nav.alone
   - link_to "< back to #{@forum.name}", "/forums/#{@forum.id}", class: "btn"
+  - link_to "last reply", "javascript:void(0)", class: "btn"
 
 .post
   %h1= @post.title
@@ -8,15 +9,20 @@
     in
     - link_to @forum.name, "/forums/#{@forum.id}"
 
+  .updated_at
+    = @post.updated_at.formatted
+
   .text
     = @post.text
+
+- link_to "Reply", "javascript:void(0)", class: "reply_btn btn"
 
 .reply
   - @reply = Post.new params[:post]
   %form{ action: "/posts/#{@post.id}/reply", method: "post" }
     - unless route_is_new?(nested: true)
       %input{ type: "hidden", name: "_method", value: "put" }
-    - textarea  @reply, :text
+    = textarea  @reply, :text, label: "Reply:"
 
     - submit "Save"
   .clear

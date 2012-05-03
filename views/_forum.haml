@@ -1,9 +1,11 @@
 .forum
   %h1
     - link_to forum.name, "/forums/#{forum.id}"
-  
-  #{forum.posts_count} posts
-  
+
+  (#{forum.posts_count} posts)
+
   .info
-    last update:
-    %span.updated_at= forum.updated_at.strftime("%d %b %Y - %H:%M")
+    last post:
+    %span.last_post
+      - link_to forum.last_post.title, "/posts/#{forum.last_post.id}"
+    %span.updated_at= forum.updated_at.formatted

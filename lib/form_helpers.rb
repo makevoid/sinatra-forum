@@ -40,7 +40,12 @@ module FormHelpers
     name = object.class.name.downcase
     attributes = { name: "#{name}[#{field}]", id: field }
     options.delete :label
-    haml_tag(:textarea, attributes.merge(options) ){ haml_concat object.send(field) }
+    text = find_and_preserve do
+      haml_tag(:textarea, attributes.merge(options) ) do
+        haml_concat object.send(field)
+      end
+    end
+    text.gsub(/&#x000A;  /, '')
   end
 
   def validations_for(object)

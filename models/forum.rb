@@ -10,7 +10,7 @@ class Forum
   property :last_post_id, Integer
 
   def last_post
-    Post.get last_post_id
+    @last_post ||= Post.get last_post_id
   end
 
   has n, :posts

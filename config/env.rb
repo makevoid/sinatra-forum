@@ -16,6 +16,7 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup :default, "mysql://localhost/sinforum_#{env}"
 require_all "#{path}/models"
 
+require "#{path}/lib/ruby_exts.rb"
 require "#{path}/config/sinatra_exts.rb"
 
 DataMapper.finalize

@@ -146,15 +146,19 @@ input[type='submit'] {
   margin: 20px auto; }
 
 .forum .info {
-  font-size: 0.9em; }
+  font-size: 0.75em; }
+  .forum .info .last_post a {
+    font-size: 1.3em;
+    font-weight: bold; }
   .forum .info .updated_at {
     font-weight: bold;
-    font-size: 0.9em; }
+    font-size: 1em; }
 
 .post .forum_name {
   margin: 0 0 10px 0; }
 
 .reply {
+  display: none;
   background: white;
   background: linear-gradient(top, white, #dddddd);
   background: -o-linear-gradient(top, white, #dddddd);

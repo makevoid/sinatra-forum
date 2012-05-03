@@ -9,6 +9,7 @@ class Post
 
   belongs_to :forum
   belongs_to :user
+  alias :author :user
 
   # parent
 
