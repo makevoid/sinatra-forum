@@ -25,4 +25,9 @@ class Sinforum < Sinatra::Base
     end
   end
 
+  get "/users/:id/edit" do |id|
+    @user = User.get id
+    haml_mod :user_edit
+  end
+
 end

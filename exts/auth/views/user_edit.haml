@@ -1,0 +1,10 @@
+%h1
+  Edit: #{@user.username}'s profile
+%nav.inpage
+  - link_to "back", "/users/#{@user.id}", class: "btn"
+
+%form{ action: "/users", method: "post" }
+  - form_method :put
+  - input @user, :diablo_id
+  - input @user, :avatar
+  - textarea @user, :signature#, class: "sign"

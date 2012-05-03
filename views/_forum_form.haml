@@ -6,9 +6,11 @@
     Edit: #{@forum.name}
     - action = "/forums/#{@forum.id}"
 
+- validations_for @forum
+
 %form{ action: action, method: "post" }
   - unless route_is_new?
-    %input{ type: "hidden", name: "_method", value: "put" }
+    - form_method :put
   - input @forum, :name
   - input @forum, :description
   - submit "Save"

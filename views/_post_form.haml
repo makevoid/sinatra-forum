@@ -7,9 +7,11 @@
       Edit: #{@post.title}
       - action = "/posts/#{@post.id}"
 
+  - validations_for @post
+
   %form{ action: action, method: "post" }
     - unless route_is_new?(nested: true)
-      %input{ type: "hidden", name: "_method", value: "put" }
+      - form_method :put
     - input     @post, :title
     - textarea  @post, :text
 

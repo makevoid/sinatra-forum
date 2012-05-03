@@ -1,7 +1,30 @@
+class NotIncludedError < ArgumentError
+end
+
+module StringValidations
+  def validate_in(array)
+    raise NotIncludedError, "#{self.inspect} should be included in #{array.inspect}" unless array.find{ |str| self == str.to_sym  }
+  end
+end
+
+class String
+  include StringValidations
+end
+
+class Symbol
+  include StringValidations
+end
+
+
 module FormHelpers
 
   def label(field, options)
     haml_tag(:label, for: field){ haml_concat options[:label] || field.to_s.capitalize }
+  end
+
+  def form_method(method)
+    method.validate_in [:put, :delete]
+    haml_tag :input, type: "hidden", name: "_method", value: method
   end
 
   def input(object, field, options={})

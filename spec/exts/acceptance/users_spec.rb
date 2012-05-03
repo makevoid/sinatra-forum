@@ -42,4 +42,9 @@ describe "Users" do
 
   end
 
+  it "/users/:id/edit" do
+    get "/users/#{user.id}/edit"
+    body.should =~ /Edit/
+  end
+
 end
