@@ -2,6 +2,7 @@ class Sinforum < Sinatra::Base
   get "/posts/:id" do |id|
     @post = Post.get id.to_i
     @forum = @post.forum
+    @replies = @post.replies
     haml :post
   end
 
@@ -26,11 +27,12 @@ class Sinforum < Sinatra::Base
   post "/posts/:post_id/reply" do |post_id|
     login_required
     post = Post.get post_id
-    @forum = post.forum
     @post = current_user.reply post, params[:post]
     if @post.save
       redirect "/posts/#{post.id}"
     else
+      @forum = post.forum
+      @replies = @post.replies
       haml :post
     end
   end

@@ -13,6 +13,6 @@
     - unless route_is_new?(nested: true)
       - form_method :put
     - input     @post, :title
-    - textarea  @post, :text
+    = textarea  @post, :text
 
     - submit "Save"

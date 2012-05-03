@@ -2,7 +2,7 @@ class Post
   include DataMapper::Resource
 
   property :id,         Serial
-  property :title,      String, length: 100, required: true
+  property :title,      String, length: 100
   property :text,       Text, required: true
   property :created_at, DateTime
   property :updated_at, DateTime
@@ -11,18 +11,24 @@ class Post
   belongs_to :user
   alias :author :user
 
+  validates_presence_of :title, :if => lambda { |p| p.parent_id.nil? }
+
   # parent
 
   property :parent_id, Integer
 
+  def is_root?
+    parent_id.nil?
+  end
+
   def parent
     parent_id ? Post.get(parent_id) : self
   end
-  alias :root? :parent
 
   def children
     Post.all parent_id: self.id
   end
+  alias :replies :children
 
   private
 
