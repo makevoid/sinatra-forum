@@ -4,8 +4,14 @@ class Forum
   property :id,           Serial
   property :name,         String, required: true
   property :description,  String
-  property :private,      Integer, default: 0
+  property :private,      Boolean,  default: false
   property :updated_at,   DateTime, default: Time.now
+  property :posts_count,  Integer,  default: 0
+  property :last_post_id, Integer
+
+  def last_post
+    Post.get last_post_id
+  end
 
   has n, :posts
 
