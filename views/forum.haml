@@ -10,5 +10,5 @@
     %a.btn{ href: "/login" } Log in to post
 
 .posts
-  - @forum.posts.each do |post|
+  - @posts.each do |post|
     = partial :post, post

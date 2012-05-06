@@ -3,9 +3,10 @@
     - link_to forum.name, "/forums/#{forum.id}"
 
   (#{forum.posts_count} posts)
-
-  .info
-    last post:
-    %span.last_post
-      - link_to forum.last_post.title, "/posts/#{forum.last_post.id}"
-    %span.updated_at= forum.updated_at.formatted
+  
+  - unless forum.empty?
+    .info
+      last post:
+      %span.last_post
+        - link_to forum.last_post.title, "/posts/#{forum.last_post.id}"
+      %span.updated_at= forum.updated_at.formatted

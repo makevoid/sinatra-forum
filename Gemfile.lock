@@ -2,6 +2,12 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.7)
+    capistrano (2.9.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -39,13 +45,22 @@ GEM
       guard (>= 0.4.0)
       sass (>= 3.1)
     haml (3.1.4)
+    highline (1.6.9)
     json (1.7.0)
     multi_json (1.3.4)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.3.0)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rerun (0.6.5)
     rspec-core (2.9.0)
     rspec-expectations (2.9.1)
       diff-lcs (~> 1.1.3)
@@ -63,6 +78,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano
   dm-core
   dm-migrations
   dm-mysql-adapter
@@ -75,6 +91,7 @@ DEPENDENCIES
   haml
   json
   rack-test
+  rerun
   rspec-core
   rspec-expectations
   rspec-mocks

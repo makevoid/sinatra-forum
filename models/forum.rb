@@ -13,6 +13,10 @@ class Forum
     @last_post ||= Post.get last_post_id
   end
 
+  def empty?
+    last_post.nil?
+  end
+
   has n, :posts
 
   before :create do

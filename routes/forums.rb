@@ -11,6 +11,7 @@ class Sinforum < Sinatra::Base
 
   get "/forums/:id" do |id|
     @forum = Forum.get id
+    @posts = @forum.posts.all(parent_id: nil)
     haml :forum
   end
 

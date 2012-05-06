@@ -22,7 +22,9 @@ group :test do
 end
 
 group :development do
+  gem "capistrano"
   gem "foreman"
+  gem "rerun"
   gem "guard"
   gem "guard-sass"
   gem "guard-coffeescript"
