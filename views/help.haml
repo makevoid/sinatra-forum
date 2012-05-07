@@ -5,5 +5,5 @@
   %ul.icons
     - Icon.all.each do |icon|
       %li
-        = icon.name
         - image_tag icon.path, class: "icon"
+        \:#{icon.name}:

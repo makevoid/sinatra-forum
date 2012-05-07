@@ -180,5 +180,9 @@ input[type='submit'] {
 .icon {
   width: 25px; }
 
-.icons ul li {
+ul.icons li {
   display: block; }
+  ul.icons li img {
+    margin: 0 1% 0 0;
+    position: relative;
+    top: 3px; }

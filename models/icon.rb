@@ -17,7 +17,7 @@ class Icon
 
   def self.all
     path = File.expand_path "../../", __FILE__
-    Dir.glob("#{path}/public/images/icons/*").map do |icon|
+    Dir.glob("#{path}/public/images/icons/*.{png,gif}").map do |icon|
       file = File.basename icon
       name = File.basename icon, ".*"
       Icon.new name: name, file: file
