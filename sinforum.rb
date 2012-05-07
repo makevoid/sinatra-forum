@@ -10,6 +10,12 @@ class Sinforum < Sinatra::Base
   configure :development do
     use Rack::Reloader, 0
     Sinatra::Application.reset!
+    before do
+      unless defined?(@@session_set)
+        @@session_set = true
+        session[:user_id] = User.first.id
+      end
+    end
   end
 
   include Voidtools::Sinatra::ViewHelpers

@@ -7,3 +7,7 @@
 = @user.avatar
 
 = @user.signature
+
+
+- if File.exist? "#{Sinforum.root}/views/_ext_user.haml"
+  = partial :ext_user

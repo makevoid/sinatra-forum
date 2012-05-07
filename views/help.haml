@@ -2,6 +2,8 @@
 
 .help
   %h2 Icons
-  
-  - Icon.all.each do |icon|
-    = icon.name
+  %ul.icons
+    - Icon.all.each do |icon|
+      %li
+        = icon.name
+        - image_tag icon.path, class: "icon"

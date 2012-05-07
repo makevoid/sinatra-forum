@@ -25,6 +25,11 @@ example:
     rackup
 
 
+### Development mode
+
+note: in development mode the first user (admin) gets logged in by default to ease the development
+
+
 ### Testing
 
 create database
