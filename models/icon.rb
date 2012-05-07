@@ -14,4 +14,9 @@ class Icon
       Icon.new name: name, path: name
     end
   end
+
+  def self.unpack
+    puts `cd public/images/icons; tar xfz icons.tgz`
+  end
+
 end

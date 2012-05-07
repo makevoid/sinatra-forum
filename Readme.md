@@ -14,7 +14,7 @@ example:
 
     bundle
 
-- automigrate and apply seeds
+- automigrate and apply seeds (includes icon files unpacking)
 
     ruby config/seeds.rb
 
