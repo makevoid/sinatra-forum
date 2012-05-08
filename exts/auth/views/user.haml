@@ -4,9 +4,11 @@
   %nav.inpage
     - link_to "Edit profile", "/users/#{@user.id}/edit", class: "btn"
 
-= @user.avatar
+.avatar
+  = @user.avatar
 
-= @user.signature
+.signature
+  = markdown(@user.signature)
 
 
 - if File.exist? "#{Sinforum.root}/views/_ext_user.haml"

@@ -37,6 +37,29 @@ describe "Posts" do
     body.should include("#{post1.title}")
   end
 
+  it "GET /posts/:id/edit" do
+    login
+    get "/posts/#{post1.id}/edit"
+    body.should include("Edit:")
+  end
+
+  it "PUT /posts/:id" do
+    login
+    put "/posts/#{post1.id}", { post: { title: "asd" } }
+    referer.should == "/posts/#{post1.id}"
+    Post.get(post1.id).title.should == "asd"
+  end
+
+  context "post redirects to root" do
+    it "PUT /posts/:id" do
+      login
+      post2 = user.reply post1, title: "lol", text: "lololol"
+      post2.save
+      put "/posts/#{post2.id}", { post: { title: "asd" } }
+      referer.should == "/posts/#{post1.id}"
+    end
+  end
+
   after :all do
     clear_db
   end

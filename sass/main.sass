@@ -1,6 +1,9 @@
 $main: #D00
 $bg: #D9D9D9
-$fg: #FFF
+$fg: rgba(255, 255, 255, 1)// #FFF
+$fg2: rgba(255, 255, 255, 0.9)// #FFF
+$fg3: rgba(210, 210, 210, 0.7)// #FFF
+$fg4: rgba(180, 180, 180, 0.8)// #FFF
 $text: #111
 
 
@@ -31,13 +34,13 @@ $text: #111
   box-shadow: 0px 0px 4px #FFF
 
 =box
-  +gradient($fg, $fg - #222)
+  +gradient($fg2, $fg3)
   padding: 5px 1.5% 10px
   border-radius: 12px
   +emboss
   
 =box_hover  
-  +gradient($fg - #444, $fg - #111)
+  +gradient($fg4, $fg2)
   +emboss_hover
 
 
@@ -54,6 +57,8 @@ ul
 
 body
   background: $bg
+  background: url(/images/d3c.png) no-repeat $bg
+  background-size: 100%
   font-family: Georgia, Verdana, Arial
   color: $text
 
@@ -77,9 +82,9 @@ a.btn:hover
   
 h1, nav.main
   display: inline-block
-
-h2
-  margin: 10px 0 6px 0
+  
+h1
+  text-shadow: 2px 1px 1px #FFF
 
 nav.main
   margin: 0 0 20px 1%
@@ -184,6 +189,10 @@ input[type='submit']
   +box
 
 // .help
+
+.help h2
+  margin: 10px 0 6px 0
+
 
 .icon
   width: 25px

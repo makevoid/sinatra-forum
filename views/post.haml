@@ -6,7 +6,7 @@
 
 - @replies.each do |reply|
   = partial :post_full, reply
-  
+
 - link_to "Reply", "javascript:void(0)", class: "reply_btn btn"
 
 .reply
@@ -15,4 +15,6 @@
     = textarea  @reply, :text, label: "Reply:"
 
     - submit "Save"
+
+  - link_to "Help", "/help"
   .clear

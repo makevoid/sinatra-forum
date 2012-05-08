@@ -1,5 +1,6 @@
 module MarkdownHelpers
 
+  require "rdiscount"
   include Haml::Helpers
 
   alias :tag :haml_tag
@@ -13,12 +14,17 @@ module MarkdownHelpers
     ["Heading", "# Big Heading"],
   ]
 
+  def markdown(string)
+    RDiscount.new(string).to_html if string
+  end
 
   def markdown_helps
     HELPS.each do |name, definition|
       markdown_help name, definition
     end
   end
+
+  private
 
   def markdown_help(name, definition)
     tag :li do

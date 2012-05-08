@@ -13,6 +13,10 @@ class User
 
   # actions
 
+  def mine?(post)
+    post.user == self
+  end
+
   def post(forum, attributes)
     forum.posts.new attributes.merge(user_id: self.id)
   end
@@ -27,9 +31,8 @@ class User
 
   attr_accessor :password_confirmation
 
-  validates_with_block :password_confirmation do
-    self.password_confirmation == self.password ? [true] : [false,  "Password and Confirmed password have different values."]
-  end
+  validates_confirmation_of :password
+
 
   before :create do
     generate_salt

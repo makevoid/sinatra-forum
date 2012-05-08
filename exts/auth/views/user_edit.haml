@@ -3,6 +3,8 @@
 %nav.inpage
   - link_to "back", "/users/#{@user.id}", class: "btn"
 
+- validations_for @user
+
 %form{ action: "/users/#{@user.id}", method: "post" }
   - form_method :put
   - input @user, :diablo_id

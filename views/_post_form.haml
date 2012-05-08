@@ -12,7 +12,10 @@
   %form{ action: action, method: "post" }
     - unless route_is_new?(nested: true)
       - form_method :put
-    - input     @post, :title
+    - if @post.root?
+      - input     @post, :title
     = textarea  @post, :text
+
+    - link_to "Help", "/help"
 
     - submit "Save"

@@ -26,11 +26,6 @@ class Sinforum < Sinatra::Base
   require "#{@@path}/lib/markdown_helpers"
   helpers do
     include MarkdownHelpers
-    require "rdiscount"
-    def markdown(string)
-      RDiscount.new(string).to_html
-    end
-
   end
   # partials
 

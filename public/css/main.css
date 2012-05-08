@@ -11,6 +11,8 @@ ul {
 
 body {
   background: #d9d9d9;
+  background: url(/images/d3c.png) no-repeat #d9d9d9;
+  background-size: 100%;
   font-family: Georgia, Verdana, Arial;
   color: #111111; }
 
@@ -43,8 +45,8 @@ a.btn:hover {
 h1, nav.main {
   display: inline-block; }
 
-h2 {
-  margin: 10px 0 6px 0; }
+h1 {
+  text-shadow: 2px 1px 1px white; }
 
 nav.main {
   margin: 0 0 20px 1%;
@@ -73,13 +75,13 @@ h1 {
 
 .post, .forum, .user {
   margin: 0 0 10px 0;
-  background: white;
-  background: linear-gradient(top, white, #dddddd);
-  background: -o-linear-gradient(top, white, #dddddd);
-  background: -moz-linear-gradient(top, white, #dddddd);
-  background: -webkit-linear-gradient(top, white, #dddddd);
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, white), color-stop(0, #dddddd));
-  background: -ms-linear-gradient(top, white, #dddddd);
+  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
   padding: 5px 1.5% 10px;
   border-radius: 12px;
   border: 1px solid #888888;
@@ -91,13 +93,13 @@ h1 {
 .posts .post, .forums .forum, .users .user {
   cursor: pointer; }
   .posts .post:hover, .forums .forum:hover, .users .user:hover {
-    background: #bbbbbb;
-    background: linear-gradient(top, #bbbbbb, #eeeeee);
-    background: -o-linear-gradient(top, #bbbbbb, #eeeeee);
-    background: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
-    background: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(1, #bbbbbb), color-stop(0, #eeeeee));
-    background: -ms-linear-gradient(top, #bbbbbb, #eeeeee);
+    background: rgba(180, 180, 180, 0.8);
+    background: linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
+    background: -o-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
+    background: -moz-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
+    background: -webkit-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(180, 180, 180, 0.8)), color-stop(0, rgba(255, 255, 255, 0.9)));
+    background: -ms-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
     border: 1px solid #cccccc;
     border-top: 1px solid #888888;
     box-shadow: 0px 0px 4px white; }
@@ -165,13 +167,13 @@ input[type='submit'] {
 
 .reply {
   display: none;
-  background: white;
-  background: linear-gradient(top, white, #dddddd);
-  background: -o-linear-gradient(top, white, #dddddd);
-  background: -moz-linear-gradient(top, white, #dddddd);
-  background: -webkit-linear-gradient(top, white, #dddddd);
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, white), color-stop(0, #dddddd));
-  background: -ms-linear-gradient(top, white, #dddddd);
+  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
   padding: 5px 1.5% 10px;
   border-radius: 12px;
   border: 1px solid #888888;
@@ -179,6 +181,9 @@ input[type='submit'] {
   border-right: 1px solid #aaaaaa;
   border-top: 1px solid #cccccc;
   box-shadow: 1px 1px 3px #999999; }
+
+.help h2 {
+  margin: 10px 0 6px 0; }
 
 .icon {
   width: 25px; }

@@ -36,4 +36,19 @@ class Sinforum < Sinatra::Base
       haml :post
     end
   end
+
+  get "/posts/:id/edit" do |id|
+    @post = Post.get id
+    haml :_post_form
+  end
+
+  put "/posts/:id" do |id|
+    @post = Post.get id
+    if @post.update(params[:post])
+      url = @post.root? ? "/posts/#{@post.id}" : "/posts/#{@post.parent.id}"
+      redirect url
+    else
+      haml :_post_form
+    end
+  end
 end

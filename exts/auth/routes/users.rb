@@ -35,7 +35,7 @@ class Sinforum < Sinatra::Base
     if @user.update(params[:user])
       redirect "/users/#{@user.id}"
     else
-      haml_mod :user
+      haml_mod :user_edit
     end
   end
 

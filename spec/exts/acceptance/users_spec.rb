@@ -37,7 +37,7 @@ describe "Users" do
 
     it "displays validations" do
       post "/users", { user: { username: "antani2", password: "sblinda", password_confirmation: "sblinda2" } }
-      body.should =~ /Password and Confirmed password have different values/
+      body.should =~ /Password does not match the confirmation/
     end
 
   end

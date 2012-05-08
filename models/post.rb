@@ -17,7 +17,7 @@ class Post
 
   property :parent_id, Integer
 
-  def is_root?
+  def root?
     parent_id.nil?
   end
 

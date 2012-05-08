@@ -1,12 +1,16 @@
 - post = post_full
 
 .post
-  - if post.is_root?
+  - if post.root?
     %h1= post.title
 
     .forum_name
       in
       - link_to @forum.name, "/forums/#{@forum.id}"
+
+  - if current_user && current_user.mine?(post)
+    - link_to "Edit", "/posts/#{post.id}/edit", class: "btn right"
+
   .by
     - link_to post.author.username, "/users/#{post.author.id}"
 
@@ -14,4 +18,4 @@
     = post.updated_at.formatted if post.updated_at
 
   .text
-    = post.text
+    = markdown post.text
