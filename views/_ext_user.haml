@@ -1,5 +1,5 @@
 %h2 Posts
 %ul.posts
   - @user.posts.each do |post|
-    %li
+    %li.post
       - link_to post.title, "/posts/#{post.id}"

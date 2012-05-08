@@ -4,6 +4,9 @@
   %nav.inpage
     - link_to "Edit profile", "/users/#{@user.id}/edit", class: "btn"
 
+.role
+  = @user.role
+
 .avatar
   = @user.avatar
 

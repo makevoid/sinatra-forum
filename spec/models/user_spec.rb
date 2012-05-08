@@ -9,4 +9,22 @@ describe User do
     post2.save
     user.posts.should include(post2)
   end
+
+  context "roles" do
+
+    it "has roles" do
+      User::ROLES.should be_an(Array)
+    end
+
+    it "defaults to :guest" do
+      User.new.role.should == :guest
+    end
+
+    it "defines ROLES methods" do
+      User.new.admin?.should  be_false
+      User.new.member?.should be_false
+      User.new.guest?.should  be_true
+    end
+
+  end
 end

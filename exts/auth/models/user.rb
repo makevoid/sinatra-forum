@@ -1,8 +1,12 @@
 class User
   include DataMapper::Resource
 
+  ROLES = [ :guest, :member, :admin ]
+
+
   property :id,         Serial
   property :username,   String, length: 100, required: true, unique: true
+  property :role,       Enum[*ROLES], default: :guest
   property :password,   String, required: true, length: 5..50
   property :salt,       String
   property :diablo_id,  String
@@ -10,6 +14,14 @@ class User
   property :signature,  Text
 
   has n, :posts
+
+  default_scope(:default).update order: :id.desc
+
+  ROLES.each do |role|
+    define_method "#{role}?" do
+      self.role == role
+    end
+  end
 
   # actions
 

@@ -14,7 +14,10 @@ end
 def factory(type)
   case type.name
   when "User"
-    User.create username: "antani#{rand(100000)}", password: "sblinda", password_confirmation: "sblinda"
+    user = User.new username: "antani#{rand(100000)}", password: "sblinda", password_confirmation: "sblinda", role: :guest
+    user.save
+    p user.errors if user.errors.any?
+    user
   else
     raise "factory type not handled: #{type}"
   end

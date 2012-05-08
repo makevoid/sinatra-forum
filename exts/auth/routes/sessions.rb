@@ -20,7 +20,7 @@ class Sinforum < Sinatra::Base
   end
 
   def admin?
-    current_user && true # current_user.admin?
+    current_user && current_user.admin?
   end
 
   def me?
