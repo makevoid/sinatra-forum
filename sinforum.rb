@@ -8,21 +8,30 @@ class Sinforum < Sinatra::Base
   set :root, @@path
 
   configure :development do
-    use Rack::Reloader, 0
-    Sinatra::Application.reset!
     before do
       unless defined?(@@session_set)
         @@session_set = true
         session[:user_id] = User.first.id
       end
     end
+
+    require 'growl'
+    Growl.notify 'Sinatra server loaded', icon: :Terminal, title: 'Loaded'
   end
 
   include Voidtools::Sinatra::ViewHelpers
 
   require "#{@@path}/lib/form_helpers"
   include FormHelpers
+  require "#{@@path}/lib/markdown_helpers"
+  helpers do
+    include MarkdownHelpers
+    require "rdiscount"
+    def markdown(string)
+      RDiscount.new(string).to_html
+    end
 
+  end
   # partials
 
   # partial :comment, { comment: "blah" }

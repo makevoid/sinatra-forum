@@ -3,8 +3,9 @@
 %nav.inpage
   - link_to "back", "/users/#{@user.id}", class: "btn"
 
-%form{ action: "/users", method: "post" }
+%form{ action: "/users/#{@user.id}", method: "post" }
   - form_method :put
   - input @user, :diablo_id
   - input @user, :avatar
   = textarea @user, :signature#, class: "sign"
+  - submit "Save"

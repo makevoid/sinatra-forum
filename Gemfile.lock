@@ -60,6 +60,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rdiscount (1.6.8)
     rerun (0.6.5)
     rspec-core (2.9.0)
     rspec-expectations (2.9.1)
@@ -91,6 +92,7 @@ DEPENDENCIES
   haml
   json
   rack-test
+  rdiscount
   rerun
   rspec-core
   rspec-expectations

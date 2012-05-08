@@ -42,9 +42,14 @@ describe "Users" do
 
   end
 
-  it "/users/:id/edit" do
+  it "GET /users/:id/edit" do
     get "/users/#{user.id}/edit"
     body.should =~ /Edit/
+  end
+
+  it "PUT /users/:id" do
+    put "/users/#{user.id}", user: { signature: "antani" }
+    User.get(user.id).signature.should == "antani"
   end
 
 end

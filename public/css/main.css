@@ -43,6 +43,9 @@ a.btn:hover {
 h1, nav.main {
   display: inline-block; }
 
+h2 {
+  margin: 10px 0 6px 0; }
+
 nav.main {
   margin: 0 0 20px 1%;
   position: relative;
@@ -181,8 +184,29 @@ input[type='submit'] {
   width: 25px; }
 
 ul.icons li {
-  display: block; }
+  display: inline-block;
+  width: 16%;
+  min-width: 150px;
+  margin: 5px 0 0; }
   ul.icons li img {
     margin: 0 1% 0 0;
     position: relative;
     top: 7px; }
+
+.markdown_help {
+  margin: 10px 0 0 0; }
+  .markdown_help li div {
+    font-size: 0.85em;
+    width: 220px;
+    display: inline-block;
+    padding: 5px;
+    border-bottom: 1px dashed #999999;
+    background: #eeeeee; }
+  .markdown_help li:last-child div {
+    border: 0; }
+  .markdown_help .md {
+    background: white; }
+  .markdown_help h1 {
+    font-size: 1em;
+    margin: 0;
+    padding: 0; }

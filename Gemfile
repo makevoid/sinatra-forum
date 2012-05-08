@@ -10,6 +10,7 @@ gem "dm-validations"
 
 gem "haml"
 gem "sass"
+gem "rdiscount"
 
 gem "voidtools"
 
