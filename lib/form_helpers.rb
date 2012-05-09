@@ -45,7 +45,7 @@ module FormHelpers
         haml_concat object.send(field)
       end
     end
-    text.gsub(/&#x000A;  /, '')
+    text.gsub(/&#x000A;  /, '&#x000A;')
   end
 
   def validations_for(object)

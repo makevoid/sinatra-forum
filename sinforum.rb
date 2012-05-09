@@ -24,8 +24,14 @@ class Sinforum < Sinatra::Base
   require "#{@@path}/lib/form_helpers"
   include FormHelpers
   require "#{@@path}/lib/markdown_helpers"
+  require "#{@@path}/lib/icons_helpers"
   helpers do
     include MarkdownHelpers
+    include IconsHelpers
+
+    def markup(text)
+      iconize markdown(text)
+    end
   end
   # partials
 

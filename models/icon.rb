@@ -15,9 +15,15 @@ class Icon
     "/images/icons/#{file}"
   end
 
+  def self.find(name)
+    icon = all.find{ |icon| icon.name == name }
+    icon.path if icon
+  end
+
   def self.all
+    return @@all if defined?(@@all)
     path = File.expand_path "../../", __FILE__
-    Dir.glob("#{path}/public/images/icons/*.{png,gif}").map do |icon|
+    @@all = Dir.glob("#{path}/public/images/icons/*.{png,gif}").map do |icon|
       file = File.basename icon
       name = File.basename icon, ".*"
       Icon.new name: name, file: file

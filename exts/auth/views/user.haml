@@ -11,7 +11,7 @@
   = @user.avatar
 
 .signature
-  = markdown(@user.signature)
+  = markup @user.signature
 
 
 - if File.exist? "#{Sinforum.root}/views/_ext_user.haml"

@@ -73,6 +73,9 @@ header h1 {
 h1 {
   margin: 0 0 10px 0; }
 
+.post h1 {
+  font-size: 1.7em; }
+
 .post, .forum, .user {
   margin: 0 0 10px 0;
   background: rgba(255, 255, 255, 0.9);
@@ -164,6 +167,15 @@ input[type='submit'] {
 
 .post .forum_name {
   margin: 0 0 10px 0; }
+
+.post .text h1, .post .text h2, .post .text h3 {
+  margin: 12px 0 4px; }
+.post .text h1 {
+  font-size: 1.4em; }
+.post .text h2 {
+  font-size: 1.3em; }
+.post .text h3 {
+  font-size: 1.2em; }
 
 .reply {
   display: none;
