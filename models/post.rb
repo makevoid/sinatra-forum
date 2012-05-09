@@ -43,11 +43,11 @@ class Post
   end
 
   after :save do
-    forum.update updated_at: Time.now, last_post_id: self.id, posts_count: forum.posts_count+1
+    forum.update updated_at: Time.now, last_post_id: self.id, posts_count: forum.posts_count+1 if root?
   end
 
   after :destroy do
-    forum.update last_post_id: nil, posts_count: forum.posts_count-1
+    forum.update last_post_id: nil, posts_count: forum.posts_count-1 if root?
   end
 
 end

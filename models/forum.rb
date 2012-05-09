@@ -2,7 +2,7 @@ class Forum
   include DataMapper::Resource
 
   property :id,           Serial
-  property :name,         String, required: true
+  property :name,         String,   required: true
   property :description,  String
   property :private,      Boolean,  default: false
   property :updated_at,   DateTime, default: Time.now
@@ -15,6 +15,10 @@ class Forum
 
   def empty?
     last_post.nil?
+  end
+
+  def public?
+    !private?
   end
 
   has n, :posts

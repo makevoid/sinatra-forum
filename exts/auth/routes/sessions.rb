@@ -23,6 +23,10 @@ class Sinforum < Sinatra::Base
     current_user && current_user.admin?
   end
 
+  def member?
+    current_user && (admin? || current_user.member?)
+  end
+
   def me?
     @user == current_user
   end
