@@ -1,6 +1,24 @@
 # SinForum
 ### simple forum build on sinatra
 
+Example of a Diablo III styled forum: http://bitclan.it (branch bit)
+
+### Features:
+
+- Very Simple and Straightforward
+- Easyly Stylable (SASS + CSS3)
+- Very fast! (sinatra with few libraries)
+- Robust (good spec coverage, important stuff covered, with RSpec)
+- DataMapper ORM
+- Markdown support
+- github icons support
+- avatars
+- private forums
+- more to come...
+
+try it and send feedback to [@makevoid](http://francescocanessa.com)
+
+
 ### Installation
 
 - download / clone the project and cd into the directory
