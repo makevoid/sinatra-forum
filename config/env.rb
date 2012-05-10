@@ -13,7 +13,7 @@ end
 include Utils
 
 env = ENV["RACK_ENV"] || "development"
-DataMapper.setup :default, "mysql://#{"root@#{File.read("/home/www-data/.password").strip}" if env == "production"}localhost/sinforum_#{env}"
+DataMapper.setup :default, "mysql://#{"root:#{File.read("/home/www-data/.password").strip}@" if env == "production"}localhost/sinforum_#{env}"
 require_all "#{path}/models"
 
 require "#{path}/lib/ruby_exts.rb"
