@@ -4,7 +4,9 @@
 %nav.inpage
   - if admin?
     %a.btn{ href: "/forums/new" } Create forum
-  
+
 .forums
-  - Forum.all.each do |forum|
-    = partial :forum, forum
+  - unless @forums.nil?
+    - # TODO: refactor forum nil?
+    - @forums.each do |forum|
+      = partial :forum, forum

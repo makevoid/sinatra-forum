@@ -1,26 +1,23 @@
 - post = post_full
 
 .post.full
-
-  .updated_at
-    = post.updated_at.formatted if post.updated_at
-  
-  - if current_user && current_user.mine?(post)
-    - link_to "Edit", "/posts/#{post.id}/edit", class: "btn right edit"
-  
   - if post.root?
+    = partial :post_right, post
+    
     %h1= post.title
 
     .forum_name
       in
       - link_to @forum.name, "/forums/#{@forum.id}"
 
-
-
-  = post.user.avatar_image
-
   .by
+    = post.user.avatar_image
     - link_to post.author.username, "/users/#{post.author.id}"
 
   .text
     = markup post.text
+  
+  - unless post.root?
+    = partial :post_right, post
+    
+  .clear

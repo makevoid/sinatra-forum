@@ -1,0 +1,7 @@
+- post = post_right
+
+.updated_at
+  = post.updated_at.formatted if post.updated_at
+
+- if current_user && current_user.mine?(post) || admin?
+  - link_to "Edit", "/posts/#{post.id}/edit", class: "btn right edit"
