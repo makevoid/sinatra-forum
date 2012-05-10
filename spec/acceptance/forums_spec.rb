@@ -14,14 +14,23 @@ describe "Forum" do
     body.should include(forum.name)
   end
 
-  it "GET /forums - doesn't list private posts" do
-    get "/forums"
-    body.should_not include(forum_pvt.name)
-  end
-
   it "GET /forums/:id" do
     get "/forums/#{forum.id}"
     body.should include(forum.name)
+  end
+
+  context "private forums - as guest" do
+
+    it "GET /forums - doesn't list private posts" do
+      get "/forums"
+      body.should_not include(forum_pvt.name)
+    end
+
+    it "GET /forums/:id = 403" do
+      get "/forums/#{forum_pvt.id}"
+      last_response.status.should == 403
+    end
+
   end
 
   context "as admin" do
