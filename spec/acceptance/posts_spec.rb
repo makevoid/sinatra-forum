@@ -2,11 +2,23 @@ require_relative "spec_helper"
 
 describe "Posts" do
   let(:forum){ Forum.create name: "foro"  }
-  let(:post1){ forum.posts.create title: "one", text: "one", user_id: user.id  }
+  let(:forum_pvt){ Forum.create name: "secreeto", private: true }
+  let(:post1){ forum.posts.create     title: "one", text: "one", user_id: user.id  }
+  let(:post2){ forum_pvt.posts.create title: "one", text: "one", user_id: user.id  }
+
 
   it "GET /posts/:id" do
     get "/posts/#{post1.id}"
     body.should include(post1.title)
+  end
+
+  context "on a private forum - as guest" do
+
+    it "GET /posts/:id = 403" do
+      get "/posts/#{post2.id}"
+      last_response.status.should == 403
+    end
+
   end
 
   it "GET /forums/:forum_id/posts/new" do

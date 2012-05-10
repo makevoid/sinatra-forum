@@ -2,6 +2,7 @@ class Sinforum < Sinatra::Base
   get "/posts/:id" do |id|
     @post = Post.get id.to_i
     @forum = @post.forum
+    member_required if @forum.private?
     @replies = @post.replies
     haml :post
   end
