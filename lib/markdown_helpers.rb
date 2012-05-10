@@ -24,6 +24,15 @@ module MarkdownHelpers
     end
   end
 
+  def truncate(string, size=100)
+    if string.size > size
+      "#{string[0..size-1]}..."
+    else
+      string
+    end
+  end
+
+
   private
 
   def markdown_help(name, definition)

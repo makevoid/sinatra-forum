@@ -5,6 +5,7 @@ class Sinforum < Sinatra::Base
   end
 
   get "/forums/new" do
+    admin_required
     @forum = Forum.new params[:forum]
     haml :_forum_form
   end
@@ -16,11 +17,13 @@ class Sinforum < Sinatra::Base
   end
 
   get "/forums/:id/edit" do |id|
+    admin_required
     @forum = Forum.get id
     haml :_forum_form
   end
 
   post "/forums" do
+    admin_required
     @forum = Forum.new params[:forum]
     if @forum.save
       redirect "/"
@@ -31,6 +34,7 @@ class Sinforum < Sinatra::Base
   end
 
   put "/forums/:id" do |id|
+    admin_required
     @forum = Forum.get id
     if @forum.update params[:forum]
       redirect "/forums/#{@forum.id}"
@@ -39,4 +43,5 @@ class Sinforum < Sinatra::Base
       haml :_forum_form
     end
   end
+
 end

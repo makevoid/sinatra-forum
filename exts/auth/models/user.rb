@@ -23,6 +23,28 @@ class User
     end
   end
 
+  # attributes
+
+  def avatar_image
+    default_avatar = "/images/avatars/d3_1.jpg"
+    "<img src='#{avatar || default_avatar}' class='avatar' />"
+  end
+
+
+  # filters
+
+  def posts_roots
+    posts.all(parent_id: nil)
+  end
+
+  def replies
+    posts.all(:parent_id.not => nil)
+  end
+
+  def posts_lasts
+    posts.all(limit: 20)
+  end
+
   # actions
 
   def mine?(post)

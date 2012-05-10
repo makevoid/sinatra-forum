@@ -8,6 +8,10 @@ class Sinforum < Sinatra::Base
     redirect "/login" unless current_user
   end
 
+  def admin_required
+    halt 403, haml_mod(:admin_required) unless admin?
+  end
+
   def current_user
     return self.class.current_user if defined?(self.class.current_user) # for test sake
     if id = session[:user_id]

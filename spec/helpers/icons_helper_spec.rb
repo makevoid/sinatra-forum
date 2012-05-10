@@ -1,9 +1,15 @@
+require "spec_helper"
+
 class Stub
   include IconsHelpers
 end
 
-describe "Stub" do
+describe "IconsHelpers" do
   it "iconize" do
-    Stub.new.iconize(":asd:").should == "<img src='/images/icons/asd.gif' />"
+    Stub.new.iconize("aa :asd: bb").should == "aa <img src='/images/icons/asd.gif' class='icon' /> bb"
+  end
+
+  it "icon_not_found" do
+    Stub.new.iconize(":antanifoti:").should == "<img src='#{Stub.new.send :icon_not_found}' class='icon' />"
   end
 end

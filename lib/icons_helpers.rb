@@ -1,6 +1,6 @@
 module IconsHelpers
   def iconize(text)
-    text.gsub(/:([\w_-]+):/, "<img src='#{Icon.find($~) || icon_not_found}' />") if text
+    text.gsub(/:([\w_-]+):/) { "<img src='#{Icon.find($1) || icon_not_found}' class='icon' />" } if text
   end
 
   private

@@ -23,6 +23,9 @@ a:hover {
   color: #ff1111; }
 
 a.btn {
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-border-radius: 8px;
   border-radius: 8px;
   background: #dd0000;
   color: white;
@@ -86,6 +89,9 @@ h1 {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
   background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
   padding: 5px 1.5% 10px;
+  -moz-border-radius: 12px;
+  -o-border-radius: 12px;
+  -webkit-border-radius: 12px;
   border-radius: 12px;
   border: 1px solid #888888;
   border-left: 1px solid #999999;
@@ -107,8 +113,30 @@ h1 {
     border-top: 1px solid #888888;
     box-shadow: 0px 0px 4px white; }
 
-.user a {
+.users .user a {
+  font-weight: bold;
+  display: inline-block; }
+.users .user .name {
+  display: inline-block;
+  position: relative;
+  top: -14px;
+  margin: 0 0 0 0.5%; }
+.users .user .role {
+  float: right; }
+.users .user .avatar {
+  width: 40px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 6px 0 0 0; }
+
+.user h2 {
+  margin: 20px 0 10px 0; }
+.user .title a {
   font-weight: bold; }
+.user .avatar {
+  width: 128px; }
 
 label {
   font-size: 0.85em;
@@ -165,8 +193,27 @@ input[type='submit'] {
     font-weight: bold;
     font-size: 1em; }
 
-.post .forum_name {
+.posts .post .updated_at {
+  font-size: 0.9em;
+  font-weight: bold; }
+  .posts .post .updated_at span {
+    font-weight: normal; }
+
+.post.full .forum_name {
   margin: 0 0 10px 0; }
+.post.full .updated_at {
+  float: right;
+  font-weight: bold;
+  margin: 0 0 5px 0; }
+.post.full .avatar {
+  width: 80px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  border: 1px solid #777777; }
+.post.full .edit {
+  clear: right; }
 
 .post .text h1, .post .text h2, .post .text h3 {
   margin: 12px 0 4px; }
@@ -187,6 +234,9 @@ input[type='submit'] {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
   background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
   padding: 5px 1.5% 10px;
+  -moz-border-radius: 12px;
+  -o-border-radius: 12px;
+  -webkit-border-radius: 12px;
   border-radius: 12px;
   border: 1px solid #888888;
   border-left: 1px solid #999999;
@@ -227,3 +277,13 @@ ul.icons li {
     font-size: 1em;
     margin: 0;
     padding: 0; }
+
+.form_info {
+  margin: 0 0 10px 0; }
+
+.avatars {
+  margin: 0 0 20px 0;
+  display: none; }
+  .avatars img {
+    width: 80px;
+    cursor: pointer; }

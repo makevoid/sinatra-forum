@@ -37,9 +37,17 @@
 
   $(function() {
     extended_click(".forums .forum, .posts .post, .users .user");
-    return $(".reply_btn").on("click", function() {
+    $(".reply_btn").on("click", function() {
       $(this).hide();
       return $(".reply").fadeIn();
+    });
+    return $(".choose_btn").on("click", function() {
+      $(".avatars").show();
+      return $(".avatars img").on("click", function() {
+        var url;
+        url = $(this).attr("src");
+        return $("#avatar").val(url);
+      });
     });
   });
 

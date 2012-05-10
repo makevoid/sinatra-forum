@@ -1,0 +1,14 @@
+- post = post_last
+- forum = post.forum
+
+%li.post
+  %span.title
+    - if post.root?
+      - link_to post.title, "/posts/#{post.id}"
+    - else
+      - link_to post.parent.title, "/posts/#{post.parent.id}"
+  in
+  - link_to forum.name, "/forums/#{forum.id}"
+
+  .text
+    = truncate post.text

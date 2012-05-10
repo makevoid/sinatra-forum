@@ -1,5 +1,4 @@
-%h2 Posts
-%ul.posts
-  - @user.posts.each do |post|
-    %li.post
-      - link_to post.title, "/posts/#{post.id}"
+%h2 Last Posts
+%ul.posts.last
+  - @user.posts_lasts.each do |post|
+    = partial :post_last, post

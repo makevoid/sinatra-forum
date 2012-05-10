@@ -18,3 +18,9 @@ $ ->
   $(".reply_btn").on "click", ->
     $(@).hide()
     $(".reply").fadeIn()
+    
+  $(".choose_btn").on "click", ->
+    $(".avatars").show()
+    $(".avatars img").on "click", ->
+      url = $(this).attr "src"
+      $("#avatar").val url

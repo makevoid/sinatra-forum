@@ -22,8 +22,7 @@ class Icon
 
   def self.all
     return @@all if defined?(@@all)
-    path = File.expand_path "../../", __FILE__
-    @@all = Dir.glob("#{path}/public/images/icons/*.{png,gif}").map do |icon|
+    @@all = Dir.glob("#{path}/public/images/icons/*.{png,gif,jpg}").map do |icon|
       file = File.basename icon
       name = File.basename icon, ".*"
       Icon.new name: name, file: file
@@ -32,6 +31,18 @@ class Icon
 
   def self.unpack
     puts `cd public/images/icons; tar xfz icons.tgz`
+  end
+
+  def self.avatars
+    Dir.glob("#{path}/public/images/avatars/*.{png,gif,jpg}").map do |avatar|
+      "/images/avatars/#{File.basename avatar}"
+    end
+  end
+
+  private
+
+  def self.path
+    path = File.expand_path "../../", __FILE__
   end
 
 end
