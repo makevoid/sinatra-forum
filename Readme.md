@@ -29,6 +29,10 @@ example:
 
 note: in development mode the first user (admin) gets logged in by default to ease the development
 
+    foreman start
+
+and you are good to go!
+
 
 ### Testing
 
