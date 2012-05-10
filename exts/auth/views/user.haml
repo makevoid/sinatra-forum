@@ -10,10 +10,14 @@
 
   .avatar
     = @user.avatar_image
+  
+  %div
 
-  .signature
-    = markup @user.signature
+    .signature
+      = markup @user.signature
 
 
-  - if File.exist? "#{Sinforum.root}/views/_ext_user.haml"
-    = partial :ext_user
+    - if File.exist? "#{Sinforum.root}/views/_ext_user.haml"
+      = partial :ext_user
+    
+    .clear
