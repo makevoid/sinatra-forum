@@ -43,8 +43,8 @@ def app.current_user
   $spec_current_user
 end
 
-def login
-  $spec_current_user = User.first
+def login(user=User.first)
+  $spec_current_user = user
 end
 
 def clear_login

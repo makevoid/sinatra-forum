@@ -1,6 +1,7 @@
 class Sinforum < Sinatra::Base
 
   get "/forums" do
+    @forums = member? ? Forum.all : Forum.publics
     haml :forums
   end
 

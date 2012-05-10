@@ -11,6 +11,14 @@ def user
   @@user ||= User.create username: "antani3", password: "sblinda", password_confirmation: "sblinda"
 end
 
+def admin
+  @@admin ||= User.create username: "antani3", password: "sblinda", password_confirmation: "sblinda", role: :admin
+end
+
+def as_admin
+  admin
+end
+
 def factory(type)
   case type.name
   when "User"

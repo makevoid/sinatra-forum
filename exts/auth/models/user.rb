@@ -27,7 +27,7 @@ class User
 
   def avatar_image
     default_avatar = "/images/avatars/d3_1.jpg"
-    "<img src='#{avatar || default_avatar}' class='avatar' />"
+    "<img src='#{avatar.nilblank || default_avatar}' class='avatar' />"
   end
 
 

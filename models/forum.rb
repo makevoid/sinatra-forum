@@ -9,6 +9,14 @@ class Forum
   property :posts_count,  Integer,  default: 0
   property :last_post_id, Integer
 
+  def self.privates
+    all(private: true)
+  end
+
+  def self.publics
+    all(private: false)
+  end
+
   def last_post
     @last_post ||= Post.get last_post_id
   end

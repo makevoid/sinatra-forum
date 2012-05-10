@@ -27,8 +27,6 @@ a.btn {
   -o-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
-  background: #dd0000;
-  color: white;
   font-weight: bold;
   font-size: 0.9em;
   padding: 3px 10px;
@@ -36,14 +34,17 @@ a.btn {
   border-left: 1px solid #999999;
   border-right: 1px solid #aaaaaa;
   border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999; }
+  box-shadow: 1px 1px 3px #999999;
+  cursor: pointer;
+  background: #dd0000;
+  color: white; }
 
 a.btn:hover {
-  background: white;
-  color: #dd0000;
   border: 1px solid #cccccc;
   border-top: 1px solid #888888;
-  box-shadow: 0px 0px 4px white; }
+  box-shadow: 0px 0px 4px white;
+  background: white;
+  color: #dd0000; }
 
 h1, nav.main {
   display: inline-block; }
@@ -57,7 +58,7 @@ nav.main {
   top: -4px; }
 
 nav.right {
-  margin: 12px 0 0; }
+  margin: 10px 0 0; }
 
 nav.inpage {
   margin: 0 0 15px;
@@ -72,6 +73,8 @@ nav.alone {
 header h1 {
   font-size: 2.2em;
   text-shadow: 1px 1px 1px white, 1px 1px 4px #222222; }
+header input[type='submit'] {
+  margin: 0; }
 
 h1 {
   margin: 0 0 10px 0; }
@@ -120,7 +123,7 @@ h1 {
   display: inline-block;
   position: relative;
   top: -14px;
-  margin: 0 0 0 0.5%; }
+  margin: 0 0 0 0.7%; }
 .users .user .role {
   float: right; }
 .users .user .avatar {
@@ -136,7 +139,11 @@ h1 {
 .user .title a {
   font-weight: bold; }
 .user .avatar {
-  width: 128px; }
+  width: 128px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px; }
 
 label {
   font-size: 0.85em;
@@ -162,11 +169,33 @@ textarea {
   width: 70%; }
 
 input[type='submit'] {
-  margin: 10px 0 0 0;
+  margin: 10px 0 20px 0;
   font-size: 1.2em;
   width: auto;
   float: right;
-  display: inline-block; }
+  display: inline-block;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 3px 10px;
+  border: 1px solid #888888;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #aaaaaa;
+  border-top: 1px solid #cccccc;
+  box-shadow: 1px 1px 3px #999999;
+  cursor: pointer;
+  background: #dd0000;
+  color: white;
+  font-family: Georgia, Verdana, Arial; }
+  input[type='submit']:hover {
+    border: 1px solid #cccccc;
+    border-top: 1px solid #888888;
+    box-shadow: 0px 0px 4px white;
+    background: white;
+    color: #dd0000; }
 
 .clear {
   clear: both; }
@@ -174,9 +203,9 @@ input[type='submit'] {
 .right {
   float: right; }
   .right .user_name {
-    margin: 0 10px 0 0;
+    margin: 0 12px 0 0;
     position: relative;
-    top: -4px; }
+    top: -6px; }
   .right form, .right .user_name {
     display: inline-block; }
 
@@ -200,11 +229,17 @@ input[type='submit'] {
     font-weight: normal; }
 
 .post.full .forum_name {
-  margin: 0 0 10px 0; }
+  margin: 0 0 4px 0; }
 .post.full .updated_at {
   float: right;
   font-weight: bold;
   margin: 0 0 5px 0; }
+.post.full .by {
+  float: left;
+  text-align: center;
+  margin: 0.5% 1.1% 0 0; }
+  .post.full .by img {
+    display: block; }
 .post.full .avatar {
   width: 80px;
   -moz-border-radius: 7px;
@@ -214,6 +249,8 @@ input[type='submit'] {
   border: 1px solid #777777; }
 .post.full .edit {
   clear: right; }
+.post.full .text {
+  float: left; }
 
 .post .text h1, .post .text h2, .post .text h3 {
   margin: 12px 0 4px; }
@@ -287,3 +324,21 @@ ul.icons li {
   .avatars img {
     width: 80px;
     cursor: pointer; }
+
+.flashes div {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  padding: 4px 2% 6px;
+  background: rgba(200, 200, 200, 0.5);
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+.flashes .alert {
+  background: rgba(240, 240, 150, 0.7);
+  color: #78781e;
+  border: 1px solid rgba(120, 120, 30, 0.3); }
+.flashes .notice {
+  background: rgba(200, 255, 200, 0.5);
+  color: #1e781e;
+  border: 1px solid rgba(30, 120, 30, 0.3); }
