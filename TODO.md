@@ -1,5 +1,8 @@
 # TODO
 
+
+- privates forums and posts should be private
+
 - admin
   - users
   - all posts

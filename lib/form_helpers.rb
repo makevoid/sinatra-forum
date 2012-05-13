@@ -36,11 +36,11 @@ module FormHelpers
   end
 
   def textarea(object, field, options={})
-    label field, options
     name = object.class.name.downcase
     attributes = { name: "#{name}[#{field}]", id: field }
     options.delete :label
     text = find_and_preserve do
+      label field, options
       haml_tag(:textarea, attributes.merge(options) ) do
         haml_concat object.send(field)
       end

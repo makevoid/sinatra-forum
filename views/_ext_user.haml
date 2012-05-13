@@ -1,4 +1,14 @@
+- if me? && current_user.member?
+  %p.info
+    %b Note:
+    you can send a mail to
+    - link_to "suppla@hotmail.com", "mailto:suppla@hotmail.com"
+    to request access to the private forums
+
+.clear
+
 %h2 Last Posts
 %ul.posts.last
   - @user.posts_lasts.each do |post|
     = partial :post_last, post
+
