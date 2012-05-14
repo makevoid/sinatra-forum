@@ -3,6 +3,7 @@ require_relative "spec_helper"
 describe "Forum" do
   let(:forum){ Forum.create name: "foro"  }
   let(:post1){ forum.posts.create title: "one", text: "one", user_id: user.id  }
+  let(:post2){ forum.posts.create title: "oneB", text: "oneB", user_id: user.id  }
   let(:forum_pvt){ Forum.create name: "secreeto", private: true }
 
   before :all do
@@ -17,6 +18,7 @@ describe "Forum" do
   it "GET /forums/:id" do
     get "/forums/#{forum.id}"
     body.should include(forum.name)
+    # body.should include(post2.title)
   end
 
   context "private forums - as guest" do
