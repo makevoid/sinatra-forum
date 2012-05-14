@@ -13,6 +13,16 @@ class Post
 
   validates_presence_of :title, :if => lambda { |p| p.parent_id.nil? }
 
+  # scopes
+
+  def self.by_update
+    all order: :updated_at.desc
+  end
+
+  def self.roots
+    all parent_id: nil
+  end
+
   # parent
 
   property :parent_id, Integer
@@ -43,7 +53,13 @@ class Post
   end
 
   after :save do
-    forum.update updated_at: Time.now, last_post_id: self.id, posts_count: forum.posts_count+1 if root?
+    attrs = { updated_at: Time.now }
+    if root?
+      attrs.merge! last_post_id: self.id, posts_count: forum.posts_count+1
+    else
+      parent.update attrs
+    end
+    forum.update attrs
   end
 
   after :destroy do
