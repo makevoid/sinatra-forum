@@ -7,6 +7,9 @@
       Edit: #{@post.title}
       - action = "/posts/#{@post.id}"
 
+  %nav.inpage
+    - link_to "back", "/posts/#{@post.id}", class: "btn"
+
   - validations_for @post
 
   %form{ action: action, method: "post" }

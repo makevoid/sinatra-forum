@@ -5,6 +5,9 @@
   - else
     Edit: #{@forum.name}
     - action = "/forums/#{@forum.id}"
+    
+%nav.inpage
+  - link_to "back", "/forums/#{@forum.id}", class: "btn"
 
 - validations_for @forum
 

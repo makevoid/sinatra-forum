@@ -6,6 +6,8 @@ $fg3: rgba(210, 210, 210, 0.7)// #FFF
 $fg4: rgba(180, 180, 180, 0.8)// #FFF
 $text: #111
 $fonts_default: Georgia, Verdana, Arial
+$fonts_diablo: diablo_bold, diablo, Georgia, Verdana, Arial
+$fonts_diablo_small: diablo, Georgia, Verdana, Arial
 
 
 // $main: #D00
@@ -69,12 +71,21 @@ ul
   padding: 0
   box-sizing: border-box
 
+@font-face
+  font-family: diablo
+  src: url('/fonts/diablo.ttf')
+    
+@font-face
+  font-family: diablo
+  src: url('/fonts/diablo_bold.ttf')
+
 body
   background: $bg
   background: url(/images/d3c.png) no-repeat $bg
   background-size: 100%
   font-family: $fonts_default
   color: $text
+  font-size: 85%
 
 a
   color: $main
@@ -201,12 +212,17 @@ input[type='submit']
   +button
   background: $main
   color: #fff
-  font-family: $fonts_default
+  font-family: $fonts_diablo
   &:hover    
     +emboss_hover
     background: #fff
     color: $main
 
+h1, h2, .btn, .name
+  font-family: $fonts_diablo
+
+.by, .forum_name
+  font-family: $fonts_diablo_small
   
 .clear 
   clear: both
