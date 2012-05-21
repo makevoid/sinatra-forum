@@ -1,7 +1,7 @@
 class Sinforum < Sinatra::Base
 
   enable :sessions
-  use Rack::Session::Cookie
+  use Rack::Session::Cookie, expire_after: 60 * 60 * 24 * 12
 
 
   def login_required
