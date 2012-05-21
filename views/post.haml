@@ -7,7 +7,11 @@
 - @replies.each do |reply|
   = partial :post_full, reply
 
-- link_to "Reply", "javascript:void(0)", class: "reply_btn btn"
+- if logged?
+  - link_to "Reply", "javascript:void(0)", class: "reply_btn btn"
+- else
+  - link_to "Login", "/login"
+  to reply
 
 .reply
   - @reply = Post.new params[:post]

@@ -25,9 +25,10 @@ class User
 
   # attributes
 
+  DEFAULT_AVATAR = "/images/avatars/d3_1.jpg"
+
   def avatar_image
-    default_avatar = "/images/avatars/d3_1.jpg"
-    "<img src='#{avatar.nilblank || default_avatar}' class='avatar' />"
+    "<img src='#{avatar.nilblank || DEFAULT_AVATAR}' class='avatar' />"
   end
 
 

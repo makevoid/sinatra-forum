@@ -14,7 +14,7 @@ class Sinforum < Sinatra::Base
   get "/forums/:id" do |id|
     @forum = Forum.get id
     member_required if @forum.private?
-    @posts = @forum.posts.all(parent_id: nil)
+    @posts = @forum.posts.roots.by_update
     haml :forum
   end
 
