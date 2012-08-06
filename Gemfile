@@ -15,7 +15,9 @@ gem "rdiscount"
 
 gem "voidtools"
 
-gem "ffi", "= 1.0.9", platforms: "mingw" # windows
+if RUBY_PLATFORM =~ /win32/
+  gem "ffi", "= 1.0.9"
+end
 
 group :test do
   gem "rspec-core"

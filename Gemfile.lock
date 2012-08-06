@@ -106,7 +106,6 @@ DEPENDENCIES
   dm-mysql-adapter
   dm-types
   dm-validations
-  ffi (= 1.0.9)
   foreman
   growl
   guard
