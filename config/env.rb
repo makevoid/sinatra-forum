@@ -1,7 +1,7 @@
 path = File.expand_path '../../', __FILE__
 APP = "sinforum"
 
-windows_dev_only = RUBY_PLATFORM =~ /win32/
+windows_dev_only = RUBY_PLATFORM =~ /win32|mingw/
 bundler_require = !windows_dev_only
 
 require "bundler/setup"
