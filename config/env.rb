@@ -1,8 +1,23 @@
 path = File.expand_path '../../', __FILE__
 APP = "sinforum"
 
+windows_dev_only = RUBY_PLATFORM =~ /win32/
+bundler_require = !windows_dev_only
+
 require "bundler/setup"
-Bundler.require :default
+if bundler_require
+  Bundler.require :default
+else
+  puts "loading dev gems without bundler..."
+  File.open("#{path}/Gemfile").each_line do |line|
+    gem_match = line.match /^\s*gem\s*["']([-\w]+)["']/
+    if gem_match
+      break if gem_match[1] =~ /rspec/
+      require gem_match[1]
+    end
+  end
+end
+
 module Utils
   def require_all(path)
     Dir.glob("#{path}/**/*.rb") do |model|
