@@ -13,6 +13,7 @@ else
     gem_match = line.match /^\s*gem\s*["']([-\w]+)["']/
     if gem_match
       break if gem_match[1] =~ /rspec/
+      next if gem_match[1] =~ /dm-mysql-adapter/
       require gem_match[1]
     end
   end
@@ -28,7 +29,13 @@ end
 include Utils
 
 env = ENV["RACK_ENV"] || "development"
-DataMapper.setup :default, "mysql://127.0.0.1/sinforum_#{env}"
+
+if RUBY_PLATFORM =~ /win32|mingw/
+  DataMapper.setup :default, "sqlite://#{path}/config/sinforum_db.sqlite"
+else
+  DataMapper.setup :default, "mysql://127.0.0.1/sinforum_#{env}"
+end
+
 require_all "#{path}/models"
 
 require "#{path}/lib/ruby_exts.rb"

@@ -4,7 +4,11 @@ gem "sinatra"
 gem "json"
 
 gem "dm-core"
-gem "dm-mysql-adapter"
+if RUBY_PLATFORM =~ /win32|mingw/
+  gem "dm-sqlite-adapter"
+else
+  gem "dm-mysql-adapter"
+end
 gem "dm-migrations"
 gem "dm-validations"
 gem "dm-types"
