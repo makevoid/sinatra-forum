@@ -22,13 +22,15 @@
               %input{ type: "submit", value: "Logout" }
           - else
             %a.btn{ href: "/login" } Login
-            or
-            %a.btn{ href: "/register" } Register
+            %br
+            %p#register
+              or
+              %a{ href: "/register" } Register
         %h1
           - link_to "Sinforum", "/"
         %nav.main
-          %a.btn{ href: "/forums" } Forums
-          %a.btn{ href: "/users" } Users
+          %a{ href: "/forums" } Home
+          %a{ href: "/users" } Users
       .flashes
         - flash.each do |type, message|
           %div{ class: type }= message

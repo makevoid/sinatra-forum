@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "ChunkFiveRegular";
+  src: url("fonts/Chunkfive-webfont.eot");
+  src: url("fonts/Chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Chunkfive-webfont.woff") format("woff"), url("fonts/Chunkfive-webfont.ttf") format("truetype"), url("fonts/Chunkfive-webfont.svg#ChunkFiveRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 a {
   text-decoration: none; }
 
@@ -10,41 +17,20 @@ ul {
   box-sizing: border-box; }
 
 body {
-  background: #d9d9d9;
-  background: url(/images/d3c.png) no-repeat #d9d9d9;
-  background-size: 100%;
-  font-family: Rockwell, Verdana, Arial;
+  background: #01adef;
+  font-family: Rockwell;
   color: #111111; }
 
 a {
-  color: #dd0000; }
-
-a:hover {
-  color: #ff1111; }
+  color: #01adef; }
 
 a.btn {
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.9em;
-  padding: 3px 10px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999;
+  font-family: Rockwell;
+  font-size: 18px;
   cursor: pointer;
-  background: #dd0000;
-  color: white; }
-
-a.btn:hover {
-  border: 1px solid #cccccc;
-  border-top: 1px solid #888888;
-  box-shadow: 0px 0px 4px white;
-  background: white;
-  color: #dd0000; }
+  background: #01adef;
+  color: white;
+  padding: 12px 27px; }
 
 h1, nav.main {
   display: inline-block; }
@@ -53,12 +39,23 @@ h1 {
   text-shadow: 2px 1px 1px white; }
 
 nav.main {
-  margin: 0 0 20px 1%;
-  position: relative;
-  top: -4px; }
+  position: relative; }
+  nav.main a.btn {
+    margin: 45px 28px 0 0; }
+  nav.main a {
+    color: #01adef;
+    font-family: Rockwell;
+    font-size: 18px;
+    margin: 0 5px 0 0; }
 
 nav.right {
-  margin: 10px 0 0; }
+  margin: 50px 28px 0 0; }
+
+#register {
+  margin: 15px 8px 0 0;
+  text-align: center; }
+  #register a:link {
+    text-decoration: underline; }
 
 nav.inpage {
   margin: 0 0 15px;
@@ -70,51 +67,22 @@ nav.inpage {
 nav.alone {
   margin: 0 0 15px; }
 
-header h1 {
-  font-size: 2.2em;
-  text-shadow: 1px 1px 1px white, 1px 1px 4px #222222; }
-header input[type='submit'] {
-  margin: 0; }
-
-h1 {
-  margin: 0 0 10px 0; }
+header {
+  margin: 0;
+  padding: 0 0 30px 0;
+  background: white; }
+  header h1 {
+    font-size: 64px;
+    font-family: "ChunkFiveRegular";
+    margin: 45px 12px 0 25px; }
+  header input[type='submit'] {
+    margin: 0; }
 
 .post h1 {
   font-size: 1.7em; }
 
 .post, .forum, .user {
-  margin: 0 0 10px 0;
-  background: rgba(255, 255, 255, 0.9);
-  background: linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  padding: 5px 1.5% 10px;
-  -moz-border-radius: 12px;
-  -o-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999; }
-
-.posts .post, .forums .forum, .users .user {
-  cursor: pointer; }
-  .posts .post:hover, .forums .forum:hover, .users .user:hover {
-    background: rgba(180, 180, 180, 0.8);
-    background: linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -o-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -moz-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -webkit-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(180, 180, 180, 0.8)), color-stop(0, rgba(255, 255, 255, 0.9)));
-    background: -ms-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    border: 1px solid #cccccc;
-    border-top: 1px solid #888888;
-    box-shadow: 0px 0px 4px white; }
+  margin: 0 0 10px 0; }
 
 .users .user a {
   font-weight: bold;
@@ -128,10 +96,6 @@ h1 {
   float: right; }
 .users .user .avatar {
   width: 40px;
-  -moz-border-radius: 5px;
-  -o-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
   margin: 6px 0 0 0; }
 
 .user h2 {
@@ -140,11 +104,7 @@ h1 {
   font-weight: bold; }
 .user .avatar {
   margin: 3px 1.3% 0 0;
-  width: 128px;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px; }
+  width: 128px; }
 .user .info {
   margin: 10px 0 0; }
 .user .signature {
@@ -181,31 +141,20 @@ input[type='submit'] {
   width: auto;
   float: right;
   display: inline-block;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.9em;
-  padding: 3px 10px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999;
+  font-family: Rockwell;
+  font-size: 18px;
   cursor: pointer;
-  background: #dd0000;
+  background: #01adef;
   color: white;
-  font-family: Rockwell, Verdana, Arial; }
-  input[type='submit']:hover {
-    border: 1px solid #cccccc;
-    border-top: 1px solid #888888;
-    box-shadow: 0px 0px 4px white;
-    background: white;
-    color: #dd0000; }
+  font-family: Rockwell; }
 
-.clear {
-  clear: both; }
+.content {
+  background: white;
+  margin: 20px 0 0 0;
+  padding: 0 0 45px 0; }
+  .content h1 {
+    color: #01adef;
+    font-size: 18px; }
 
 .right {
   float: right; }
@@ -217,20 +166,62 @@ input[type='submit'] {
     display: inline-block; }
 
 #container {
-  width: 92%;
-  margin: 20px auto; }
+  width: 80%;
+  margin: 0px auto; }
 
-.forum .info {
-  font-size: 0.75em; }
-  .forum .info .last_post a {
-    font-size: 1.3em;
-    font-weight: bold; }
-  .forum .info .updated_at {
-    font-weight: bold;
-    font-size: 1em; }
+.forum {
+  margin: 0 2.4% 0 2.4%;
+  border: 3px #01adef solid; }
+  .forum .forum_icon, .forum .info, .forum .name {
+    display: inline-block;
+    height: 90px; }
+  .forum .forum_icon {
+    float: left;
+    border-right: 3px solid #01adef;
+    width: 10%; }
+    .forum .forum_icon img {
+      margin: 20% 25%;
+      width: 50%;
+      height: auto; }
+  .forum h1, .forum .info, .forum .last_post a {
+    font-size: 18px; }
+  .forum .name {
+    float: left; }
+  .forum h1 {
+    display: block;
+    width: 55%;
+    margin: 0;
+    padding: 18px 0 0 20px;
+    font-family: "ChunkFiveRegular"; }
+  .forum .post_count {
+    margin: 0 0 0 20px;
+    font-size: 14px;
+    font-family: Rockwell; }
+  .forum .visitors_count {
+    margin: 0 0 0 20px;
+    font-size: 14px;
+    font-family: Rockwell; }
+  .forum .info {
+    width: 35%;
+    margin: 0;
+    border-left: 3px #01adef solid;
+    padding: 18px 35px 0 18px;
+    color: black;
+    font-family: "ChunkFiveRegular";
+    float: right; }
+    .forum .info .last_post a {
+      color: #01adef;
+      font-family: Rockwell; }
+    .forum .info .updated_at {
+      margin: 40px 0 0 0;
+      font-size: 12px;
+      font-family: "ChunkFiveRegular"; }
+
+.clear {
+  clear: both; }
 
 .posts .post .updated_at {
-  font-size: 0.9em;
+  font-size: 12px;
   font-weight: bold; }
   .posts .post .updated_at span {
     font-weight: normal; }
@@ -238,7 +229,6 @@ input[type='submit'] {
 .post.full .forum_name {
   margin: 0 0 4px 0; }
 .post.full .updated_at {
-  float: right;
   font-weight: bold;
   margin: 0 0 5px 0; }
 .post.full .by {
@@ -249,10 +239,6 @@ input[type='submit'] {
     display: block; }
 .post.full .avatar {
   width: 80px;
-  -moz-border-radius: 7px;
-  -o-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
   border: 1px solid #777777; }
 .post.full .edit {
   clear: right; }
@@ -270,23 +256,7 @@ input[type='submit'] {
 
 .reply {
   display: none;
-  background: rgba(255, 255, 255, 0.9);
-  background: linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  padding: 5px 1.5% 10px;
-  -moz-border-radius: 12px;
-  -o-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999; }
+  padding: 5px 1.5% 10px; }
 
 .help h2 {
   margin: 10px 0 6px 0; }
@@ -336,16 +306,10 @@ ul.icons li {
   display: inline-block;
   margin: 0 0 10px 0;
   padding: 4px 2% 6px;
-  background: rgba(200, 200, 200, 0.5);
-  -moz-border-radius: 10px;
-  -o-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px; }
+  background: rgba(200, 200, 200, 0.5); }
 .flashes .alert {
   background: rgba(240, 240, 150, 0.7);
-  color: #78781e;
-  border: 1px solid rgba(120, 120, 30, 0.3); }
+  color: #78781e; }
 .flashes .notice {
   background: rgba(200, 255, 200, 0.5);
-  color: #1e781e;
-  border: 1px solid rgba(30, 120, 30, 0.3); }
+  color: #1e781e; }
