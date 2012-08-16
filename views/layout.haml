@@ -19,7 +19,7 @@
             .user_name
               %a{ href: "/users/#{current_user.id}" }= current_user.username
             %form{ action: "/logout", method: "post" }
-              %input{ type: "submit", value: "Logout" }
+              %input.btn{ type: "submit", value: "Logout" }
           - else
             %a.btn{ href: "/login" } Login
             %br

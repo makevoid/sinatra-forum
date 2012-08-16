@@ -50,6 +50,9 @@ nav.main {
 
 nav.right {
   margin: 50px 28px 0 0; }
+  nav.right input {
+    padding: 12px 27px;
+    border: 1px solid #01adef; }
 
 #register {
   margin: 15px 8px 0 0;
@@ -59,7 +62,6 @@ nav.right {
 
 nav.inpage {
   margin: 0 0 15px;
-  display: inline-block;
   margin: 0 0 0 10px;
   position: relative;
   top: -3px; }
@@ -151,17 +153,35 @@ input[type='submit'] {
 .content {
   background: white;
   margin: 20px 0 0 0;
-  padding: 0 0 45px 0; }
+  padding: 0 0 100px 0; }
   .content h1 {
     color: #01adef;
     font-size: 18px; }
+  .content .title_form {
+    margin: 65px 0 0 24px;
+    color: black;
+    font-size: 42px; }
+
+.new_form {
+  margin: 27px 0 0 24px; }
+  .new_form label {
+    font-family: "ChunkFiveRegular";
+    font-size: 18px; }
+  .new_form input {
+    border: 2px #01adef solid; }
+  .new_form input[value='Save'] {
+    padding: 12px 27px; }
 
 .right {
   float: right; }
   .right .user_name {
     margin: 0 12px 0 0;
     position: relative;
-    top: -6px; }
+    top: -15px; }
+    .right .user_name a {
+      font-family: Rockwell;
+      font-size: 18px;
+      text-decoration: underline; }
   .right form, .right .user_name {
     display: inline-block; }
 
@@ -170,7 +190,7 @@ input[type='submit'] {
   margin: 0px auto; }
 
 .forum {
-  margin: 0 2.4% 0 2.4%;
+  margin: 0 2.4% 38px 2.4%;
   border: 3px #01adef solid; }
   .forum .forum_icon, .forum .info, .forum .name {
     display: inline-block;
@@ -313,3 +333,6 @@ ul.icons li {
 .flashes .notice {
   background: rgba(200, 255, 200, 0.5);
   color: #1e781e; }
+
+#text {
+  border: 2px #01adef solid; }

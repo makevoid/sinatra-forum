@@ -1,5 +1,5 @@
 .post_form
-  %h1
+  %h1.title_form
     - if route_is_new?(nested: true)
       - action = "/forums/#{@forum.id}/posts"
       New post
@@ -9,7 +9,7 @@
 
   - validations_for @post
 
-  %form{ action: action, method: "post" }
+  %form.new_form{ action: action, method: "post" }
     - unless route_is_new?(nested: true)
       - form_method :put
     - if @post.root?

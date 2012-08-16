@@ -73,15 +73,19 @@ nav.main
 
 nav.right
   margin: 50px 28px 0 0
+  input
+    padding: 12px 27px
+    border: 1px solid $main
+
 
 #register
   margin: 15px 8px 0 0
   text-align: center
   a:link
     text-decoration: underline
+
 nav.inpage
   margin: 0 0 15px
-  display: inline-block
   margin: 0 0 0 10px
   position: relative
   top: -3px
@@ -176,16 +180,34 @@ input[type='submit']
   h1
     color: $main
     font-size: 18px
+  .title_form
+    margin: 65px 0 0 24px
+    color: #000
+    font-size: 42px
   background: #fff
   margin: 20px  0 0 0
-  padding: 0 0 45px 0
+  padding: 0 0 100px 0
+
+.new_form
+  margin: 27px 0 0 24px
+  label
+    font-family: $webfont
+    font-size: 18px
+  input
+    border: 2px $main solid
+  input[value='Save']
+    padding: 12px 27px
 
 .right
   float: right
   .user_name
     margin: 0 12px 0 0
     position: relative
-    top: -6px
+    a
+      font-family: $fsecondary
+      font-size: 18px
+      text-decoration: underline
+    top: -15px
   form, .user_name
     display: inline-block
 
@@ -196,7 +218,7 @@ input[type='submit']
 $forum_height: 90px
 
 .forum
-  margin: 0 2.4% 0 2.4%
+  margin: 0 2.4% 38px 2.4%
   border: 3px $main solid
   .forum_icon, .info, .name
     display: inline-block
@@ -349,3 +371,6 @@ ul.icons li
   .notice
     background:       rgba(200, 255, 200, 0.5)
     color:            rgba(30,  120,  30, 1)
+
+#text
+  border: 2px $main solid

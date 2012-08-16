@@ -1,4 +1,4 @@
-%h1
+%h1.title_form
   - if route_is_new?
     - action = "/forums"
     New Forum
@@ -8,7 +8,7 @@
 
 - validations_for @forum
 
-%form{ action: action, method: "post" }
+%form.new_form{ action: action, method: "post" }
   - unless route_is_new?
     - form_method :put
   - input @forum, :name

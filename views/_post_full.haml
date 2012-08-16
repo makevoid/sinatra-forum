@@ -3,7 +3,7 @@
 .post.full
   - if post.root?
     = partial :post_right, post
-    
+
     %h1= post.title
 
     .forum_name
@@ -16,8 +16,8 @@
 
   .text
     = markup post.text
-  
+
   - unless post.root?
     = partial :post_right, post
-    
+
   .clear
