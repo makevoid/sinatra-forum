@@ -1,11 +1,12 @@
-%h1
-  Edit: #{@user.username}'s profile
 %nav.inpage
   - link_to "back", "/users/#{@user.id}", class: "btn"
 
+%h1
+  Edit: #{@user.username}'s profile
+
 - validations_for @user
 
-%form{ action: "/users/#{@user.id}", method: "post" }
+%form.new_form{ action: "/users/#{@user.id}", method: "post" }
   - form_method :put
   - input @user, :diablo_id
 
@@ -15,7 +16,7 @@
     Insert an avatar url or
     - link_to "choose one", "javascript:void(0)", class: "choose_btn"
 
-  
+
   .avatars
     - Icon.avatars.each do |avatar|
       %img{ src: avatar }

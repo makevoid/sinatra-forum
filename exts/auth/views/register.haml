@@ -1,8 +1,8 @@
-%h1 Register
+%h1.title_form Register
 
 - validations_for @user
 
-%form{ action: "/users", method: "post" }
+%form.new_form{ action: "/users", method: "post" }
   - input @user, :username
   - input @user, :password, type: "password"
   - input @user, :password_confirmation, type: "password", label: "Confirm password"

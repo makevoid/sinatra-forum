@@ -1,12 +1,8 @@
 $main: #01adef
 $bg: #01adef
-$fg: rgba(255, 255, 255, 1)// #FFF
-$fg2: rgba(255, 255, 255, 0.9)// #FFF
-$fg3: rgba(210, 210, 210, 0.7)// #FFF
-$fg4: rgba(180, 180, 180, 0.8)// #FFF
-$text: #111
 $fsecondary: Rockwell
-$webfont:'ChunkFiveRegular', Rockwell
+$webfont: 'ChunkFiveRegular', Rockwell
+$white : #fff
 
 @font-face
   font-family: 'ChunkFiveRegular'
@@ -14,8 +10,6 @@ $webfont:'ChunkFiveRegular', Rockwell
   src: url('fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Chunkfive-webfont.woff') format('woff'), url('fonts/Chunkfive-webfont.ttf') format('truetype'), url('fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg')
   font-weight: normal
   font-style: normal
-
-$webfont:'ChunkFiveRegular'
 
 // $main: #D00
 // $bg: #333
@@ -39,12 +33,13 @@ ul
 *
   margin: 0
   padding: 0
+  font-weight: 300
   box-sizing: border-box
 
 body
-  background: $bg
+  background: url('bg-pattern.png') repeat
   font-family: $fsecondary
-  color: $text
+  color: #000
 
 a
   color: $main
@@ -57,9 +52,6 @@ a.btn
 
 h1, nav.main
   display: inline-block
-
-h1
-  text-shadow: 2px 1px 1px #FFF
 
 nav.main
   a.btn
@@ -77,7 +69,6 @@ nav.right
     padding: 12px 27px
     border: 1px solid $main
 
-
 #register
   margin: 15px 8px 0 0
   text-align: center
@@ -85,10 +76,8 @@ nav.right
     text-decoration: underline
 
 nav.inpage
-  margin: 0 0 15px
-  margin: 0 0 0 10px
-  position: relative
-  top: -3px
+  margin: 40px 2.4%
+  display: inline-block
 
 nav.alone
   margin: 0 0 15px
@@ -96,11 +85,12 @@ nav.alone
 header
   margin: 0
   padding: 0 0 30px 0
-  background: #fff
+  background: $white
   h1
     font-size: 64px
     font-family: $webfont
     margin: 45px 12px 0 25px
+    color: #000
   input[type='submit']
     margin: 0
 
@@ -173,7 +163,7 @@ input[type='submit']
   display: inline-block
   +button
   background: $main
-  color: #fff
+  color: $white
   font-family: $fsecondary
 
 .content
@@ -184,18 +174,18 @@ input[type='submit']
     margin: 65px 0 0 24px
     color: #000
     font-size: 42px
-  background: #fff
+  background: $white
   margin: 20px  0 0 0
   padding: 0 0 100px 0
 
-.new_form
+.new_form,
   margin: 27px 0 0 24px
   label
-    font-family: $webfont
+    font-family: $fsecondary
     font-size: 18px
-  input
+  input, .sign
     border: 2px $main solid
-  input[value='Save']
+  input[type='submit'], .sign
     padding: 12px 27px
 
 .right
@@ -261,8 +251,9 @@ $forum_height: 90px
       color: $main
       font-family: $fsecondary
     .updated_at
-      margin: 40px 0 0 0
+      margin: 3px 0 0 0
       font-size: 12px
+      display: inline-block
       font-family: $webfont
 
 .clear
@@ -343,7 +334,7 @@ ul.icons li
   li:last-child div
     border: 0
   .md
-    background: #FFF
+    background: $white
   h1
     font-size: 1em
     margin: 0

@@ -14,12 +14,13 @@ ul {
 * {
   margin: 0;
   padding: 0;
+  font-weight: 300;
   box-sizing: border-box; }
 
 body {
-  background: #01adef;
+  background: url("bg-pattern.png") repeat;
   font-family: Rockwell;
-  color: #111111; }
+  color: black; }
 
 a {
   color: #01adef; }
@@ -34,9 +35,6 @@ a.btn {
 
 h1, nav.main {
   display: inline-block; }
-
-h1 {
-  text-shadow: 2px 1px 1px white; }
 
 nav.main {
   position: relative; }
@@ -61,10 +59,8 @@ nav.right {
     text-decoration: underline; }
 
 nav.inpage {
-  margin: 0 0 15px;
-  margin: 0 0 0 10px;
-  position: relative;
-  top: -3px; }
+  margin: 40px 2.4%;
+  display: inline-block; }
 
 nav.alone {
   margin: 0 0 15px; }
@@ -75,8 +71,9 @@ header {
   background: white; }
   header h1 {
     font-size: 64px;
-    font-family: "ChunkFiveRegular";
-    margin: 45px 12px 0 25px; }
+    font-family: "ChunkFiveRegular", Rockwell;
+    margin: 45px 12px 0 25px;
+    color: black; }
   header input[type='submit'] {
     margin: 0; }
 
@@ -165,11 +162,11 @@ input[type='submit'] {
 .new_form {
   margin: 27px 0 0 24px; }
   .new_form label {
-    font-family: "ChunkFiveRegular";
+    font-family: Rockwell;
     font-size: 18px; }
-  .new_form input {
+  .new_form input, .new_form .sign {
     border: 2px #01adef solid; }
-  .new_form input[value='Save'] {
+  .new_form input[type='submit'], .new_form .sign {
     padding: 12px 27px; }
 
 .right {
@@ -212,7 +209,7 @@ input[type='submit'] {
     width: 55%;
     margin: 0;
     padding: 18px 0 0 20px;
-    font-family: "ChunkFiveRegular"; }
+    font-family: "ChunkFiveRegular", Rockwell; }
   .forum .post_count {
     margin: 0 0 0 20px;
     font-size: 14px;
@@ -227,15 +224,16 @@ input[type='submit'] {
     border-left: 3px #01adef solid;
     padding: 18px 35px 0 18px;
     color: black;
-    font-family: "ChunkFiveRegular";
+    font-family: "ChunkFiveRegular", Rockwell;
     float: right; }
     .forum .info .last_post a {
       color: #01adef;
       font-family: Rockwell; }
     .forum .info .updated_at {
-      margin: 40px 0 0 0;
+      margin: 3px 0 0 0;
       font-size: 12px;
-      font-family: "ChunkFiveRegular"; }
+      display: inline-block;
+      font-family: "ChunkFiveRegular", Rockwell; }
 
 .clear {
   clear: both; }
