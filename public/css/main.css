@@ -32,7 +32,8 @@ a.btn {
   background: #01adef;
   color: white;
   padding: 11px 26px;
-  border: none; }
+  border: none;
+  margin: 0 10px 0 0; }
 
 input[value='Save'] {
   border: 3px solid black; }
@@ -101,9 +102,8 @@ header {
   margin: 30px 0 0 2.4%;
   display: inline-block; }
   .user img {
-    margin: 7% 7% 0 7%;
-    padding: 0 28% 0 0;
-    width: 100%; }
+    margin: 7% 0 0 7%;
+    width: 80%; }
   .user .name {
     margin: 30px 0 0 7%;
     font-family: "ChunkFiveRegular", Rockwell;
@@ -250,9 +250,11 @@ input[type='submit'] {
   height: auto; }
   .post h2 a {
     font-size: 40px;
-    margin: 0; }
-  .post a {
+    margin: 0;
     color: white; }
+  .post span a {
+    color: white;
+    text-decoration: underline; }
   .post .by {
     font-family: Rockwell;
     display: inline-block;
@@ -270,32 +272,30 @@ input[type='submit'] {
   margin: 0.5% 1.1% 0 0; }
   .post.full .by img {
     display: block; }
-.post.full .avatar {
-  width: 80px;
-  border: 1px solid #777777; }
 .post.full .edit {
   clear: right; }
 .post.full .text {
   float: left; }
 
-.post .text h1, .post .text h2, .post .text h3 {
-  margin: 12px 0 4px; }
-.post .text h1 {
-  font-size: 1.4em; }
-.post .text h2 {
-  font-size: 1.3em; }
-.post .text h3 {
-  font-size: 1.2em; }
+.post_last .post {
+  margin: 0; }
+
+.text {
+  color: white; }
 
 .reply {
   display: none;
   padding: 5px 1.5% 10px; }
 
 .help h2 {
-  margin: 10px 0 6px 0; }
+  margin: 40px 0 6px 2.4%;
+  color: #01adef; }
+.help p {
+  margin: 0 0 0 2.4%;
+  font-family: Rockwell; }
 
 .icon {
-  width: 25px; }
+  margin: 0 0 0 2.4%; }
 
 ul.icons li {
   display: inline-block;
@@ -308,7 +308,8 @@ ul.icons li {
     top: 7px; }
 
 .markdown_help {
-  margin: 10px 0 0 0; }
+  margin: 10px 0 0 2.4%;
+  width: 62.3%; }
   .markdown_help li div {
     font-size: 0.85em;
     width: 220px;
@@ -355,16 +356,17 @@ ul.icons li {
   color: black;
   font-size: 42px; }
 #my_user .role {
-  margin: -30px 0 0 2.5%;
+  margin: 0 0 0 2.5%;
   color: #01adef;
   font-size: 26px; }
-#my_user p {
-  margin: 20px 0 0 2.5%;
-  padding: 10px 0 10px 3.6%;
-  font-size: 18px;
-  border: 3px solid #01adef;
-  width: 20%; }
 #my_user img {
   margin: 20px 0 0 2.5%;
   width: 20%;
   height: auto; }
+
+.signature {
+  margin: 20px 0 0 2.5%;
+  padding: 10px 3.6% 10px 3.6%;
+  font-size: 18px;
+  background: #01adef;
+  width: 20%; }

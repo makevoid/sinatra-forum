@@ -51,6 +51,7 @@ a.btn
   color: #fff
   padding: 11px 26px
   border: none
+  margin: 0 10px 0 0
 
 input[value='Save']
   border: 3px solid $color_d
@@ -120,9 +121,8 @@ header
   margin: 30px 0 0 2.4%
   display: inline-block
   img
-    margin: 7% 7% 0 7%
-    padding: 0 28% 0 0
-    width: 100%
+    margin: 7% 0 0 7%
+    width: 80%
   .name
     a
       color: #fff
@@ -271,8 +271,10 @@ $forum_height: 90px
   h2 a
     font-size: 40px
     margin: 0
-  a
     color: #fff
+  span a
+    color: #fff
+    text-decoration: underline
   .by
     font-family: $fsecondary
     display: inline-block
@@ -291,24 +293,17 @@ $forum_height: 90px
     margin: 0.5% 1.1% 0 0
     img
       display: block
-  .avatar
-    width: 80px
-    border: 1px solid #777
   .edit
     clear: right
   .text
     float: left
 
+.post_last
+  .post
+    margin: 0
 
-.post .text
-  h1, h2, h3
-    margin: 12px 0 4px
-  h1
-    font-size: 1.4em
-  h2
-    font-size: 1.3em
-  h3
-    font-size: 1.2em
+.text
+  color: #fff
 
 
 .reply
@@ -317,12 +312,17 @@ $forum_height: 90px
 
 // .help
 
-.help h2
-  margin: 10px 0 6px 0
+.help
+  h2
+    margin: 40px 0 6px 2.4%
+    color: $main
+  p
+    margin: 0 0 0 2.4%
+    font-family: $fsecondary
 
 
 .icon
-  width: 25px
+  margin: 0 0 0 2.4%
 
 ul.icons li
   display: inline-block
@@ -336,7 +336,8 @@ ul.icons li
 
 
 .markdown_help
-  margin: 10px 0 0 0
+  margin: 10px 0 0 2.4%
+  width: 62.3%
   li div
     font-size: 0.85em
     width: 220px
@@ -386,16 +387,17 @@ ul.icons li
     color: black
     font-size: 42px
   .role
-    margin: -30px 0 0 2.5%
+    margin: 0 0 0 2.5%
     color: #01adef
     font-size: 26px
-  p
-    margin: 20px 0 0 2.5%
-    padding: 10px 0 10px 3.6%
-    font-size: 18px
-    border: 3px solid #01adef
-    width: 20%
   img
     margin: 20px 0 0 2.5%
     width: 20%
     height: auto
+
+.signature
+  margin: 20px 0 0 2.5%
+  padding: 10px 3.6% 10px 3.6%
+  font-size: 18px
+  background: #01adef
+  width: 20%
