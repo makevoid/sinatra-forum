@@ -31,7 +31,15 @@ a.btn {
   cursor: pointer;
   background: #01adef;
   color: white;
-  padding: 12px 27px; }
+  padding: 11px 26px;
+  border: none; }
+
+input[value='Save'] {
+  border: 3px solid black; }
+
+.btn:hover, input[type='submit']:hover {
+  background: black;
+  border: none; }
 
 h1, nav.main {
   display: inline-block; }
@@ -39,7 +47,8 @@ h1, nav.main {
 nav.main {
   position: relative; }
   nav.main a.btn {
-    margin: 45px 28px 0 0; }
+    margin: 45px 28px 0 0;
+    display: inline-block; }
   nav.main a {
     color: #01adef;
     font-family: Rockwell;
@@ -50,7 +59,7 @@ nav.right {
   margin: 50px 28px 0 0; }
   nav.right input {
     padding: 12px 27px;
-    border: 1px solid #01adef; }
+    border: none; }
 
 #register {
   margin: 15px 8px 0 0;
@@ -72,8 +81,9 @@ header {
   header h1 {
     font-size: 64px;
     font-family: "ChunkFiveRegular", Rockwell;
-    margin: 45px 12px 0 25px;
-    color: black; }
+    margin: 45px 12px 0 2.4%; }
+    header h1 a:link, header h1 a:visited {
+      color: black; }
   header input[type='submit'] {
     margin: 0; }
 
@@ -83,37 +93,29 @@ header {
 .post, .forum, .user {
   margin: 0 0 10px 0; }
 
-.users .user a {
-  font-weight: bold;
+.user {
+  background: #01adef;
+  width: 20%;
+  height: auto;
+  padding: 0px 0 15px 0;
+  margin: 30px 0 0 2.4%;
   display: inline-block; }
-.users .user .name {
-  display: inline-block;
-  position: relative;
-  top: -14px;
-  margin: 0 0 0 0.7%; }
-.users .user .role {
-  float: right; }
-.users .user .avatar {
-  width: 40px;
-  margin: 6px 0 0 0; }
-
-.user h2 {
-  margin: 20px 0 10px 0; }
-.user .title a {
-  font-weight: bold; }
-.user .avatar {
-  margin: 3px 1.3% 0 0;
-  width: 128px; }
-.user .info {
-  margin: 10px 0 0; }
-.user .signature {
-  margin: 10px 0 0; }
-.user .avatar {
-  float: left; }
+  .user img {
+    margin: 7% 7% 0 7%;
+    padding: 0 28% 0 0;
+    width: 100%; }
+  .user .name {
+    margin: 30px 0 0 7%;
+    font-family: "ChunkFiveRegular", Rockwell;
+    font-size: 22px; }
+    .user .name a {
+      color: white; }
+  .user .role {
+    margin: 5px 0 0 7%;
+    font-size: 18px; }
 
 label {
   font-size: 0.85em;
-  font-weight: bold;
   margin: 0 0 4px;
   display: block; }
 
@@ -155,7 +157,7 @@ input[type='submit'] {
     color: #01adef;
     font-size: 18px; }
   .content .title_form {
-    margin: 65px 0 0 24px;
+    margin: 65px 0 0 2.5%;
     color: black;
     font-size: 42px; }
 
@@ -224,31 +226,44 @@ input[type='submit'] {
     border-left: 3px #01adef solid;
     padding: 18px 35px 0 18px;
     color: black;
-    font-family: "ChunkFiveRegular", Rockwell;
+    font-family: Rockwell;
     float: right; }
     .forum .info .last_post a {
       color: #01adef;
       font-family: Rockwell; }
-    .forum .info .updated_at {
-      margin: 3px 0 0 0;
-      font-size: 12px;
-      display: inline-block;
-      font-family: "ChunkFiveRegular", Rockwell; }
+
+.updated_at {
+  margin: 3px 0 0 0;
+  font-size: 13px;
+  display: inline-block;
+  font-family: "ChunkFiveRegular", Rockwell; }
 
 .clear {
   clear: both; }
 
-.posts .post .updated_at {
-  font-size: 12px;
-  font-weight: bold; }
-  .posts .post .updated_at span {
-    font-weight: normal; }
+.post {
+  background: #01adef;
+  width: 45.6%;
+  display: inline-block;
+  padding: 20px 0 20px 20px;
+  margin: 30px 0 0 2.4%;
+  height: auto; }
+  .post h2 a {
+    font-size: 40px;
+    margin: 0; }
+  .post a {
+    color: white; }
+  .post .by {
+    font-family: Rockwell;
+    display: inline-block;
+    margin: 5px 0 0 0; }
+  .post .updated_at {
+    margin: 0;
+    font-family: Rockwell;
+    font-size: 14px; }
 
 .post.full .forum_name {
   margin: 0 0 4px 0; }
-.post.full .updated_at {
-  font-weight: bold;
-  margin: 0 0 5px 0; }
 .post.full .by {
   float: left;
   text-align: center;
@@ -334,3 +349,22 @@ ul.icons li {
 
 #text {
   border: 2px #01adef solid; }
+
+#my_user h1 {
+  margin: 65px 0 0 2.5%;
+  color: black;
+  font-size: 42px; }
+#my_user .role {
+  margin: -30px 0 0 2.5%;
+  color: #01adef;
+  font-size: 26px; }
+#my_user p {
+  margin: 20px 0 0 2.5%;
+  padding: 10px 0 10px 3.6%;
+  font-size: 18px;
+  border: 3px solid #01adef;
+  width: 20%; }
+#my_user img {
+  margin: 20px 0 0 2.5%;
+  width: 20%;
+  height: auto; }

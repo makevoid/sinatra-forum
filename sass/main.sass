@@ -3,6 +3,7 @@ $bg: #01adef
 $fsecondary: Rockwell
 $webfont: 'ChunkFiveRegular', Rockwell
 $white : #fff
+$color_d: #000
 
 @font-face
   font-family: 'ChunkFiveRegular'
@@ -43,11 +44,20 @@ body
 
 a
   color: $main
+
 a.btn
   +button
   background: $main
   color: #fff
-  padding: 12px 27px
+  padding: 11px 26px
+  border: none
+
+input[value='Save']
+  border: 3px solid $color_d
+
+.btn:hover, input[type='submit']:hover
+  background: #000
+  border: none
 
 
 h1, nav.main
@@ -56,6 +66,7 @@ h1, nav.main
 nav.main
   a.btn
     margin: 45px 28px 0 0
+    display: inline-block
   a
     color: $main
     font-family: $fsecondary
@@ -67,7 +78,7 @@ nav.right
   margin: 50px 28px 0 0
   input
     padding: 12px 27px
-    border: 1px solid $main
+    border: none
 
 #register
   margin: 15px 8px 0 0
@@ -87,10 +98,11 @@ header
   padding: 0 0 30px 0
   background: $white
   h1
+    a:link, a:visited
+      color: #000
     font-size: 64px
     font-family: $webfont
-    margin: 45px 12px 0 25px
-    color: #000
+    margin: 45px 12px 0 2.4%
   input[type='submit']
     margin: 0
 
@@ -100,40 +112,29 @@ header
 .post, .forum, .user
   margin: 0 0 10px 0
 
-.users
-  .user
-    a
-      font-weight: bold
-      display: inline-block
-    .name
-      display: inline-block
-      position: relative
-      top: -14px
-      margin: 0 0 0 0.7%
-    .role
-      float: right
-    .avatar
-      width: 40px
-      margin: 6px 0 0 0
-
 .user
-  h2
-    margin: 20px 0 10px 0
-  .title a
-    font-weight: bold
-  .avatar
-    margin: 3px 1.3% 0 0
-    width: 128px
-  .info
-    margin: 10px 0 0
-  .signature
-    margin: 10px 0 0
-  .avatar
-    float: left
+  background: $main
+  width: 20%
+  height: auto
+  padding: 0px 0 15px 0
+  margin: 30px 0 0 2.4%
+  display: inline-block
+  img
+    margin: 7% 7% 0 7%
+    padding: 0 28% 0 0
+    width: 100%
+  .name
+    a
+      color: #fff
+    margin: 30px 0 0 7%
+    font-family: $webfont
+    font-size: 22px
+  .role
+    margin: 5px 0 0 7%
+    font-size: 18px
 
 label
   font-size: 0.85em
-  font-weight: bold
   margin: 0 0 4px
   display: block
 
@@ -171,7 +172,7 @@ input[type='submit']
     color: $main
     font-size: 18px
   .title_form
-    margin: 65px 0 0 24px
+    margin: 65px 0 0 2.5%
     color: #000
     font-size: 42px
   background: $white
@@ -245,33 +246,45 @@ $forum_height: 90px
     border-left: 3px $main solid
     padding: 18px 35px 0 18px
     color: #000
-    font-family: $webfont
+    font-family: $fsecondary
     float: right
     .last_post a
       color: $main
       font-family: $fsecondary
-    .updated_at
-      margin: 3px 0 0 0
-      font-size: 12px
-      display: inline-block
-      font-family: $webfont
+
+.updated_at
+  margin: 3px 0 0 0
+  font-size: 13px
+  display: inline-block
+  font-family: $webfont
 
 .clear
   clear: both
 
-.posts .post
+.post
+  background: #01adef
+  width: 45.6%
+  display: inline-block
+  padding: 20px 0 20px 20px
+  margin: 30px 0 0 2.4%
+  height: auto
+  h2 a
+    font-size: 40px
+    margin: 0
+  a
+    color: #fff
+  .by
+    font-family: $fsecondary
+    display: inline-block
+    margin: 5px 0 0 0
   .updated_at
-    font-size: 12px
-    font-weight: bold
-    span
-      font-weight: normal
+    margin: 0
+    font-family: $fsecondary
+    font-size: 14px
 
 .post.full
   .forum_name
     margin: 0 0 4px 0
-  .updated_at
-    font-weight: bold
-    margin: 0 0 5px 0
   .by
     float: left
     text-align: center
@@ -365,3 +378,24 @@ ul.icons li
 
 #text
   border: 2px $main solid
+
+
+#my_user
+  h1
+    margin: 65px 0 0 2.5%
+    color: black
+    font-size: 42px
+  .role
+    margin: -30px 0 0 2.5%
+    color: #01adef
+    font-size: 26px
+  p
+    margin: 20px 0 0 2.5%
+    padding: 10px 0 10px 3.6%
+    font-size: 18px
+    border: 3px solid #01adef
+    width: 20%
+  img
+    margin: 20px 0 0 2.5%
+    width: 20%
+    height: auto
