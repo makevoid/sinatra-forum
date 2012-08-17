@@ -7,7 +7,7 @@
 - @replies.each do |reply|
   = partial :post_full, reply
 
-- if logged?
+- if logged_in?
   - link_to "Reply", "javascript:void(0)", class: "reply_btn btn"
 - else
   - link_to "Login", "/login"

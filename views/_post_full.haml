@@ -1,23 +1,19 @@
 - post = post_full
 
 .post.full
+
+  %h1= post.title
+
   - if post.root?
     = partial :post_right, post
 
-    %h1= post.title
-
-    .forum_name
-      in
-      - link_to @forum.name, "/forums/#{@forum.id}"
-
-  .by
-    = post.user.avatar_image
-    - link_to post.author.username, "/users/#{post.author.id}"
-
-  .text
-    = markup post.text
-
   - unless post.root?
     = partial :post_right, post
+
+  .by
+    - link_to post.author.username, "/users/#{post.author.id}"
+    = post.user.avatar_image
+  .text
+    = markup post.text
 
   .clear
