@@ -68,6 +68,18 @@ class Sinforum < Sinatra::Base
     request.path.split("/")[num_split] == "new" || @route == :new
   end
 
+  def user_agent_class
+    case request.user_agent
+    when /firefox/i then "firefox"
+    when /chrome/i  then "chrome"
+    when /msie/i    then "ie"
+    when /iphone/i  then "iphone"
+    when /ipad/i    then "ipad"
+    when /opera/i   then "opera"
+    when /android/i then "android"
+    when /safari/i  then "safari"
+    end
+  end
 end
 
 require_all "#{path}/routes"
