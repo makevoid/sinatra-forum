@@ -8,9 +8,9 @@
   = partial :post_full, reply
 
 - if logged_in?
-  - link_to "Reply", "javascript:void(0)", class: "reply_btn btn"
+  - link_to "Reply", "javascript:void(0)", id: "reply_btn", class: "btn"
 - else
-  - link_to "Login", "/login"
+  - link_to "Login", "/login", id: "login_btn", class: "btn"
   to reply
 
 .reply
@@ -20,5 +20,5 @@
 
     - submit "Save"
 
-  - link_to "Help", "/help"
+  - link_to "Help", "/help", id: "help_link"
   .clear

@@ -6,7 +6,6 @@ $webfont: 'ChunkFiveRegular', Rockwell
 $white : #fff
 $color_d: #000
 
-
 @font-face
   font-family: 'ChunkFiveRegular'
   src: url('fonts/Chunkfive-webfont.eot')
@@ -14,33 +13,23 @@ $color_d: #000
   font-weight: normal
   font-style: normal
 
-// $main: #D00
-// $bg: #333
-// $fg: #111
-// $text: #EEE
-
-=box
-  padding: 5px 1.5% 10px
-
-a
-  text-decoration: none
-
-ul
-  list-style-type: none
-
 *
   margin: 0
   padding: 0
   font-weight: 300
   box-sizing: border-box
-
-body
-  background: url('bg-pattern.png') repeat
   font-family: $fsecondary
   color: #000
 
+body
+  background: url('bg-pattern.png')
+
 a
-  color: $main
+  text-decoration: none
+  color: #01adef
+
+ul
+  list-style-type: none
 
 a.btn, input[type='submit']
   font-family: $fsecondary
@@ -54,12 +43,11 @@ a.btn, input[type='submit']
   border-radius: 3px
   padding: 11px 26px
 
-input[type='text']
+input[type='text'], input[type='password']
   border: 2px solid $main
+  padding: 10px
 
 input[type='submit']
-  margin: 10px 0 20px 0
-  float: right
   display: inline-block
   width: auto
 
@@ -75,11 +63,6 @@ input[type='submit']
   box-shadow: inset 0 1px 2px rgba(0,0,0,.3)
   border: none
 
-.role
-  margin: 0 0 0 2.5%
-  color: #01adef
-  font-size: 26px
-
 
 h1, nav.main
   display: inline-block
@@ -92,13 +75,15 @@ nav.main
     color: $main
     font-family: $fsecondary
     font-size: 18px
-    margin: 0 5px 0 0
+    margin: 0 0 0 10px
   position: relative
 
 nav.right
   margin: 50px 28px 0 0
   input
     border: none
+
+// register
 
 #register
   margin: 15px 8px 0 0
@@ -109,6 +94,8 @@ nav.right
 nav.inpage
   margin: 40px 2.4%
   display: inline-block
+  .btn
+    margin: 0 0 0 15px
 
 nav.alone
   margin: 40px 0 0 2.4%
@@ -118,11 +105,11 @@ header
   margin: 0
   padding: 0 0 30px 0
   background: $white
-  h1
+  .logo
     a:link, a:visited
       color: #000
-    font-size: 64px
-    font-family: $webfont
+      font-size: 64px
+      font-family: $webfont
     margin: 45px 12px 0 2.4%
   input[type='submit']
     margin: 0
@@ -156,7 +143,7 @@ header
   .role
     margin: 0 0 0 7%
     color: #000
-
+    font-size: 18px
 label
   font-size: 0.85em
   margin: 0 0 4px
@@ -171,14 +158,17 @@ input, textarea
 
 textarea
   height: 400px
+.new_form
+  .submit
+    width: 30%
+    clear: right
+  #help_link
+    margin: 15px 0 15px
+    display: inline-block
+    font-size: 21px
 
-.submit
-  width: 30%
-  clear: right
-
-.post_form, .reply
-  input, textarea, .submit
-    width: 70%
+.post_form
+  width: 70%
 
 .content
   h1
@@ -209,7 +199,6 @@ textarea
       font-family: $fsecondary
       font-size: 18px
       text-decoration: underline
-    top: -15px
   form, .user_name
     display: inline-block
 
@@ -218,6 +207,8 @@ textarea
   margin: 0px auto
 
 $forum_height: 120px
+
+// forum
 
 .forum
   margin: 0 2.4% 38px 2.4%
@@ -228,18 +219,17 @@ $forum_height: 120px
   .forum_icon
     float: left
     border-right: 3px solid $main
-    width: 10%
+    width: 100px
     img
-      margin: 25% 25%
-      width: 50%
-      height: auto
+      margin: 25%
+      width: 50px
   h1, .info, .last_post a
     font-size: 18px
   .name
     float: left
+    margin: 0 0 0 0
   h1
     display: block
-    width: 55%
     margin: 0
     padding: 18px 0 0 20px
     font-family: $webfont
@@ -252,16 +242,28 @@ $forum_height: 120px
     font-size: 14px
     font-family: $fsecondary
   .info
-    width: 35%
-    margin: 0
-    border-left: 3px $main solid
-    padding: 18px 35px 0 18px
+    margin: 0 0 0 20%
+    border-left: 3px solid #01adef
+    width: 45%
+    float: left
+    padding: 18px 0 0 18px
     color: #000
     font-family: $fsecondary
-    float: right
-    .last_post a
-      color: $main
-      font-family: $fsecondary
+    @media screen and (max-width: 1050px)
+      margin: 0 0 0 10%
+      width: 44%
+    @media screen and (max-width: 800px)
+      border-top: 3px solid #01adef
+      clear: both
+      width: 100%
+      border-left: none
+      margin: 0
+      padding: 15px 15px 0 15px
+    .last_post
+      width: 50%
+      a
+        color: $main
+        font-family: $fsecondary
 
 .updated_at
   margin: 3px 0 0 0
@@ -272,41 +274,72 @@ $forum_height: 120px
 .clear
   clear: both
 
+// single post
+
 .post
-  background: #01adef
+  background-image: -webkit-gradient(linear,left top,left bottom,from($main),to($second))
+  background-image: -webkit-linear-gradient(top,$main,$second)
+  background-image: -moz-linear-gradient(top,$main,$second)
+  background-image: -ms-linear-gradient(top,$main,$second)
+  background-image: -o-linear-gradient(top,$main,$second)
+  background-image: linear-gradient(top,$main,$second)
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.3)
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.3)
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.3)
+  border: 2px solid #fff
+  -webkit-border-top-right-radius: 20px
+  -moz-border-radius-topright: 20px
+  border-top-right-radius: 20px
   width: 94%
-  h1
-    font-size: 1.7em
   display: inline-block
-  padding: 20px 0 20px 20px
-  margin: 30px 0 0 2.4%
+  padding: 10px
+  margin: 15px 0 0 2.4%
   height: auto
+  a
+    color: #fff
   h2 a
-    font-size: 40px
+    font-size: 26px
     margin: 0
     color: #fff
-  span a
+  span a:link, span a:visited
     color: #fff
+  a:hover
     text-decoration: underline
   .by
+    font-size: 1.2em
     font-family: $fsecondary
     display: inline-block
-    margin: 5px 0 0 0
+    margin: -2px 0 0 0
   .updated_at
     margin: 0
     font-family: $fsecondary
     font-size: 14px
 
+// .post.full
+
+.firefox .post.full h1
+  width: 77%
+
 .post.full
+  -webkit-border-top-right-radius: 0
+  -moz-border-radius-topright: 0
+  border-top-right-radius: 0
   padding: 0 0 20px 0
   border: 5px solid $main
+  margin: 30px 0 0 2.4%
   h1
     width: 100%
     color: #fff
     font-size: 1.25em
     background: #01adef
     font-family: 'ChunkFiveRegular'
-    padding: 10px 0 5px 23%
+    @media screen and (min-width: 1600px)
+      padding: 5px 15px 5px 200px
+      padding: 5px 15px 5px 23%
+    @media screen and (max-width: 1600px)
+      padding: 5px 15px 5px 23%
+    @media screen and (max-width: 960px)
+      padding: 5px 15px 5px 5%
   p
     width: 70%
     color: #000
@@ -317,8 +350,15 @@ $forum_height: 120px
   .updated_at
     margin: 10px 30px 0 0
     float: right
-  .reply_btn
-    margin: 10px 0 0 2.4%
+    font-size: 17px
+  .reply
+    width: 71.7%
+    font-family: $fsecondary
+    font-size: 18px
+    cursor: pointer
+    border: none
+    border-radius: 3px
+    padding: 11px 26px
   .btn
     margin: 10px 30px 0 0
   width: 94%
@@ -342,6 +382,23 @@ $forum_height: 120px
   .edit
     clear: right
 
+.reply
+  margin: 20px 0 0 1.1%
+  display: none
+  label
+    margin: 0 0 5px 1.3%
+    color: #000
+    font-size: 42px
+
+.reply
+  input[type='submit']
+    display: inline-block
+    width: auto
+    margin: 15px 0 0 63%
+
+.reply_btn btn
+  margin: 15px 0 0 2.4%
+  display: inline-block
 .post_last
   .post
     margin: 0
@@ -349,12 +406,9 @@ $forum_height: 120px
 .text
   color: #fff
 
-
-.reply
-  display: none
-  +box
-
 // .help
+
+
 
 .help
   h2
@@ -364,6 +418,10 @@ $forum_height: 120px
     margin: 0 0 0 2.4%
     font-family: $fsecondary
 
+.role
+  margin: 0 0 0 2.5%
+  color: #01adef
+  font-size: 26px
 
 .icon
   margin: 0 0 0 2.4%
@@ -377,7 +435,6 @@ ul.icons li
     margin: 0 1% 0 0
     position: relative
     top: 7px
-
 
 .markdown_help
   margin: 10px 0 0 2.4%
@@ -427,7 +484,12 @@ ul.icons li
 
 #text
   border: 2px $main solid
+  margin: 0
+  width: 90%
+  padding: 5px
 
+#title
+  width: 90%
 
 #my_user
   h1
@@ -436,16 +498,25 @@ ul.icons li
     font-size: 42px
   img
     margin: 20px 0 0 2.5%
-    width: 20%
+    width: 220px
     height: auto
-
+  .role
+    margin: 15px 0 0 2.5%
 .signature
-  margin: 20px 0 0 2.5%
+  margin: 10px 0 0 0
   padding: 10px 3.6% 10px 3.6%
   font-size: 1.3em
-  background: #01adef
-  width: 25%
-  color: #fff
 
 textarea
   border: 2px solid $main
+
+#login_btn
+  display: inline-block
+  margin: 15px 0 0 2.4%
+
+#reply_btn
+  display: inline-block
+  margin: 15px 0 0 2.4%
+
+#diablo_id, #avatar, #signature
+  width: 70%

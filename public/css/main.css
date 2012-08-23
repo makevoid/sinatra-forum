@@ -5,25 +5,23 @@
   font-weight: normal;
   font-style: normal; }
 
-a {
-  text-decoration: none; }
-
-ul {
-  list-style-type: none; }
-
 * {
   margin: 0;
   padding: 0;
   font-weight: 300;
-  box-sizing: border-box; }
-
-body {
-  background: url("bg-pattern.png") repeat;
+  box-sizing: border-box;
   font-family: Rockwell;
   color: black; }
 
+body {
+  background: url("bg-pattern.png"); }
+
 a {
+  text-decoration: none;
   color: #01adef; }
+
+ul {
+  list-style-type: none; }
 
 a.btn, input[type='submit'] {
   font-family: Rockwell;
@@ -37,12 +35,11 @@ a.btn, input[type='submit'] {
   border-radius: 3px;
   padding: 11px 26px; }
 
-input[type='text'] {
-  border: 2px solid #01adef; }
+input[type='text'], input[type='password'] {
+  border: 2px solid #01adef;
+  padding: 10px; }
 
 input[type='submit'] {
-  margin: 10px 0 20px 0;
-  float: right;
   display: inline-block;
   width: auto; }
 
@@ -58,11 +55,6 @@ input[type='submit'] {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
   border: none; }
 
-.role {
-  margin: 0 0 0 2.5%;
-  color: #01adef;
-  font-size: 26px; }
-
 h1, nav.main {
   display: inline-block; }
 
@@ -75,7 +67,7 @@ nav.main {
     color: #01adef;
     font-family: Rockwell;
     font-size: 18px;
-    margin: 0 5px 0 0; }
+    margin: 0 0 0 10px; }
 
 nav.right {
   margin: 50px 28px 0 0; }
@@ -91,6 +83,8 @@ nav.right {
 nav.inpage {
   margin: 40px 2.4%;
   display: inline-block; }
+  nav.inpage .btn {
+    margin: 0 0 0 15px; }
 
 nav.alone {
   margin: 40px 0 0 2.4%;
@@ -100,12 +94,12 @@ header {
   margin: 0;
   padding: 0 0 30px 0;
   background: white; }
-  header h1 {
-    font-size: 64px;
-    font-family: "ChunkFiveRegular", Rockwell;
+  header .logo {
     margin: 45px 12px 0 2.4%; }
-    header h1 a:link, header h1 a:visited {
-      color: black; }
+    header .logo a:link, header .logo a:visited {
+      color: black;
+      font-size: 64px;
+      font-family: "ChunkFiveRegular", Rockwell; }
   header input[type='submit'] {
     margin: 0; }
 
@@ -136,7 +130,8 @@ header {
       color: white; }
   .user .role {
     margin: 0 0 0 7%;
-    color: black; }
+    color: black;
+    font-size: 18px; }
 
 label {
   font-size: 0.85em;
@@ -153,11 +148,15 @@ input, textarea {
 textarea {
   height: 400px; }
 
-.submit {
+.new_form .submit {
   width: 30%;
   clear: right; }
+.new_form #help_link {
+  margin: 15px 0 15px;
+  display: inline-block;
+  font-size: 21px; }
 
-.post_form input, .post_form textarea, .post_form .submit, .reply input, .reply textarea, .reply .submit {
+.post_form {
   width: 70%; }
 
 .content {
@@ -184,8 +183,7 @@ textarea {
   float: right; }
   .right .user_name {
     margin: 0 12px 0 0;
-    position: relative;
-    top: -15px; }
+    position: relative; }
     .right .user_name a {
       font-family: Rockwell;
       font-size: 18px;
@@ -206,18 +204,17 @@ textarea {
   .forum .forum_icon {
     float: left;
     border-right: 3px solid #01adef;
-    width: 10%; }
+    width: 100px; }
     .forum .forum_icon img {
-      margin: 25% 25%;
-      width: 50%;
-      height: auto; }
+      margin: 25%;
+      width: 50px; }
   .forum h1, .forum .info, .forum .last_post a {
     font-size: 18px; }
   .forum .name {
-    float: left; }
+    float: left;
+    margin: 0 0 0 0; }
   .forum h1 {
     display: block;
-    width: 55%;
     margin: 0;
     padding: 18px 0 0 20px;
     font-family: "ChunkFiveRegular", Rockwell; }
@@ -230,16 +227,30 @@ textarea {
     font-size: 14px;
     font-family: Rockwell; }
   .forum .info {
-    width: 35%;
-    margin: 0;
-    border-left: 3px #01adef solid;
-    padding: 18px 35px 0 18px;
+    margin: 0 0 0 20%;
+    border-left: 3px solid #01adef;
+    width: 45%;
+    float: left;
+    padding: 18px 0 0 18px;
     color: black;
-    font-family: Rockwell;
-    float: right; }
-    .forum .info .last_post a {
-      color: #01adef;
-      font-family: Rockwell; }
+    font-family: Rockwell; }
+    @media screen and (max-width: 1050px) {
+      .forum .info {
+        margin: 0 0 0 10%;
+        width: 44%; } }
+    @media screen and (max-width: 800px) {
+      .forum .info {
+        border-top: 3px solid #01adef;
+        clear: both;
+        width: 100%;
+        border-left: none;
+        margin: 0;
+        padding: 15px 15px 0 15px; } }
+    .forum .info .last_post {
+      width: 50%; }
+      .forum .info .last_post a {
+        color: #01adef;
+        font-family: Rockwell; }
 
 .updated_at {
   margin: 3px 0 0 0;
@@ -251,33 +262,54 @@ textarea {
   clear: both; }
 
 .post {
-  background: #01adef;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#01adef), to(#0084b0));
+  background-image: -webkit-linear-gradient(top, #01adef, #0084b0);
+  background-image: -moz-linear-gradient(top, #01adef, #0084b0);
+  background-image: -ms-linear-gradient(top, #01adef, #0084b0);
+  background-image: -o-linear-gradient(top, #01adef, #0084b0);
+  background-image: linear-gradient(top, #01adef, #0084b0);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  border-top-right-radius: 20px;
   width: 94%;
   display: inline-block;
-  padding: 20px 0 20px 20px;
-  margin: 30px 0 0 2.4%;
+  padding: 10px;
+  margin: 15px 0 0 2.4%;
   height: auto; }
-  .post h1 {
-    font-size: 1.7em; }
+  .post a {
+    color: white; }
   .post h2 a {
-    font-size: 40px;
+    font-size: 26px;
     margin: 0;
     color: white; }
-  .post span a {
-    color: white;
+  .post span a:link, .post span a:visited {
+    color: white; }
+  .post a:hover {
     text-decoration: underline; }
   .post .by {
+    font-size: 1.2em;
     font-family: Rockwell;
     display: inline-block;
-    margin: 5px 0 0 0; }
+    margin: -2px 0 0 0; }
   .post .updated_at {
     margin: 0;
     font-family: Rockwell;
     font-size: 14px; }
 
+.firefox .post.full h1 {
+  width: 77%; }
+
 .post.full {
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-topright: 0;
+  border-top-right-radius: 0;
   padding: 0 0 20px 0;
   border: 5px solid #01adef;
+  margin: 30px 0 0 2.4%;
   width: 94%;
   background: white;
   border: 2px solid #01adef; }
@@ -286,8 +318,17 @@ textarea {
     color: white;
     font-size: 1.25em;
     background: #01adef;
-    font-family: "ChunkFiveRegular";
-    padding: 10px 0 5px 23%; }
+    font-family: "ChunkFiveRegular"; }
+    @media screen and (min-width: 1600px) {
+      .post.full h1 {
+        padding: 5px 15px 5px 200px;
+        padding: 5px 15px 5px 23%; } }
+    @media screen and (max-width: 1600px) {
+      .post.full h1 {
+        padding: 5px 15px 5px 23%; } }
+    @media screen and (max-width: 960px) {
+      .post.full h1 {
+        padding: 5px 15px 5px 5%; } }
   .post.full p {
     width: 70%;
     color: black;
@@ -297,9 +338,16 @@ textarea {
     width: 65%; }
   .post.full .updated_at {
     margin: 10px 30px 0 0;
-    float: right; }
-  .post.full .reply_btn {
-    margin: 10px 0 0 2.4%; }
+    float: right;
+    font-size: 17px; }
+  .post.full .reply {
+    width: 71.7%;
+    font-family: Rockwell;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    padding: 11px 26px; }
   .post.full .btn {
     margin: 10px 30px 0 0; }
   .post.full .forum_name {
@@ -320,15 +368,28 @@ textarea {
   .post.full .edit {
     clear: right; }
 
+.reply {
+  margin: 20px 0 0 1.1%;
+  display: none; }
+  .reply label {
+    margin: 0 0 5px 1.3%;
+    color: black;
+    font-size: 42px; }
+
+.reply input[type='submit'] {
+  display: inline-block;
+  width: auto;
+  margin: 15px 0 0 63%; }
+
+.reply_btn btn {
+  margin: 15px 0 0 2.4%;
+  display: inline-block; }
+
 .post_last .post {
   margin: 0; }
 
 .text {
   color: white; }
-
-.reply {
-  display: none;
-  padding: 5px 1.5% 10px; }
 
 .help h2 {
   margin: 40px 0 6px 2.4%;
@@ -336,6 +397,11 @@ textarea {
 .help p {
   margin: 0 0 0 2.4%;
   font-family: Rockwell; }
+
+.role {
+  margin: 0 0 0 2.5%;
+  color: #01adef;
+  font-size: 26px; }
 
 .icon {
   margin: 0 0 0 2.4%; }
@@ -395,7 +461,13 @@ ul.icons li {
   color: #1e781e; }
 
 #text {
-  border: 2px #01adef solid; }
+  border: 2px #01adef solid;
+  margin: 0;
+  width: 90%;
+  padding: 5px; }
+
+#title {
+  width: 90%; }
 
 #my_user h1 {
   margin: 65px 0 0 2.5%;
@@ -403,16 +475,26 @@ ul.icons li {
   font-size: 42px; }
 #my_user img {
   margin: 20px 0 0 2.5%;
-  width: 20%;
+  width: 220px;
   height: auto; }
+#my_user .role {
+  margin: 15px 0 0 2.5%; }
 
 .signature {
-  margin: 20px 0 0 2.5%;
+  margin: 10px 0 0 0;
   padding: 10px 3.6% 10px 3.6%;
-  font-size: 1.3em;
-  background: #01adef;
-  width: 25%;
-  color: white; }
+  font-size: 1.3em; }
 
 textarea {
   border: 2px solid #01adef; }
+
+#login_btn {
+  display: inline-block;
+  margin: 15px 0 0 2.4%; }
+
+#reply_btn {
+  display: inline-block;
+  margin: 15px 0 0 2.4%; }
+
+#diablo_id, #avatar, #signature {
+  width: 70%; }
