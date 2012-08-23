@@ -216,8 +216,10 @@ textarea {
   .forum h1 {
     display: block;
     margin: 0;
-    padding: 18px 0 0 20px;
-    font-family: "ChunkFiveRegular", Rockwell; }
+    padding: 30px 0 0 20px; }
+    .forum h1 a {
+      font-family: "ChunkFiveRegular", Rockwell;
+      font-size: 24px; }
   .forum .post_count {
     margin: 0 0 0 20px;
     font-size: 14px;
@@ -231,7 +233,7 @@ textarea {
     border-left: 3px solid #01adef;
     width: 45%;
     float: left;
-    padding: 18px 0 0 18px;
+    padding: 30px 0 0 18px;
     color: black;
     font-family: Rockwell; }
     @media screen and (max-width: 1050px) {
@@ -272,9 +274,6 @@ textarea {
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
   border: 2px solid white;
-  -webkit-border-top-right-radius: 20px;
-  -moz-border-radius-topright: 20px;
-  border-top-right-radius: 20px;
   width: 94%;
   display: inline-block;
   padding: 10px;
@@ -304,9 +303,6 @@ textarea {
   width: 77%; }
 
 .post.full {
-  -webkit-border-top-right-radius: 0;
-  -moz-border-radius-topright: 0;
-  border-top-right-radius: 0;
   padding: 0 0 20px 0;
   border: 5px solid #01adef;
   margin: 30px 0 0 2.4%;
@@ -318,7 +314,7 @@ textarea {
     color: white;
     font-size: 1.25em;
     background: #01adef;
-    font-family: "ChunkFiveRegular"; }
+    font-family: Rockwell; }
     @media screen and (min-width: 1600px) {
       .post.full h1 {
         padding: 5px 15px 5px 200px;
