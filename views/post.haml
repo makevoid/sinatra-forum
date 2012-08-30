@@ -8,7 +8,7 @@
   = partial :post_full, reply
 
 - if logged_in?
-  - link_to "Reply", "javascript:void(0)", class: "reply_btn", id: "reply", class: "btn"
+  - link_to "Reply", "javascript:void(0)", class: "reply_btn"
 - else
   - link_to "Login", "/login", id: "login_btn", class: "btn"
   to reply

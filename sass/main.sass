@@ -138,11 +138,11 @@ header
   .name
     a
       color: #fff
-    margin: 30px 0 0 7%
+    padding: 30px 10% 0 10%
     font-family: $webfont
     font-size: 22px
   .role
-    margin: 0 0 0 7%
+    padding: 0 10% 0 8%
     color: #000
     font-size: 18px
 label
@@ -163,10 +163,13 @@ textarea
   .submit
     width: 30%
     clear: right
-  #help_link
-    margin: 15px 0 15px
-    display: inline-block
-    font-size: 21px
+
+#help_link
+  margin: 15px 0 15px 1.1%
+  display: inline-block
+  padding: 15px 0 15px 0
+  font-size: 21px
+  margin: 0 0 0 1.1%
 
 .post_form
   width: 70%
@@ -204,8 +207,12 @@ textarea
     display: inline-block
 
 #container
-  width: 80%
+  width: 75%
   margin: 0px auto
+  @media screen and (max-width: 1024px)
+    width: 90%
+  @media screen and (max-width: 500px)
+    width: 95%
 
 $forum_height: 120px
 
@@ -380,7 +387,7 @@ $forum_height: 120px
     clear: right
 
 .reply
-  margin: 20px 0 0 1.1%
+  padding: 20px 0 0 1.1%
   display: none
   label
     margin: 0 0 5px 1.3%
@@ -393,9 +400,32 @@ $forum_height: 120px
     width: auto
     margin: 15px 0 0 63%
 
-.reply_btn btn
+.reply_btn
   margin: 15px 0 0 2.4%
   display: inline-block
+  font-family: $fsecondary
+  font-size: 18px
+  cursor: pointer
+  background-color: $main
+  color: #fff
+  border: none
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  padding: 11px 26px
+
+.reply_btn:hover
+  background-image: -webkit-gradient(linear,left top,left bottom,from($main),to($second))
+  background-image: -webkit-linear-gradient(top,$main,$second)
+  background-image: -moz-linear-gradient(top,$main,$second)
+  background-image: -ms-linear-gradient(top,$main,$second)
+  background-image: -o-linear-gradient(top,$main,$second)
+  background-image: linear-gradient(top,$main,$second)
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.3)
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.3)
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.3)
+  border: none
+
 .post_last
   .post
     margin: 0
@@ -481,8 +511,8 @@ ul.icons li
 
 #text
   border: 2px $main solid
-  margin: 0
-  width: 90%
+  margin: 0 0 0 1.3%
+  width: 80%
   padding: 5px
 
 #title
@@ -511,9 +541,9 @@ textarea
   display: inline-block
   margin: 15px 0 0 2.4%
 
-.reply
+/* .reply
   display: inline-block
   margin: 15px 0 0 2.4%
-
+/*
 #diablo_id, #avatar, #signature
   width: 70%
