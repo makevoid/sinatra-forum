@@ -68,6 +68,11 @@ class Sinforum < Sinatra::Base
     request.path.split("/")[num_split] == "new" || @route == :new
   end
 
+  def route_class
+    split = request.path.split("/")
+    "#{split[1]} #{split[2]}" if split
+  end
+
   def user_agent_class
     case request.user_agent
     when /firefox/i then "firefox"
@@ -77,7 +82,7 @@ class Sinforum < Sinatra::Base
     when /ipad/i    then "ipad"
     when /opera/i   then "opera"
     when /android/i then "android"
-    when /safari/i  then "safari" 
+    when /safari/i  then "safari"
     end
   end
 end

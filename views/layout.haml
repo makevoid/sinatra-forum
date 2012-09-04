@@ -11,7 +11,7 @@
     %meta{ property: "og:site_name", content: "BIT Forum" }/
     %meta{ property: "og:image", content: "/images/sinforum.png" }/
     %meta{ property: "fb:admins", content: "makevoid" }/
-  %body{ class: user_agent_class }
+  %body{ class: "#{route_class} #{user_agent_class}" }
     #container
       %header
         %nav.right
