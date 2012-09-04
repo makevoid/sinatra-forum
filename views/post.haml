@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %nav.alone
   - link_to "< back to #{@forum.name}", "/forums/#{@forum.id}", class: "btn"
   -# link_to "last reply", "javascript:void(0)", class: "btn"
@@ -21,4 +22,29 @@
     - submit "Save"
 
     - link_to "Help", "/help", id: "help_link"
+=======
+%nav.alone
+  - link_to "< back to #{@forum.name}", "/forums/#{@forum.id}", class: "btn"
+  -# link_to "last reply", "javascript:void(0)", class: "btn"
+
+= partial :post_full, @post
+
+- @replies.each do |reply|
+  = partial :post_full, reply
+
+- if logged_in?
+  - link_to "Reply", "javascript:void(0)", class: "reply_btn btn"
+- else
+  - link_to "Login", "/login"
+  to reply
+
+.reply
+  - @reply = Post.new params[:post]
+  %form{ action: "/posts/#{@post.id}/reply", method: "post" }
+    = textarea  @reply, :text, label: "Reply:"
+
+    - submit "Save"
+
+  - link_to "Help", "/help"
+>>>>>>> 65ca7714f0dde0674c7911908a057ff8835c6415
   .clear

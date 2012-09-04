@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %html
   %head
     %title Sinforum
@@ -36,3 +37,41 @@
           %div{ class: type }= message
 
       %section.content= yield
+=======
+%html
+  %head
+    %title Sinforum
+    %meta{ :"http-equiv" => "Content-Type", content: "text/html; charset=UTF-8" }
+    %link{ rel: "stylesheet", href: "/css/main.css" }
+    %script{ type: "text/javascript", src: "/js/vendor/zepto.js" }
+    %script{ type: "text/javascript", src: "/js/main.js" }
+    %meta{ property: "og:title", content: "BIT Forum" }
+    %meta{ property: "og:url", content: "http://bitclan.it" }/
+    %meta{ property: "og:type", content: "website" }/
+    %meta{ property: "og:site_name", content: "BIT Forum" }/
+    %meta{ property: "og:image", content: "/images/sinforum.png" }/
+    %meta{ property: "fb:admins", content: "makevoid" }/
+  %body{ class: user_agent_class }
+    #container
+      %header
+        %nav.right
+          - if logged_in?
+            .user_name
+              %a{ href: "/users/#{current_user.id}" }= current_user.username
+            %form{ action: "/logout", method: "post" }
+              %input{ type: "submit", value: "Logout" }
+          - else
+            %a.btn{ href: "/login" } Login
+            or
+            %a.btn{ href: "/register" } Register
+        %h1
+          - link_to "Sinforum", "/"
+        %nav.main
+          %a.btn{ href: "/forums" } Forums
+          %a.btn{ href: "/users" } Users
+      .flashes
+        - flash.each do |type, message|
+          %div{ class: type }= message
+
+      %section.content= yield
+>>>>>>> 65ca7714f0dde0674c7911908a057ff8835c6415
