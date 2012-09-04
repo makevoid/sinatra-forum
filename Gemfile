@@ -38,6 +38,7 @@ group :development do
   gem "guard"
   gem "guard-sass"
   gem "guard-coffeescript"
+  gem "guard-livereload"
   gem 'growl'
 end
 # group :acceptance_test do
