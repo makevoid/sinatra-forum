@@ -1,12 +1,19 @@
 .forum
-  %h1
-    - link_to forum.name, "/forums/#{forum.id}"
 
-  (#{forum.posts_count} posts)
-  
+  .forum_icon
+    %img(src="./images/discussion.png")
+
+  .name
+    %h1
+      - link_to forum.name, "/forums/#{forum.id}"
+
+    %p.post_count Post numbers: (#{forum.posts_count} posts)
+
   - unless forum.empty?
     .info
       last post:
       %span.last_post
         - link_to forum.last_post.title, "/posts/#{forum.last_post.id}"
+      %br
       %span.updated_at= forum.updated_at.formatted
+  .clear

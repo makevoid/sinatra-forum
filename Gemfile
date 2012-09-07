@@ -4,7 +4,11 @@ gem "sinatra"
 gem "json"
 
 gem "dm-core"
-gem "dm-mysql-adapter"
+if RUBY_PLATFORM =~ /win32|mingw/
+  gem "dm-sqlite-adapter"
+else
+  gem "dm-mysql-adapter"
+end
 gem "dm-migrations"
 gem "dm-validations"
 gem "dm-types"
@@ -28,12 +32,14 @@ group :test do
 end
 
 group :development do
+  gem "eventmachine", "~> 1.0.0.rc.4"
   gem "capistrano"
   gem "foreman"
   gem "rerun"
   gem "guard"
   gem "guard-sass"
   gem "guard-coffeescript"
+  gem "guard-livereload"
   gem 'growl'
 end
 # group :acceptance_test do

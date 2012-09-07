@@ -4,6 +4,7 @@
   %span.by
     by
     - link_to post.author.username, "/users/#{post.author.id}"
+  %br
   %span.updated_at
-    %span at 
+    %span at
     = post.updated_at.formatted

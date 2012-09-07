@@ -1,160 +1,148 @@
-a {
-  text-decoration: none; }
+@font-face {
+  font-family: "Rockwell";
+  src: url("/fonts/Rockwell.otf") format("otf"), url("/fonts/Rockwell.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 
-ul {
-  list-style-type: none; }
+@font-face {
+  font-family: "ChunkFiveRegular";
+  src: url("/fonts/Chunkfive-webfont.eot");
+  src: url("/fonts/Chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/Chunkfive-webfont.woff") format("woff"), url("/fonts/Chunkfive-webfont.ttf") format("truetype"), url("/fonts/Chunkfive-webfont.svg#ChunkFiveRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  font-weight: 300;
+  box-sizing: border-box;
+  font-family: Rockwell;
+  color: black; }
 
 body {
-  background: #d9d9d9;
-  background: url(/images/d3c.png) no-repeat #d9d9d9;
-  background-size: 100%;
-  font-family: Georgia, Verdana, Arial;
-  color: #111111; }
+  background: url("/images/bg-pattern.png"); }
 
 a {
-  color: #dd0000; }
+  text-decoration: none;
+  color: #01adef; }
 
-a:hover {
-  color: #ff1111; }
+ul {
+  list-style-type: none; }
 
-a.btn {
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.9em;
-  padding: 3px 10px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999;
+a.btn, input[type='submit'] {
+  font-family: Rockwell;
+  font-size: 18px;
   cursor: pointer;
-  background: #dd0000;
-  color: white; }
+  background-color: #01adef;
+  color: white;
+  border: none;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 11px 26px; }
 
-a.btn:hover {
-  border: 1px solid #cccccc;
-  border-top: 1px solid #888888;
-  box-shadow: 0px 0px 4px white;
-  background: white;
-  color: #dd0000; }
+input[type='text'], input[type='password'] {
+  border: 2px solid #01adef;
+  padding: 10px; }
+
+input[type='submit'] {
+  display: inline-block;
+  width: auto; }
+
+.btn:hover, input[type='submit']:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#01adef), to(#0084b0));
+  background-image: -webkit-linear-gradient(top, #01adef, #0084b0);
+  background-image: -moz-linear-gradient(top, #01adef, #0084b0);
+  background-image: -ms-linear-gradient(top, #01adef, #0084b0);
+  background-image: -o-linear-gradient(top, #01adef, #0084b0);
+  background-image: linear-gradient(top, #01adef, #0084b0);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  border: none; }
 
 h1, nav.main {
   display: inline-block; }
 
-h1 {
-  text-shadow: 2px 1px 1px white; }
-
 nav.main {
-  margin: 0 0 20px 1%;
-  position: relative;
-  top: -4px; }
+  position: relative; }
+  nav.main a.btn {
+    margin: 45px 28px 0 0;
+    display: inline-block; }
+  nav.main a {
+    color: #01adef;
+    font-family: Rockwell;
+    font-size: 18px;
+    margin: 0 0 0 10px; }
 
 nav.right {
-  margin: 10px 0 0; }
+  margin: 50px 28px 0 0; }
+  nav.right input {
+    border: none; }
+
+#register {
+  margin: 15px 8px 0 0;
+  text-align: center; }
+  #register a:link {
+    text-decoration: underline; }
 
 nav.inpage {
-  margin: 0 0 15px;
-  display: inline-block;
-  margin: 0 0 0 10px;
-  position: relative;
-  top: -3px; }
+  margin: 40px 2.4%;
+  display: inline-block; }
+  nav.inpage .btn {
+    margin: 0 0 0 15px; }
 
 nav.alone {
-  margin: 0 0 15px; }
+  margin: 40px 0 0 2.4%;
+  display: inline-block; }
 
-header h1 {
-  font-size: 2.2em;
-  text-shadow: 1px 1px 1px white, 1px 1px 4px #222222; }
-header input[type='submit'] {
-  margin: 0; }
+header {
+  margin: 0;
+  padding: 0 0 30px 0;
+  background: white; }
+  header .logo {
+    margin: 45px 12px 0 2.4%; }
+    header .logo a:link, header .logo a:visited {
+      color: black;
+      font-size: 64px;
+      font-family: "ChunkFiveRegular", Rockwell; }
+  header input[type='submit'] {
+    margin: 0; }
 
-h1 {
-  margin: 0 0 10px 0; }
-
-.post h1 {
-  font-size: 1.7em; }
+.validations {
+  margin: 0 0 0 2.4%; }
+  .validations p {
+    color: red;
+    margin: 4px 0 0 0; }
 
 .post, .forum, .user {
-  margin: 0 0 10px 0;
-  background: rgba(255, 255, 255, 0.9);
-  background: linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  padding: 5px 1.5% 10px;
-  -moz-border-radius: 12px;
-  -o-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999; }
+  margin: 0 0 10px 0; }
 
-.posts .post, .forums .forum, .users .user {
-  cursor: pointer; }
-  .posts .post:hover, .forums .forum:hover, .users .user:hover {
-    background: rgba(180, 180, 180, 0.8);
-    background: linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -o-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -moz-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -webkit-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(180, 180, 180, 0.8)), color-stop(0, rgba(255, 255, 255, 0.9)));
-    background: -ms-linear-gradient(top, rgba(180, 180, 180, 0.8), rgba(255, 255, 255, 0.9));
-    border: 1px solid #cccccc;
-    border-top: 1px solid #888888;
-    box-shadow: 0px 0px 4px white; }
-
-.users .user a {
-  font-weight: bold;
+.user {
+  background: #01adef;
+  width: 20%;
+  height: auto;
+  padding: 0px 0 15px 0;
+  margin: 30px 0 0 2.4%;
   display: inline-block; }
-.users .user .name {
-  display: inline-block;
-  position: relative;
-  top: -14px;
-  margin: 0 0 0 0.7%; }
-.users .user .role {
-  float: right; }
-.users .user .avatar {
-  width: 40px;
-  -moz-border-radius: 5px;
-  -o-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  margin: 6px 0 0 0; }
-
-.user h2 {
-  margin: 20px 0 10px 0; }
-.user .title a {
-  font-weight: bold; }
-.user .avatar {
-  margin: 3px 1.3% 0 0;
-  width: 128px;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px; }
-.user .info {
-  margin: 10px 0 0; }
-.user .signature {
-  margin: 10px 0 0; }
-.user .avatar {
-  float: left; }
+  .user img {
+    padding: 20px 0 0 0;
+    margin: 0 0 0 10%;
+    width: 80%; }
+  .user .name {
+    padding: 30px 10% 0 10%;
+    font-family: "ChunkFiveRegular", Rockwell;
+    font-size: 22px; }
+    .user .name a {
+      color: white; }
+  .user .role {
+    padding: 0 10% 0 8%;
+    color: black;
+    font-size: 18px; }
 
 label {
   font-size: 0.85em;
-  font-weight: bold;
   margin: 0 0 4px;
   display: block; }
 
@@ -162,137 +150,301 @@ input, textarea {
   font-size: 1.1em;
   display: block;
   margin: 0 0 15px;
-  padding: 2px 5px;
-  width: 30%; }
+  padding: 2px 5px; }
 
 textarea {
-  height: 400px; }
+  height: 400px;
+  width: 80%; }
 
-.submit {
+.new_form .submit {
   width: 30%;
   clear: right; }
 
-.post_form input, .post_form textarea, .post_form .submit, .reply input, .reply textarea, .reply .submit {
+#help_link {
+  margin: 15px 0 15px 1.1%;
+  display: inline-block;
+  padding: 15px 0 15px 0;
+  font-size: 21px;
+  margin: 0 0 0 1.1%; }
+
+.post_form {
   width: 70%; }
 
-input[type='submit'] {
-  margin: 10px 0 20px 0;
-  font-size: 1.2em;
-  width: auto;
-  float: right;
-  display: inline-block;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.9em;
-  padding: 3px 10px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999;
-  cursor: pointer;
-  background: #dd0000;
-  color: white;
-  font-family: Georgia, Verdana, Arial; }
-  input[type='submit']:hover {
-    border: 1px solid #cccccc;
-    border-top: 1px solid #888888;
-    box-shadow: 0px 0px 4px white;
-    background: white;
-    color: #dd0000; }
+.content {
+  background: white;
+  margin: 20px 0 0 0;
+  padding: 0 0 100px 0; }
+  .content h1 {
+    color: #01adef;
+    font-size: 18px; }
+  .content .title_form {
+    margin: 65px 0 0 2.5%;
+    color: black;
+    font-size: 42px; }
 
-.clear {
-  clear: both; }
+.new_form {
+  margin: 27px 0 0 24px; }
+  .new_form label {
+    font-family: Rockwell;
+    font-size: 18px; }
+  .new_form input, .new_form .sign {
+    width: auto; }
 
 .right {
   float: right; }
   .right .user_name {
     margin: 0 12px 0 0;
-    position: relative;
-    top: -6px; }
+    position: relative; }
+    .right .user_name a {
+      font-family: Rockwell;
+      font-size: 18px;
+      text-decoration: underline; }
   .right form, .right .user_name {
     display: inline-block; }
 
 #container {
-  width: 92%;
-  margin: 20px auto; }
+  width: 75%;
+  margin: 0px auto; }
+  @media screen and (max-width: 1024px) {
+    #container {
+      width: 90%; } }
+  @media screen and (max-width: 500px) {
+    #container {
+      width: 95%; } }
 
-.forum .info {
-  font-size: 0.75em; }
-  .forum .info .last_post a {
-    font-size: 1.3em;
-    font-weight: bold; }
-  .forum .info .updated_at {
-    font-weight: bold;
-    font-size: 1em; }
+.forum {
+  margin: 0 2.4% 38px 2.4%;
+  border: 3px #01adef solid; }
+  .forum .forum_icon, .forum .info, .forum .name {
+    display: inline-block;
+    height: 120px; }
+  .forum .forum_icon {
+    float: left;
+    border-right: 3px solid #01adef;
+    width: 100px; }
+    .forum .forum_icon img {
+      margin: 25%;
+      width: 50px; }
+  .forum h1, .forum .info, .forum .last_post a {
+    font-size: 18px; }
+  .forum .name {
+    float: left;
+    margin: 0 0 0 0; }
+  .forum h1 {
+    display: block;
+    margin: 0;
+    padding: 30px 0 0 20px; }
+    .forum h1 a {
+      font-family: "ChunkFiveRegular", Rockwell;
+      font-size: 24px; }
+  .forum .post_count {
+    margin: 0 0 0 20px;
+    font-size: 14px;
+    font-family: Rockwell; }
+  .forum .visitors_count {
+    margin: 0 0 0 20px;
+    font-size: 14px;
+    font-family: Rockwell; }
+  .forum .info {
+    margin: 0 0 0 20%;
+    border-left: 3px solid #01adef;
+    width: 45%;
+    float: left;
+    padding: 30px 0 0 18px;
+    color: black;
+    font-family: Rockwell; }
+    @media screen and (max-width: 1050px) {
+      .forum .info {
+        margin: 0 0 0 10%;
+        width: 44%; } }
+    @media screen and (max-width: 800px) {
+      .forum .info {
+        border-top: 3px solid #01adef;
+        clear: both;
+        width: 100%;
+        border-left: none;
+        margin: 0;
+        padding: 15px 15px 0 15px; } }
+    .forum .info .last_post {
+      width: 50%; }
+      .forum .info .last_post a {
+        color: #01adef;
+        font-family: Rockwell; }
 
-.posts .post .updated_at {
-  font-size: 0.9em;
-  font-weight: bold; }
-  .posts .post .updated_at span {
-    font-weight: normal; }
+.updated_at {
+  margin: 3px 0 0 0;
+  font-size: 13px;
+  display: inline-block;
+  font-family: "ChunkFiveRegular", Rockwell; }
 
-.post.full .forum_name {
-  margin: 0 0 4px 0; }
-.post.full .updated_at {
-  float: right;
-  font-weight: bold;
-  margin: 0 0 5px 0; }
-.post.full .by {
-  float: left;
-  text-align: center;
-  margin: 0.5% 1.1% 0 0; }
-  .post.full .by img {
-    display: block; }
-.post.full .avatar {
-  width: 80px;
-  -moz-border-radius: 7px;
-  -o-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
-  border: 1px solid #777777; }
-.post.full .edit {
-  clear: right; }
-.post.full .text {
-  float: left; }
+.clear {
+  clear: both; }
 
-.post .text h1, .post .text h2, .post .text h3 {
-  margin: 12px 0 4px; }
-.post .text h1 {
-  font-size: 1.4em; }
-.post .text h2 {
-  font-size: 1.3em; }
-.post .text h3 {
-  font-size: 1.2em; }
+.post {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#01adef), to(#0084b0));
+  background-image: -webkit-linear-gradient(top, #01adef, #0084b0);
+  background-image: -moz-linear-gradient(top, #01adef, #0084b0);
+  background-image: -ms-linear-gradient(top, #01adef, #0084b0);
+  background-image: -o-linear-gradient(top, #01adef, #0084b0);
+  background-image: linear-gradient(top, #01adef, #0084b0);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+  width: 94%;
+  display: inline-block;
+  padding: 10px;
+  margin: 15px 0 0 2.4%;
+  height: auto; }
+  .post a {
+    color: white; }
+  .post h2 a {
+    font-size: 26px;
+    margin: 0;
+    color: white; }
+  .post span a:link, .post span a:visited {
+    color: white; }
+  .post a:hover {
+    text-decoration: underline; }
+  .post .by {
+    font-size: 1.2em;
+    font-family: Rockwell;
+    display: inline-block;
+    margin: -2px 0 0 0; }
+  .post .updated_at {
+    margin: 0;
+    font-family: Rockwell;
+    font-size: 14px; }
+
+.firefox .post.full h1 {
+  width: 77%; }
+
+.post.full {
+  padding: 0 0 20px 0;
+  border: 5px solid #01adef;
+  margin: 30px 0 0 2.4%;
+  width: 94%;
+  background: white;
+  border: 2px solid #01adef; }
+  .post.full h1 {
+    width: 100%;
+    color: white;
+    font-size: 1.25em;
+    background: #01adef;
+    font-family: Rockwell; }
+    @media screen and (min-width: 1600px) {
+      .post.full h1 {
+        padding: 5px 15px 5px 200px;
+        padding: 5px 15px 5px 23%; } }
+    @media screen and (max-width: 1600px) {
+      .post.full h1 {
+        padding: 5px 15px 5px 23%; } }
+    @media screen and (max-width: 960px) {
+      .post.full h1 {
+        padding: 5px 15px 5px 5%; } }
+  .post.full p {
+    width: 70%;
+    color: black;
+    margin: 33px 0 0 15px;
+    font-family: Helvetica;
+    float: left;
+    width: 65%; }
+  .post.full .updated_at {
+    margin: 10px 30px 0 0;
+    float: right;
+    font-size: 17px; }
+  .post.full .reply {
+    width: 71.7%;
+    font-family: Rockwell;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 11px 26px; }
+  .post.full .btn {
+    margin: 10px 30px 0 0; }
+  .post.full .forum_name {
+    margin: 0 0 4px 0; }
+  .post.full .by {
+    float: left;
+    text-align: center;
+    margin: 1% 1.1% 0 0; }
+    .post.full .by img {
+      display: block;
+      width: 155px;
+      border: 2px solid #01adef;
+      margin: 10px 0 0 18px; }
+    .post.full .by a:link, .post.full .by a:visited {
+      margin: 0 0 0 15px;
+      font-family: "ChunkFiveRegular", Rockwell;
+      color: #01adef; }
+  .post.full .edit {
+    clear: right; }
 
 .reply {
-  display: none;
-  background: rgba(255, 255, 255, 0.9);
-  background: linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(1, rgba(255, 255, 255, 0.9)), color-stop(0, rgba(210, 210, 210, 0.7)));
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(210, 210, 210, 0.7));
-  padding: 5px 1.5% 10px;
-  -moz-border-radius: 12px;
-  -o-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  border: 1px solid #888888;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #aaaaaa;
-  border-top: 1px solid #cccccc;
-  box-shadow: 1px 1px 3px #999999; }
+  padding: 20px 0 0 0;
+  display: none; }
+  .reply label {
+    margin: 0 0 5px 0;
+    color: black;
+    font-size: 42px; }
+
+.reply form {
+  margin: 0 0 0 3.5%; }
+  .reply form input[type='submit'] {
+    display: inline-block;
+    width: auto;
+    margin: 15px 0 0 63%; }
+
+.reply_btn {
+  margin: 15px 0 0 2.4%;
+  display: inline-block;
+  font-family: Rockwell;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #01adef;
+  color: white;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 11px 26px; }
+
+.reply_btn:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#01adef), to(#0084b0));
+  background-image: -webkit-linear-gradient(top, #01adef, #0084b0);
+  background-image: -moz-linear-gradient(top, #01adef, #0084b0);
+  background-image: -ms-linear-gradient(top, #01adef, #0084b0);
+  background-image: -o-linear-gradient(top, #01adef, #0084b0);
+  background-image: linear-gradient(top, #01adef, #0084b0);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  border: none; }
+
+.post_last .post {
+  margin: 0; }
+
+.text {
+  color: white; }
 
 .help h2 {
-  margin: 10px 0 6px 0; }
+  margin: 40px 0 6px 2.4%;
+  color: #01adef; }
+.help p {
+  margin: 0 0 0 2.4%;
+  font-family: Rockwell; }
+
+.role {
+  margin: 0 0 0 2.5%;
+  color: #01adef;
+  font-size: 26px; }
 
 .icon {
-  width: 25px; }
+  margin: 0 0 0 2.4%; }
 
 ul.icons li {
   display: inline-block;
@@ -305,7 +457,8 @@ ul.icons li {
     top: 7px; }
 
 .markdown_help {
-  margin: 10px 0 0 0; }
+  margin: 10px 0 0 2.4%;
+  width: 62.3%; }
   .markdown_help li div {
     font-size: 0.85em;
     width: 220px;
@@ -325,6 +478,9 @@ ul.icons li {
 .form_info {
   margin: 0 0 10px 0; }
 
+.avatar img {
+  border: 3px solid #01adef; }
+
 .avatars {
   margin: 0 0 20px 0;
   display: none; }
@@ -336,16 +492,67 @@ ul.icons li {
   display: inline-block;
   margin: 0 0 10px 0;
   padding: 4px 2% 6px;
-  background: rgba(200, 200, 200, 0.5);
-  -moz-border-radius: 10px;
-  -o-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px; }
+  background: rgba(200, 200, 200, 0.5); }
 .flashes .alert {
-  background: rgba(240, 240, 150, 0.7);
-  color: #78781e;
-  border: 1px solid rgba(120, 120, 30, 0.3); }
+  background: black;
+  color: red; }
 .flashes .notice {
   background: rgba(200, 255, 200, 0.5);
-  color: #1e781e;
-  border: 1px solid rgba(30, 120, 30, 0.3); }
+  color: #1e781e; }
+
+.new_form input, .new_form textarea {
+  width: 60%; }
+
+.post_form input, .post_form textarea {
+  width: 80%; }
+
+#text {
+  border: 2px #01adef solid;
+  padding: 5px; }
+
+#my_user {
+  padding: 0 0 0 2.5%; }
+  #my_user h1 {
+    margin: 65px 0 0 0;
+    color: black;
+    font-size: 42px; }
+  #my_user img {
+    margin: 20px 0 0 0;
+    width: 220px;
+    height: auto; }
+  #my_user .role {
+    margin: 15px 0 0 0; }
+  #my_user .title_form {
+    margin: 0; }
+
+.signature {
+  margin: 10px 0 0 0;
+  padding: 10px 3.6% 10px 3.6%;
+  font-size: 1.3em; }
+
+textarea {
+  border: 2px solid #01adef; }
+
+#login_btn {
+  display: inline-block;
+  margin: 15px 0 0 2.4%; }
+
+/* .reply
+ * display: inline-block
+ * margin: 15px 0 0 2.4% */
+/* */
+#diablo_id, #avatar, #signature {
+  width: 70%; }
+
+.icon {
+  width: 25px; }
+
+ul.icons li {
+  display: inline-block;
+  width: 16%;
+  min-width: 150px;
+  margin: 5px 0 0 2.4%; }
+  ul.icons li img {
+    margin: 0 1% 0 0;
+    position: relative;
+    top: 7px; }

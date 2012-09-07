@@ -7,7 +7,7 @@
 
 .clear
 
-%h2 Last Posts
+%h2.title_form Last Posts
 %ul.posts.last
   - @user.posts_lasts.each do |post|
     = partial :post_last, post
