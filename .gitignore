@@ -3,3 +3,4 @@ public/images/icons/*.gif
 *.sql
 config/*.sqlite
 Thumbs.db
+.bundle/config

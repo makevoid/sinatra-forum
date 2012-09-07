@@ -30,7 +30,7 @@ example:
 
 - install dependencies
 
-    bundle
+    bundle --without test
 
 - automigrate and apply seeds (includes icon files unpacking)
 

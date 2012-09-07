@@ -3,6 +3,7 @@ APP = "sinforum"
 
 windows_dev_only = RUBY_PLATFORM =~ /win32|mingw/
 bundler_require = !windows_dev_only
+bundler_require = true
 
 require "bundler/setup"
 if bundler_require

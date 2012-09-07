@@ -32,6 +32,7 @@ group :test do
 end
 
 group :development do
+  gem "eventmachine", "~> 1.0.0.rc.4"
   gem "capistrano"
   gem "foreman"
   gem "rerun"
