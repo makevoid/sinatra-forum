@@ -36,7 +36,9 @@ try it and send feedback to [@makevoid](http://francescocanessa.com)
 
 ![](http://behance.vo.llnwd.net/profiles6/876337/projects/5076079/f6c6ff9d0815e62aad366193025be4b6.jpg)
 
-Salvatore
+made by @saver1991 
+
+[full article on behance](http://www.behance.net/gallery/Sinforum-Template-Redesign/5076079)
 
 suggestions for layout names are well accepted :)
 
