@@ -19,6 +19,28 @@ Example of a Diablo III styled forum: http://bitclan.it (branch bit)
 try it and send feedback to [@makevoid](http://francescocanessa.com)
 
 
+### Layouts:
+
+- current default (default style)
+
+![](http://uploads.makevoid.com/sinforum_layout_default.png)
+
+![](http://uploads.makevoid.com/sinforum_post_view.png)
+
+
+- current default (diablo3 style) [bit branch]
+
+![](http://uploads.makevoid.com/bitforum_layout.png)
+
+- future default [default_layout branch]
+
+![](http://behance.vo.llnwd.net/profiles6/876337/projects/5076079/f6c6ff9d0815e62aad366193025be4b6.jpg)
+
+Salvatore
+
+suggestions for layout names are well accepted :)
+
+
 ### Installation
 
 - download / clone the project and cd into the directory
