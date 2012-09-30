@@ -32,9 +32,10 @@ group :development do
   gem "foreman"
   gem "rerun"
   gem "guard"
-  gem "guard-sass"
+  gem "guard-sass", require: false, git: "git@github.com:hawx/guard-sass"
   gem "guard-coffeescript"
   gem 'growl'
+  gem 'rb-inotify'
 end
 # group :acceptance_test do
 #   gem "capybara"

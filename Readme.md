@@ -47,6 +47,7 @@ suggestions for layout names are well accepted :)
 
 - download / clone the project and cd into the directory
 - create a mysql database named sinforum_development
+- extract the zip file containing the icons `cd public/images/icons/; tar xfz icons.tgz`
 
 example:
 
@@ -82,9 +83,9 @@ create database
 
     mysql -u root -e "CREATE DATABASE sinforum_test;"
 
-run auto migrate
+extract the zip file containing the icons (if you didn't di it already)
 
-    RACK_ENV=test ruby -e 'DataMapper.auto_migrate!' -r ./config/env
+    cd public/images/icons/; tar xfz icons.tgz
 
 run specs
 

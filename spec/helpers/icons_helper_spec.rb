@@ -1,4 +1,5 @@
 require "spec_helper"
+require "#{PATH}/lib/icons_helpers"
 
 class Stub
   include IconsHelpers

@@ -21,4 +21,3 @@ LOAD_MODULES_ROUTES = lambda do
 
   require_all "#{path}/exts/#{mod}/routes"
 end
-
