@@ -90,3 +90,9 @@ extract the zip file containing the icons (if you didn't di it already)
 run specs
 
     rspec
+    
+    
+    
+### Todo
+
+- Email notifications on replies and button to opt-in opt/out from the topic
