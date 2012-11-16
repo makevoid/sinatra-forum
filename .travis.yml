@@ -1,4 +1,4 @@
 rvm: 1.9.3
-before_script: "cd public/images/icons/; tar xfz icons.tgz; mysql -e 'create database sinforum_test; cd ../../../;'"
+before_script: "cd public/images/icons/; tar xfz icons.tgz; mysql -e 'create database sinforum_test;'; cd ../../"
 script: "time bundle exec rspec spec"
 bundler_args: --without development
