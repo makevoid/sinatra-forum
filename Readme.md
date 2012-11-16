@@ -1,6 +1,8 @@
 # SinForum
 ### simple forum build on sinatra
 
+[![Build Status](https://secure.travis-ci.org/makevoid/sinforum.png?branch=master)](https://travis-ci.org/makevoid/sinforum)
+
 Example of a Diablo III styled forum: http://bitclan.it (branch bit)
 
 ### Features:
