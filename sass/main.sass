@@ -45,8 +45,8 @@ $fonts_default: Georgia, Verdana, Arial
   padding: 5px 1.5% 10px
   +radius(12px)
   +emboss
-  
-=box_hover  
+
+=box_hover
   +gradient($fg4, $fg2)
   +emboss_hover
 
@@ -84,15 +84,15 @@ a.btn
   +button
   background: $main
   color: #fff
-a.btn:hover    
+a.btn:hover
   +emboss_hover
   background: #fff
   color: $main
-  
-  
+
+
 h1, nav.main
   display: inline-block
-  
+
 h1
   text-shadow: 2px 1px 1px #FFF
 
@@ -100,7 +100,7 @@ nav.main
   margin: 0 0 20px 1%
   position: relative
   top: -4px
-  
+
 nav.right
   margin: 10px 0 0
 
@@ -110,11 +110,11 @@ nav.inpage
   margin: 0 0 0 10px
   position: relative
   top: -3px
-  
+
 nav.alone
   margin: 0 0 15px
 
-header 
+header
   h1
     font-size: 2.2em
     text-shadow:  1px 1px 1px #FFF, 1px 1px 4px #222
@@ -122,21 +122,21 @@ header
     margin: 0
 h1
   margin: 0 0 10px 0
-  
+
 .post h1
   font-size: 1.7em
 
 .post, .forum, .user
   margin: 0 0 10px 0
   +box
-  
+
 .posts .post, .forums .forum, .users .user
   cursor: pointer
   &:hover
     +box_hover
-    
-.users 
-  .user 
+
+.users
+  .user
     a
       font-weight: bold
       display: inline-block
@@ -151,8 +151,8 @@ h1
       width: 40px
       +radius(5px)
       margin: 6px 0 0 0
-  
-.user 
+
+.user
   h2
     margin: 20px 0 10px 0
   .title a
@@ -162,16 +162,16 @@ h1
     width: 128px
     +radius(8px)
   .info
-    margin: 10px 0 0 
+    margin: 10px 0 0
   .signature
-    margin: 10px 0 0 
+    margin: 10px 0 0
   .avatar
     float: left
 
 label
   font-size: 0.85em
   font-weight: bold
-  margin: 0 0 4px 
+  margin: 0 0 4px
   display: block
 
 input, textarea
@@ -180,18 +180,18 @@ input, textarea
   margin: 0 0 15px
   padding: 2px 5px
   width: 30%
-  
+
 textarea
   height: 400px
-  
+
 .submit
   width: 30%
   clear: right
-  
+
 .post_form, .reply
   input, textarea, .submit
     width: 70%
-  
+
 input[type='submit']
   margin: 10px 0 20px 0
   font-size: 1.2em
@@ -202,28 +202,28 @@ input[type='submit']
   background: $main
   color: #fff
   font-family: $fonts_default
-  &:hover    
+  &:hover
     +emboss_hover
     background: #fff
     color: $main
 
-  
-.clear 
+
+.clear
   clear: both
-  
+
 .right
   float: right
   .user_name
-    margin: 0 12px 0 0 
+    margin: 0 12px 0 0
     position: relative
     top: -6px
   form, .user_name
     display: inline-block
-  
+
 #container
   width: 92%
   margin: 20px auto
-  
+
 .forum
   .info
     font-size: 0.75em
@@ -240,7 +240,7 @@ input[type='submit']
     font-weight: bold
     span
       font-weight: normal
-      
+
 .post.full
   .forum_name
     margin: 0 0 4px 0
@@ -248,13 +248,13 @@ input[type='submit']
     float: right
     font-weight: bold
     margin: 0 0 5px 0
-  .by    
+  .by
     float: left
     text-align: center
-    margin: 0.5% 1.1% 0 0 
+    margin: 0.5% 1.1% 0 0
     img
       display: block
-  .avatar 
+  .avatar
     width: 80px
     +radius(7px)
     border: 1px solid #777
@@ -262,10 +262,10 @@ input[type='submit']
     clear: right
   .text
     float: left
-  
-  
+
+
 .post .text
-  h1, h2, h3 
+  h1, h2, h3
     margin: 12px 0 4px
   h1
     font-size: 1.4em
@@ -274,7 +274,7 @@ input[type='submit']
   h3
     font-size: 1.2em
 
-    
+
 .reply
   display: none
   +box
@@ -287,12 +287,12 @@ input[type='submit']
 
 .icon
   width: 25px
-  
+
 ul.icons li
   display: inline-block
   width: 16%
   min-width: 150px
-  margin: 5px 0 0 
+  margin: 5px 0 0
   img
     margin: 0 1% 0 0
     position: relative
@@ -318,7 +318,7 @@ ul.icons li
     padding: 0
 
 .form_info
-  margin: 0 0 10px 0 
+  margin: 0 0 10px 0
 
 .avatars
   margin: 0 0 20px 0
@@ -334,12 +334,11 @@ ul.icons li
     padding: 4px 2% 6px
     background: rgba(200, 200, 200, 0.5)
     +radius(10px)
-  .alert  
+  .alert
     background:       rgba(240, 240, 150, 0.7)
     color:            rgba(120, 120,  30, 1)
     border: 1px solid rgba(120, 120,  30, 0.3)
-  .notice  
+  .notice
     background:       rgba(200, 255, 200, 0.5)
     color:            rgba(30,  120,  30, 1)
     border: 1px solid rgba(30,  120,  30, 0.3)
-    

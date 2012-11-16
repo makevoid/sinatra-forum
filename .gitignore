@@ -1,3 +1,4 @@
 public/images/icons/*.png
 public/images/icons/*.gif
 *.sql
+.sass-cache
