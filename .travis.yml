@@ -1,0 +1,3 @@
+rvm: 1.9.3
+before_script: "mysql -e 'create database sinforum_test;'"
+script: "time bundle exec rspec spec"
