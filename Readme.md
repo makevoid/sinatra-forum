@@ -1,6 +1,10 @@
 # sinatra-forum
 ### simple forum build on sinatra (2012)
 
+- status: dep update needed 
+- works only on ruby 2.1?
+
+
 [![Build Status](https://secure.travis-ci.org/makevoid/sinforum.png?branch=master)](https://travis-ci.org/makevoid/sinforum)
 
 ### Features:
