@@ -1,9 +1,7 @@
-# SinForum
-### simple forum build on sinatra
+# sinatra-forum
+### simple forum build on sinatra (2012)
 
 [![Build Status](https://secure.travis-ci.org/makevoid/sinforum.png?branch=master)](https://travis-ci.org/makevoid/sinforum)
-
-Example of a Diablo III styled forum: http://bitclan.it (branch bit)
 
 ### Features:
 
@@ -19,30 +17,6 @@ Example of a Diablo III styled forum: http://bitclan.it (branch bit)
 - more to come...
 
 try it and send feedback to [@makevoid](http://francescocanessa.com)
-
-
-### Layouts:
-
-- current default (default style)
-
-![](http://uploads.makevoid.com/sinforum_layout_default.png)
-
-![](http://uploads.makevoid.com/sinforum_post_view.png)
-
-
-- current default (diablo3 style) [bit branch]
-
-![](http://uploads.makevoid.com/bitforum_layout.png)
-
-- future default [default_layout branch]
-
-![](http://behance.vo.llnwd.net/profiles6/876337/projects/5076079/f6c6ff9d0815e62aad366193025be4b6.jpg)
-
-made by @saver1991 
-
-[full article on behance](http://www.behance.net/gallery/Sinforum-Template-Redesign/5076079)
-
-suggestions for layout names are well accepted :)
 
 
 ### Installation
