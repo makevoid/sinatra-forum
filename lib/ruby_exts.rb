@@ -1,5 +1,4 @@
 class String
-
   def blank?
     self == ""
   end
@@ -8,7 +7,6 @@ class String
     return nil if self == ""
     self
   end
-
 end
 
 class NilClass

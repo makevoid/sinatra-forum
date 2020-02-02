@@ -3,7 +3,6 @@ class User
 
   ROLES = [ :guest, :member, :admin ]
 
-
   property :id,         Serial
   property :username,   String, length: 100, required: true, unique: true
   property :role,       Enum[*ROLES], default: :guest
@@ -30,7 +29,6 @@ class User
   def avatar_image
     "<img src='#{avatar.nilblank || DEFAULT_AVATAR}' class='avatar' />"
   end
-
 
   # filters
 
@@ -67,7 +65,6 @@ class User
   attr_accessor :password_confirmation
 
   validates_confirmation_of :password
-
 
   before :create do
     generate_salt

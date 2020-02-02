@@ -15,7 +15,6 @@ class Symbol
   include StringValidations
 end
 
-
 module FormHelpers
 
   def label(field, options)

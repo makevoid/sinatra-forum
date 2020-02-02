@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe "Auth" do
+
   it "should load models" do
     User.should be_a Class
   end
@@ -22,4 +23,5 @@ describe "Auth" do
   after :each do
     DataMapper.repository(:default).adapter.execute "TRUNCATE TABLE users;"
   end
+  
 end

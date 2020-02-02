@@ -3,6 +3,7 @@ class Sinforum < Sinatra::Base
   enable :sessions
   use Rack::Session::Cookie
 
+  # routes helpers - session
 
   def login_required
     redirect "/login" unless current_user
@@ -15,7 +16,6 @@ class Sinforum < Sinatra::Base
   def admin_required
     halt 403, haml_mod(:admin_required) unless admin?
   end
-
 
   def current_user
     return self.class.current_user if defined?(self.class.current_user) # for test sake
@@ -60,4 +60,5 @@ class Sinforum < Sinatra::Base
     session[:user_id] = nil
     redirect "/"
   end
+  
 end

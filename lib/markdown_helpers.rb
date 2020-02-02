@@ -32,7 +32,6 @@ module MarkdownHelpers
     end
   end
 
-
   private
 
   def markdown_help(name, definition)

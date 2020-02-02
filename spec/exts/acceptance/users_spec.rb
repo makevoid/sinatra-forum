@@ -31,8 +31,6 @@ describe "Users" do
 
     it "logins user" do
       process!
-      # p session[:user_id]
-      # TODO: pending
     end
 
     it "displays validations" do

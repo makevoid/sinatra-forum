@@ -1,6 +1,7 @@
 require_relative "spec_helper"
 
 describe "Posts" do
+  
   let(:forum){ Forum.create name: "foro"  }
   let(:forum_pvt){ Forum.create name: "secreeto", private: true }
   let(:post1){ forum.posts.create     title: "one", text: "one", user_id: user.id  }
@@ -13,12 +14,10 @@ describe "Posts" do
   end
 
   context "on a private forum - as guest" do
-
     it "GET /posts/:id = 403" do
       get "/posts/#{post2.id}"
       last_response.status.should == 403
     end
-
   end
 
   it "GET /forums/:forum_id/posts/new" do
@@ -75,4 +74,5 @@ describe "Posts" do
   after :all do
     clear_db
   end
+
 end

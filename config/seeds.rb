@@ -10,11 +10,9 @@ guest = User.create username: "guest", password: "secret", password_confirmation
 forum1 = Forum.create name: "foro", description: "first forum"
 forum2 = Forum.create name: "secreto", description: "il mio tessssooooro", private: true
 
-
 post1 = member.post forum1, title: "one", text: "one"
 post1.save
 reply = guest.reply post1, title: "two", text: "two"
 reply.save
-
 
 Icon.unpack

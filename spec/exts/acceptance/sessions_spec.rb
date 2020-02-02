@@ -1,6 +1,7 @@
 require_relative "../../acceptance/spec_helper"
 
 describe "Sessions" do
+  
   it "GET /login" do
     get "/login"
     body.should =~ /Login/

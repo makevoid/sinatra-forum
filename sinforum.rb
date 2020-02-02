@@ -33,6 +33,7 @@ class Sinforum < Sinatra::Base
       iconize markdown(text)
     end
   end
+  
   # partials
 
   # partial :comment, { comment: "blah" }
