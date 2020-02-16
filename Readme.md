@@ -11,7 +11,7 @@
 
 - Very Simple and Straightforward
 - Easyly Stylable (SASS + CSS3)
-- Very fast! (sinatra with few libraries)
+- Very fast! (sinatra with few libraries) [check Roda for a modern ruby microframework http://roda.jeremyevans.net/]
 - Robust (good spec coverage, important stuff covered, with RSpec)
 - DataMapper ORM
 - Markdown support
