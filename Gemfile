@@ -3,6 +3,7 @@ source :rubygems
 
 gem "sinatra"
 gem "json"
+gem 'scrypt'
 
 gem "dm-core"
 gem "dm-mysql-adapter"

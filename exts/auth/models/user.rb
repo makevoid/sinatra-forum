@@ -7,7 +7,6 @@ class User
   property :username,   String, length: 100, required: true, unique: true
   property :role,       Enum[*ROLES], default: :guest
   property :password,   String, required: true, length: 5..50
-  property :salt,       String
   property :diablo_id,  String
   property :avatar,     String, length: 255
   property :signature,  Text
@@ -60,14 +59,14 @@ class User
 
   # authentication
 
-  require 'digest/sha2'
+  require 'scrypt'
 
   attr_accessor :password_confirmation
 
   validates_confirmation_of :password
 
   before :create do
-    generate_salt
+    SCrypt::Password.create("my grand secret")
     self.password = crypt_password self.password
   end
 
@@ -76,15 +75,7 @@ class User
   end
 
   def crypt_password(pass)
-    hexdigest "#{self.salt}comesefosse#{pass}"
-  end
-
-  def generate_salt
-    self.salt = hexdigest "#{Time.now}sblinda"
-  end
-
-  def hexdigest(string)
-    Digest::SHA2.hexdigest(string)[0..49]
+    SCrypt::Password.create pass
   end
 
 end
