@@ -4,7 +4,7 @@ source :rubygems
 gem "sinatra"
 gem "json"
 gem 'scrypt'
-gem "ffi", "= 1.12.2"
+gem "ffi", "1.9.24"
 
 gem "dm-core"
 gem "dm-mysql-adapter"
@@ -19,7 +19,7 @@ gem "rdiscount"
 gem "voidtools"
 
 if RUBY_PLATFORM =~ /win32/
-  gem "ffi", "= 1.0.9"
+  gem "ffi", "1.9.24"
 end
 
 group :test do
