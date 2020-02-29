@@ -4,6 +4,7 @@ source :rubygems
 gem "sinatra"
 gem "json"
 gem 'scrypt'
+gem "ffi", "= 1.12.2"
 
 gem "dm-core"
 gem "dm-mysql-adapter"
