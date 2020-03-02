@@ -6,7 +6,7 @@ class User
   property :id,         Serial
   property :username,   String, length: 100, required: true, unique: true
   property :role,       Enum[*ROLES], default: :guest
-  property :password,   String, required: true, length: 5..50
+  property :password,   String, required: true, length: 8..255
   property :diablo_id,  String
   property :avatar,     String, length: 255
   property :signature,  Text

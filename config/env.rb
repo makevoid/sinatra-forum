@@ -28,7 +28,8 @@ end
 include Utils
 
 env = ENV["RACK_ENV"] || "development"
-DataMapper.setup :default, "mysql://127.0.0.1/sinforum_#{env}"
+mysql_pass = ENV["MYSQL_PASSWORD"] || "antanisblinda"
+DataMapper.setup :default, "mysql://root:#{mysql_pass}@localhost/sinforum_#{env}"
 require_all "#{path}/models"
 
 require "#{path}/lib/ruby_exts.rb"
