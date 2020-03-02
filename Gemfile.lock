@@ -1,7 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.2.8)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     coderay (1.0.8)
@@ -9,11 +10,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
-    data_objects (0.10.10)
+    data_objects (0.10.17)
       addressable (~> 2.1)
     diff-lcs (1.1.3)
-    dm-core (1.2.0)
-      addressable (~> 2.2.6)
+    dm-core (1.2.1)
+      addressable (~> 2.3)
     dm-do-adapter (1.2.0)
       data_objects (~> 0.10.6)
       dm-core (~> 1.2.0)
@@ -32,10 +33,10 @@ GEM
       uuidtools (~> 2.1)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
-    do_mysql (0.10.10)
-      data_objects (= 0.10.10)
-    do_mysql (0.10.10-x86-mingw32)
-      data_objects (= 0.10.10)
+    do_mysql (0.10.17)
+      data_objects (= 0.10.17)
+    do_mysql (0.10.17-x86-mingw32)
+      data_objects (= 0.10.17)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
@@ -77,6 +78,7 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.3.1)
       win32console (~> 1.3)
+    public_suffix (4.0.3)
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
