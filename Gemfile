@@ -27,6 +27,8 @@ group :test do
 end
 
 group :development do
+  gem "puma"
+
   # gem "capistrano"
   gem "foreman"
   gem "rerun"
