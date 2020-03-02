@@ -11,7 +11,7 @@ class Sinforum < Sinatra::Base
     before do
       unless defined?(@@session_set)
         @@session_set = true
-        session[:user_id] = User.last.id
+        session[:user_id] = User.last && User.last.id
       end
     end
 
@@ -33,7 +33,7 @@ class Sinforum < Sinatra::Base
       iconize markdown(text)
     end
   end
-  
+
   # partials
 
   # partial :comment, { comment: "blah" }
