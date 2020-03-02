@@ -1,5 +1,4 @@
-source :rubygems
-# source "http://bundler-api.herokuapp.com"
+source "https://rubygems.org"
 
 gem "sinatra"
 gem "json"
@@ -18,9 +17,6 @@ gem "rdiscount"
 
 gem "voidtools"
 
-if RUBY_PLATFORM =~ /win32/
-  gem "ffi", "= 1.0.9"
-end
 
 group :test do
   gem "rspec-core"
@@ -31,7 +27,7 @@ group :test do
 end
 
 group :development do
-  gem "capistrano"
+  # gem "capistrano"
   gem "foreman"
   gem "rerun"
   gem "guard"
